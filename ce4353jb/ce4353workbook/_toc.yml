@@ -1,0 +1,18 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: lessons/computationaltools/computationaltools
+  sections:
+  - file: lessons/computationaltools/topic1-1
+  - file: lessons/computationaltools/topic1-2
+  - file: lessons/computationaltools/topic1-3
+- file: lessons/basicprinciples/basicprinciples
+  sections:
+  - file: lessons/basicprinciples/topic2-1
+  - file: lessons/basicprinciples/topic2-2
+  - file: lessons/basicprinciples/topic2-3
+- file: markdown
+- file: notebooks
