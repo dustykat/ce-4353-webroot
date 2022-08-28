@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Basic Principles &#8212; My sample book</title>
+    <title>Basic Principles &#8212; Design of Hydraulic Systems</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -51,8 +53,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Topic 2-1" href="topic2-1.html" />
-    <link rel="prev" title="Topic 1-3" href="../computationaltools/topic1-3.html" />
+    <link rel="next" title="Solution of Open Channel Problems" href="topic2-1.html" />
+    <link rel="prev" title="HEC-RAS River Analysis Software" href="../computationaltools/topic1-3.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -75,10 +77,10 @@
         
       
       
-      <img src="../../_static/logo.png" class="logo" alt="logo">
+      <img src="../../_static/river.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">My sample book</h1>
+      <h1 class="site-logo" id="site-title">Design of Hydraulic Systems</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -89,11 +91,16 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../intro.html">
-   Welcome to your Jupyter Book
+   Hydraulic Systems Design/Open Channel Flow
   </a>
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/introduction.html">
+   Introduction
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../computationaltools/computationaltools.html">
    Computational Tools
@@ -106,17 +113,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../computationaltools/topic1-1.html">
-     Topic 1-1
+     Jupyter Notebooks
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../computationaltools/topic1-2.html">
-     Topic 1-2
+     Excel/Libre Office Spreadsheets
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../computationaltools/topic1-3.html">
-     Topic 1-3
+     HEC-RAS River Analysis Software
     </a>
    </li>
   </ul>
@@ -133,30 +140,20 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="topic2-1.html">
-     Topic 2-1
+     Solution of Open Channel Problems
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="topic2-2.html">
-     Topic 2-2
+     Definitions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="topic2-3.html">
-     Topic 2-3
+     Discharge Measurements
     </a>
    </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../markdown.html">
-   Markdown Files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../notebooks.html">
-   Content with notebooks
-  </a>
  </li>
 </ul>
 
@@ -257,6 +254,41 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#characteristics-of-open-channel-flow">
+   Characteristics of Open Channel Flow
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#free-surface">
+     Free Surface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cross-sections">
+     Cross Sections
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#flow-resistance">
+     Flow Resistance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#froude-number">
+     Froude Number
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -267,6 +299,81 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="basic-principles">
 <h1>Basic Principles<a class="headerlink" href="#basic-principles" title="Permalink to this headline">¶</a></h1>
+<p>Open channel flow - free surface, gravity driven.</p>
+<blockquote>
+<div><p>From pg. 1 of <a class="reference external" href="https://www.amazon.com/Channel-Hydraulics-Third-Terry-Sturm/dp/1260469700">Sturm, T. Open Channel Hydraulics, 1 st Ed.</a></p>
+<p><img alt="" src="../../_images/open-flow-narrative.png" /></p>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The gravity “drive” is mostly true - I would say such flows are dominated by momentum conditions, mostly with gravity influence.  Open flow can go uphill (adverse to gravitational drive) but not for much distance (os one will run out of momentum)</p>
+</div>
+<p>Common examples of open channels:</p>
+<ul class="simple">
+<li><p>rivers, streams, brooks, creeks, cricks (Applacian meaning small stream), billabongs, bourns, wadis, and many more localized terms for small streams</p></li>
+<li><p>ditches, canals, aqueducts, storm sewers, sanitary sewers</p></li>
+</ul>
+<blockquote>
+<div><p>From pg. 1 of <a class="reference external" href="https://www.amazon.com/Channel-Hydraulics-Third-Terry-Sturm/dp/1260469700">Sturm, T. Open Channel Hydraulics, 1 st Ed.</a></p>
+<p><img alt="" src="../../_images/examples-ocf.png" /></p>
+</div></blockquote>
+<p>Applications of open channel flow principles</p>
+<ul class="simple">
+<li><p>Culvert design, bridge design, spillway design</p></li>
+<li><p>Floodway analysis, and nusiance flooding prediction</p></li>
+<li><p>Fate and transport of yummy/yucky stuff (dissolved and/or suspended)</p></li>
+<li><p>Surge estimation and coastal flooding from cyclonic storms <a class="reference external" href="https://en.wikipedia.org/wiki/Tropical_cyclone">(hurricane,typhoon)</a></p></li>
+</ul>
+<blockquote>
+<div><p>From pg. 1 of <a class="reference external" href="https://www.amazon.com/Channel-Hydraulics-Third-Terry-Sturm/dp/1260469700">Sturm, T. Open Channel Hydraulics, 1 st Ed.</a></p>
+<p><img alt="" src="../../_images/applications-ocf.png" /></p>
+</div></blockquote>
+<div class="section" id="characteristics-of-open-channel-flow">
+<h2>Characteristics of Open Channel Flow<a class="headerlink" href="#characteristics-of-open-channel-flow" title="Permalink to this headline">¶</a></h2>
+<p>Three important characteristics of open channels are</p>
+<ul class="simple">
+<li><p>A free surface</p></li>
+<li><p>Extremely variable cross section geometries</p></li>
+<li><p>Inertia (momentum) and gravitational dominance on flow behavior reflected in the importance of the Froude number on predicting open channel behavior</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Reynolds number still matters, just not as overarching as in closed conduit (pipe) flow</p>
+</div>
+<div class="section" id="free-surface">
+<h3>Free Surface<a class="headerlink" href="#free-surface" title="Permalink to this headline">¶</a></h3>
+<p>The free surface is an extra degree of freedom as compared to a conduit directed boundary; it is usually treatable as a streamline with constant pressure in equilibrium with the local atmosphere (i.e. <span class="math notranslate nohighlight">\(p=0_{gage}\)</span>)</p>
+</div>
+<div class="section" id="cross-sections">
+<h3>Cross Sections<a class="headerlink" href="#cross-sections" title="Permalink to this headline">¶</a></h3>
+<p>The cross section geometries are remarkably variable, but usually can be reduced to a few terms including:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(T\)</span> the topwidth, a function of cross section geometry and depth (above the thalweg reference elevation)</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> the flow area, a function of cross section geometry and depth (above the thalweg reference elevation).  Shown as the magenta shading in the drawing.</p></li>
+<li><p><span class="math notranslate nohighlight">\(P\)</span> the wetted perimeter, which is the length of the liquid-solid contact curve.  Also a function of cross section geometry and depth (above the thalweg reference elevation)</p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> the flow depth, ususlly measured from the local minimum elevation in the channel.  The locus of these minima in the longitudinal direction (downstream) forms a curve called the <a class="reference external" href="https://en.wikipedia.org/wiki/Thalweg">thalweg</a>.  The term derives from the German <em>talweg</em> whose literal translation is valley path.</p></li>
+</ul>
+<p>A sketch depicting some of the common terms is</p>
+<p><img alt="" src="../../_images/cross-section.png" /></p>
+<p>Some additional terms in common application are:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R_H\)</span> the hydraulic radius; the ratio of area to wetter perimeter</p></li>
+<li><p><span class="math notranslate nohighlight">\(D_H\)</span> the hydraulic depth; the ratio of area to topwidth</p></li>
+</ul>
+</div>
+<div class="section" id="flow-resistance">
+<h3>Flow Resistance<a class="headerlink" href="#flow-resistance" title="Permalink to this headline">¶</a></h3>
+<p>Flow resistance is acombination of frictional shear at the liquid-solid boundary, as well as form resistance from various “roughness” components (even bridge piers can be grouped into this term) that are collectively modeled in practice as a single term that plays the same role that shear does in Euler’s equation when we discuss viscous flow.</p>
+<p><img alt="" src="../../_images/friction-form.png" /></p>
+</div>
+<div class="section" id="froude-number">
+<h3>Froude Number<a class="headerlink" href="#froude-number" title="Permalink to this headline">¶</a></h3>
+<p>The most important dimensionless parameter in open channel flow is the <strong>Froude</strong> number:</p>
+<div class="math notranslate nohighlight">
+\[ Fr = \frac{V}{\sqrt{gL}} \]</div>
+<p>where <span class="math notranslate nohighlight">\(V\)</span> is the mean section velocity (speed), and <span class="math notranslate nohighlight">\(L\)</span> is a characteristic length scale related to depth.  <span class="math notranslate nohighlight">\(Fr\)</span> is the ratio of inertia to gravity forces.</p>
+</div>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -305,7 +412,7 @@
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Topic 1-3</p>
+                <p class="prevnext-title">HEC-RAS River Analysis Software</p>
             </div>
         </a>
     </div>
@@ -313,7 +420,7 @@
         <a class="right-next" href="topic2-1.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Topic 2-1</p>
+                <p class="prevnext-title">Solution of Open Channel Problems</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
@@ -327,7 +434,7 @@
     <div class="container">
       <p>
         
-          By The Jupyter Book Community<br/>
+          By Theodore G. Cleveland (the JupyterBook parts)<br/>
         
             &copy; Copyright 2021.<br/>
       </p>

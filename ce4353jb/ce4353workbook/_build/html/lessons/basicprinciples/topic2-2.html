@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Topic 2-2 &#8212; My sample book</title>
+    <title>Definitions &#8212; Design of Hydraulic Systems</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -51,8 +53,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Topic 2-3" href="topic2-3.html" />
-    <link rel="prev" title="Topic 2-1" href="topic2-1.html" />
+    <link rel="next" title="Discharge Measurements" href="topic2-3.html" />
+    <link rel="prev" title="Solution of Open Channel Problems" href="topic2-1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -75,10 +77,10 @@
         
       
       
-      <img src="../../_static/logo.png" class="logo" alt="logo">
+      <img src="../../_static/river.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">My sample book</h1>
+      <h1 class="site-logo" id="site-title">Design of Hydraulic Systems</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -89,11 +91,16 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../intro.html">
-   Welcome to your Jupyter Book
+   Hydraulic Systems Design/Open Channel Flow
   </a>
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/introduction.html">
+   Introduction
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../computationaltools/computationaltools.html">
    Computational Tools
@@ -106,17 +113,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../computationaltools/topic1-1.html">
-     Topic 1-1
+     Jupyter Notebooks
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../computationaltools/topic1-2.html">
-     Topic 1-2
+     Excel/Libre Office Spreadsheets
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../computationaltools/topic1-3.html">
-     Topic 1-3
+     HEC-RAS River Analysis Software
     </a>
    </li>
   </ul>
@@ -133,30 +140,20 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="topic2-1.html">
-     Topic 2-1
+     Solution of Open Channel Problems
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Topic 2-2
+     Definitions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="topic2-3.html">
-     Topic 2-3
+     Discharge Measurements
     </a>
    </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../markdown.html">
-   Markdown Files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../notebooks.html">
-   Content with notebooks
-  </a>
  </li>
 </ul>
 
@@ -257,6 +254,41 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#control-volumes-and-basic-equations">
+   Control Volumes and Basic Equations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conservation-of-mass">
+     Conservation of Mass
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conservation-of-momentum">
+     Conservation of Momentum
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-foreshadowing">
+     Some Foreshadowing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conservation-of-energy">
+     Conservation of Energy
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -265,8 +297,307 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="topic-2-2">
-<h1>Topic 2-2<a class="headerlink" href="#topic-2-2" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="definitions">
+<h1>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h1>
+<p>Unsteady flow means discharge,<span class="math notranslate nohighlight">\(Q(t)\)</span> is not constant in time at a cross-section. (Panels A and D in the drawing)</p>
+<p>Steady flow means that discharge, <span class="math notranslate nohighlight">\(Q(t)\)</span>, is constant in time at a cross-section. (Panels B and C in the drawing)</p>
+<p><img alt="" src="../../_images/definitions.png" /></p>
+<p>If the flow depth <span class="math notranslate nohighlight">\(y\)</span> is the same at all locations along the thalweg of a prisimatic channel, then the flow is <em>uniform</em> (Panel B in the drawing).  Steady flow that is <em>nonuniform</em> is either rapidly varying (changing over a short distance) or gradually varying (changing over a long distance).  Unsteady flows can also exhibit rapid and gradual variations.</p>
+<div class="section" id="control-volumes-and-basic-equations">
+<h2>Control Volumes and Basic Equations<a class="headerlink" href="#control-volumes-and-basic-equations" title="Permalink to this headline">¶</a></h2>
+<p>The basic euqations (mass, momentum, and energy) are usually employed from cross-section to cross-section in a “flow tube” or stream tube which represents a kind of control volume (Panel B in the drawing)</p>
+<p><img alt="" src="../../_images/control-effing-volumes.png" /></p>
+<p>Between cross sections the analytical unit is called a <em>reach</em> which is a part of a channel with <strong>approximately</strong> constant geometrical shape, constant bottom slope, and constant roughness characteristics.</p>
+<p>Application of Reynolds’ Transport Theorem to a control volume is used to derive (hypothesize) the conservaton of mass, momentum, and energy in a reach.  A collection of reaches is then analyzed  to represent an entire stream of interest</p>
+<p><img alt="" src="../../_images/reaches-bitch.png" /></p>
+<p>For mass conservation a control volume like that below can be employed</p>
+<p><img alt="" src="../../_images/reach-cv.png" /></p>
+<div class="section" id="conservation-of-mass">
+<h3>Conservation of Mass<a class="headerlink" href="#conservation-of-mass" title="Permalink to this headline">¶</a></h3>
+<p>The conservation of mass in the cell is the statement that mass entering and leaving the cell is balanced by the accumulation or lass of mass within the cell.   For pedagogical clarity, this section goes through each part of a mass balance then assembles into a difference equation of interest.</p>
+<p><em>Mass Entering:</em>  Mass enters from the left of the cell in our sketch.  This direction only establishes a direction convention and negative flux means the arrow points in the direction opposite of that in the sketch.  In the notation of the sketch mass entering in a short time interval is:</p>
+<div class="math notranslate nohighlight">
+\[
+\dot{M}_{in}= \rho * ( Q-\frac{\partial Q}{\partial x}*\frac{\Delta x}{2})*\Delta t
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\rho\)</span> is the fluid density.  Notice that the mass flux is evaluated at the cell interface and not the centroid, while by convention <span class="math notranslate nohighlight">\(\rho\)</span> is assumed to be defined as an average cell property.</p>
+<p><em>Mass Leaving:</em>  Mass leaves from the right of the cell in our sketch.    In the notation of the sketch mass leaving is:</p>
+<div class="math notranslate nohighlight">
+\[
+\dot{M}_{out}= \rho * ( Q+\frac{\partial Q}{\partial x}*\frac{\Delta x}{2})*\Delta t
+\]</div>
+<p><em>Mass Accumulating:</em>  Mass accumulating within the reach is stored in the prism depicted in the sketch by the dashed lines.  The product of density and prism volume is the mass added to (or removed from) storage.</p>
+<p>The rise in water surface in a short time interval is <span class="math notranslate nohighlight">\(\frac{\partial y}{\partial t}*\Delta t\)</span>.
+The plan view area of the prism is <span class="math notranslate nohighlight">\(T(y)* \Delta x\)</span>.
+The product of these two terms is the mass added to storage, expressed as:</p>
+<div class="math notranslate nohighlight">
+\[
+\dot{M}_{storage} = \rho *( \frac{\partial y}{\partial t}*\Delta t) *T(y)* \Delta x 
+\]</div>
+<p>Equating the accumulation to the net inflow produces</p>
+<div class="math notranslate nohighlight">
+\[
+ \rho *( \frac{\partial y}{\partial t}*\Delta t) *T(y)* \Delta x =  \rho * ( Q-\frac{\partial Q}{\partial x}*\frac{\Delta x}{2})*\Delta t - \rho * ( Q+\frac{\partial Q}{\partial x}*\frac{\Delta x}{2})*\Delta t
+\]</div>
+<p>This is the mass balance equation for the reach.  If the flow is isothermal, and essentially incompressible then the density is a constant and can be removed from both sides of the equation.</p>
+<div class="math notranslate nohighlight">
+\[
+( \frac{\partial y}{\partial t}*\Delta t) *T(y)* \Delta x =  ( Q-\frac{\partial Q}{\partial x}*\frac{\Delta x}{2})*\Delta t - ( Q+\frac{\partial Q}{\partial x}*\frac{\Delta x}{2})*\Delta t
+\]</div>
+<p>Rearranging the right hand side produces</p>
+<div class="math notranslate nohighlight">
+\[
+( \frac{\partial y}{\partial t}*\Delta t) *T(y)* \Delta x =  -\frac{\partial Q}{\partial x}*\frac{\Delta x}{2}*\Delta t - \frac{\partial Q}{\partial x}*\frac{\Delta x}{2}*\Delta t = -\frac{\partial Q}{\partial x}*\Delta x*\Delta t
+\]</div>
+<p>Dividing both sides by <span class="math notranslate nohighlight">\(\Delta x*\Delta t\)</span> yields</p>
+<div class="math notranslate nohighlight">
+\[
+( \frac{\partial y}{\partial t}) *T(y) = -\frac{\partial Q}{\partial x}
+\]</div>
+<p>This equation is the conventional representation of the conservation of mass in 1-D open channel flow.   If the equation includes lateral inflow the equation is adjusted to include this additional mass term.  The usual lateral inflow is treated as a discharge per unit length added into the mass balance as expressed below:</p>
+<div class="math notranslate nohighlight">
+\[
+( \frac{\partial y}{\partial t}) *T(y) + \frac{\partial Q}{\partial x} = q
+\label{eqn:continunity}
+\]</div>
+<p>Compare this equation to Equation 1.6 in <a class="reference external" href="https://www.amazon.com/Channel-Hydraulics-Third-Terry-Sturm/dp/1260469700">Sturm, T. Open Channel Hydraulics, 1 st Ed.</a> and observing that <span class="math notranslate nohighlight">\(q=0\)</span> (in the book), and <span class="math notranslate nohighlight">\(\frac{\partial A}{\partial t} = (\frac{\partial y}{\partial t}) *T(y)\)</span> and we have the same result.</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial A}{\partial t}  + \frac{\partial Q}{\partial x} = 0
+\]</div>
+</div>
+<div class="section" id="conservation-of-momentum">
+<h3>Conservation of Momentum<a class="headerlink" href="#conservation-of-momentum" title="Permalink to this headline">¶</a></h3>
+<p>The conservation of momentum is the statement of the change in momentum in the reach is equal to the net momentum entering the reach plus the sum of the forces on the water in the reach.  As in the mass balance, each component will be considered separately for pedagogical clarity.</p>
+<p><img alt="" src="../../_images/fbd-cell.png" /></p>
+<p><em>Momentum Entering:</em>
+Momentum entering on the left side of the sketch is</p>
+<div class="math notranslate nohighlight">
+\[
+\rho*QV = \rho*V^2A
+\]</div>
+<p><em>Momentum Leaving:</em>
+Momentum leaving on the right side of the sketch is</p>
+<div class="math notranslate nohighlight">
+\[
+\rho*QV+\frac{\partial}{\partial x}(\rho*QV)\delta x = \rho*V^2A+\frac{\partial}{\partial x}(\rho*V^2A)\delta x
+\]</div>
+<p><em>Momentum Accumulating:</em>
+The momentum accumulating is the rate of change of linear momentum:
+$<span class="math notranslate nohighlight">\(
+\frac{dL}{dt}= \frac{d~(mV)}{dt}=\frac{\partial}{\partial t}(\rho*AV*\delta x)=\rho*\delta x\frac{\partial}{\partial t}(AV)
+\)</span>$</p>
+<p><em>Forces on the liquid in the reach:</em></p>
+<p><em>Gravity forces:</em>  The gravitational force on the element is the product of the mass in the element and the downslope component of acceleration.</p>
+<p>The mass in the element is <span class="math notranslate nohighlight">\(\rho*A\delta x\)</span></p>
+<p>The <span class="math notranslate nohighlight">\(x\)</span>-component of acceleration is <span class="math notranslate nohighlight">\(g~sin(\alpha)\)</span>, which is <span class="math notranslate nohighlight">\(\approx~S_0\)</span> for small values of <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
+<p>The resulting force of gravity is is the product of these two values:</p>
+<div class="math notranslate nohighlight">
+\[
+F_g=\rho g *AS_0~\delta x
+\]</div>
+<p><em>Friction forces:</em>   Friction force is the product of the shear stress and the contact area.  In the reach the contact area is the product of the reach length and average wetted perimeter.</p>
+<div class="math notranslate nohighlight">
+\[
+F_{fr} = \tau * P_w * \delta x
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>I am taking liberties with friction here - as stated previously, form friction is going to be lumped with stress into some kind of collective friction term.</p>
+</div>
+<p>where <span class="math notranslate nohighlight">\(P_w = A/R\)</span>, <span class="math notranslate nohighlight">\(R\)</span> is the hydraulic radius.  A good approximation for shear stress in unsteady flow is <span class="math notranslate nohighlight">\(\tau = \rho g R S_f\)</span>.  <span class="math notranslate nohighlight">\(S_f\)</span> is the slope of the energy grade line at some instant and is also called the friction slope.  This slope can be empirically determined by a variety of models, typically Chezy’s or Manning’s equation is used.  In either of these two models, we are using a STEADY FLOW equation of motion to mimic unsteady behavior — nothing wrong, and it is common practice, but this decision does limit the frequency response of the model (the ability to change fast — hence the shallow wave theory assumption!).</p>
+<p>The resulting friction model is</p>
+<div class="math notranslate nohighlight">
+\[
+F_{fr} =  \rho g A S_f * \delta x
+\]</div>
+<p><em>Pressure forces:</em></p>
+<p>Need narrative to explain the parts</p>
+<div class="math notranslate nohighlight">
+\[
+F_p = \int_{A} {dF}
+\]</div>
+<p><img alt="" src="../../_images/pressure_sketch.png" /></p>
+<div class="math notranslate nohighlight">
+\[
+dF = (z-h)\rho g \xi (h) dh
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\xi (h)\)</span> is the width of the panel at a given distance above the channel bottom (<span class="math notranslate nohighlight">\(h\)</span>) at any section.</p>
+<div class="math notranslate nohighlight">
+\[
+F_{p~net} = F_{p~up} - F_{p~down}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+F_{p~net} = F_p -( F_p + \frac{\partial F_p}{\partial x}*\delta x) = - \frac{\partial F_p}{\partial x}*\delta x
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+ - \frac{\partial F_p}{\partial x}*\delta x = -\frac{\partial}{\partial x}[\int_{0}^{Z}\rho g (z-h) \xi(h) dh ] \delta x
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+F_{p~net}  = -\rho g [\frac{\partial z}{\partial x}\int_{0}^{Z} \xi(h) dh + \int_{0}^{Z} (z-h) \xi(h) \frac{\partial \xi(h)}{\partial x} dh] \delta x
+\]</div>
+<p>The first term integrates to the cross sectional area, the second term is the variation in pressure with position along the channel.</p>
+<p>The other pressure force to consider is the bank force (the pressure force exerted by the banks on the element).  This force is computed using the same type of integral structure except the order is swapped.</p>
+<div class="math notranslate nohighlight">
+\[
+F_{p~bank} =  [\int_{0}^{Z} \rho g (z-h) \frac{\partial \xi(h)}{\partial x} \delta x] dh
+\]</div>
+<p>Now we put everything together.</p>
+<div class="math notranslate nohighlight">
+\[
+{Momentum}_{in}-{Momentum}_{out} + \sum{F} = \frac{d(mV)}{dt}
+\]</div>
+<p>Substitution of the pieces:</p>
+<div class="math notranslate nohighlight">
+\[
+{Momentum}_{in}-{Momentum}_{out} + F_{p~net}+F_{bank} + F_{gravity} - F_{friction}  = \frac{d(mV)}{dt}
+\]</div>
+<p>Now when the expressions for each expressions for each part</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+\rho*V^2A- \rho*V^2A-\frac{\partial}{\partial x}(\rho*V^2A)\delta x  \\
+-\rho g \frac{\partial z}{\partial x}\int_{0}^{Z} \xi(h) dh \delta x
+- [\int_{0}^{Z}\rho g (z-h)  \frac{\partial \xi(h)}{\partial x} dh] \delta x \\ 
++[\int_{0}^{Z} \rho g (z-h) \frac{\partial \xi(h)}{\partial x} \delta x] dh\\
++\rho g *AS_0~\delta x \\- (\rho g R S_f * \delta x)  \\ =  \rho*\delta x\frac{\partial}{\partial t}(AV)
+ \\
+\end{split}
+\label{eqn:momentum_expanded}
+\end{split}\]</div>
+<p>Each row of  the Equation above represents, in order:</p>
+<ol class="simple">
+<li><p>Net momentum entering the reach.</p></li>
+<li><p>Pressure force differential at the end sections.</p></li>
+<li><p>Pressure force on the channel sides.</p></li>
+<li><p>Gravitational force.</p></li>
+<li><p>Frictional force opposing flow.</p></li>
+<li><p>Total acceleration in the reach (change in linear momentum).</p></li>
+</ol>
+<p>Canceling terms and dividing by <span class="math notranslate nohighlight">\(\rho \delta x\)</span> (isothermal, incompressible flow; reach has finite length) the equation simplifies to</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{split}
+-\frac{\partial}{\partial x}(V^2A) - g \frac{\partial z}{\partial x}\int_{0}^{Z} \xi(h) dh + g *AS_0~ - ( g R S_f * )  =  \frac{\partial}{\partial t}(AV)
+\end{split}
+\label{eqn:momentum_simpler}
+\]</div>
+<p>The second term integral is the sectional flow area, so it simplifies to</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{split}
+-\frac{\partial}{\partial x}(V^2A) - g \frac{\partial y}{\partial x}A + gAS_0~ -  g A S_f   =  \frac{\partial}{\partial t}(AV)
+\end{split}
+\label{eqn:momentum_simpler}
+\]</div>
+<p>The term with the square of mean section velocity is expanded by the chain rule, and using continunity becomes (notice the convective acceleration term from the change in area with time)</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{split}
+\frac{\partial}{\partial t}( AV) = A \frac{\partial V }{\partial t} + V \frac{\partial A }{\partial t} = A \frac{\partial V }{\partial t} -VA \frac{ \partial V }{\partial x} - V^2 \frac{\partial A }{\partial x} 
+\end{split}
+\label{eqn:momentum_simpler1}
+\]</div>
+<p>Now expand and construct</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{split}
+-V^2\frac{\partial A}{\partial x} - 2VA \frac{\partial V}{\partial x}
+- gA \frac{\partial y}{\partial x} + gA(S_0-S_f)   = A \frac{\partial V }{\partial t} -VA \frac{ \partial V }{\partial x} - V^2 \frac{\partial A }{\partial x} 
+\end{split}
+\label{eqn:momentum_simpler2}
+\]</div>
+<p>Cancel common terms and simplify</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{split}
+-VA \frac{\partial V}{\partial x}
+- gA \frac{\partial y}{\partial x} + gA(S_0-S_f)   = A \frac{\partial V }{\partial t} 
+\end{split}
+\label{eqn:momentum_simpler3}
+\]</div>
+<p>The above equation is the final form of the momentum equation for practical use.  It will be rearranged in the remainder of this discuaaion to fit some other purposes, but this is the expression of momentum in the channel reach.</p>
+<p>Divide by <span class="math notranslate nohighlight">\(gA\)</span> and obtain</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{split}
+- \frac{V}{g}\frac{\partial V}{\partial x}
+-  \frac{\partial y}{\partial x} + (S_0-S_f)   =  \frac{1}{g}\frac{\partial V }{\partial t} 
+\end{split}
+\label{eqn:momentum_simpler4}
+\]</div>
+<p>Now rearrange to place the two slopes on the left side, and the remaining part of momentum to the right side.</p>
+<p>The next equation lets us examine the several flow regimes common in open channel flows.</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{split}
+S_0-S_f   =  \frac{1}{g}\frac{\partial V }{\partial t}   +  \frac{\partial y}{\partial x} + \frac{V}{g}\frac{\partial V}{\partial x}
+\end{split}
+\label{eqn:momentum_simpler5}
+\]</div>
+<p>If the local acceleration (first term on the right) is zero, the depth taper (middle term on the right) is zero,</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Zero depth taper means constant depth flow.</p>
+</div>
+<p>and the convective acceleration (last term on the right) is zero, then the expression degenerates to the algebraic equation of <em>normal/uniform</em> flow (<span class="math notranslate nohighlight">\(S_0=S_f\)</span>).  If just the local acceleration term is zero, and all the remaining terms are considered, then the expression degenerates to the ordinary differential equation of gradually varied flow.</p>
+<p>Finally, if all the terms are retained, then the dynamic flow (shallow wave) conditions are in effect and the resulting model is a partial differential equation.</p>
+<p>Re-iterating these typical flow regimes:</p>
+<blockquote>
+<div><ol class="simple">
+<li><p>Uniform flow; algebraic equation.
+$<span class="math notranslate nohighlight">\(
+\begin{split}
+S_f = S_0 
+\end{split}
+\)</span>$</p></li>
+<li><p>Gradually varied flow; ordinary differential equation.
+$<span class="math notranslate nohighlight">\(
+\begin{split}
+S_f = S_0 -  \frac{\partial y}{\partial x} - \frac{V}{g}\frac{\partial V}{\partial x}
+\end{split}
+\)</span>$</p></li>
+<li><p>Dynamic flow (shallow wave) conditions; partial differential equation.
+$$
+\begin{split}
+S_f = S_0 -  \frac{\partial y}{\partial x} - \frac{V}{g}\frac{\partial V}{\partial x}</p></li>
+</ol>
+</div></blockquote>
+<ul class="simple">
+<li><p>\frac{1}{g}\frac{\partial V }{\partial t}
+\end{split}
+$$</p></li>
+</ul>
+</div>
+<div class="section" id="some-foreshadowing">
+<h3>Some Foreshadowing<a class="headerlink" href="#some-foreshadowing" title="Permalink to this headline">¶</a></h3>
+<p>The coupled pair of equations, for continuity and momentum are called the St. Venant equations and comprise a coupled hyperbolic differential equation system.</p>
+<div class="math notranslate nohighlight">
+\[
+( \frac{\partial y}{\partial t}) *T(y) + \frac{\partial Q}{\partial x} = q
+\label{eqn:continunity}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\begin{split}
+S_0 - S_f  -  \frac{\partial z}{\partial x} - \frac{V}{g}\frac{\partial V}{\partial x}
+- \frac{1}{g}\frac{\partial V }{\partial t} = 0
+\end{split}
+\label{eqn:momentum_complete}
+\]</div>
+<p>Solutions (<span class="math notranslate nohighlight">\((z,t)\)</span> and <span class="math notranslate nohighlight">\((V,t)\)</span> functions) are found by a variety of methods including finite difference, finite element, finite volume, and characteristics methods.</p>
+</div>
+<div class="section" id="conservation-of-energy">
+<h3>Conservation of Energy<a class="headerlink" href="#conservation-of-energy" title="Permalink to this headline">¶</a></h3>
+<p>Under reasonable practical assumptions the energy balance for a reach reduces to a modified bernoulli equation.  Equation 1.18 in the text is probably more familiar as</p>
+<div class="math notranslate nohighlight">
+\[\frac{p_1}{\gamma} + z_1 + \frac{\alpha_1 V_1^2}{2g} + h_s = \frac{p_2}{\gamma} + z_2 + \frac{\alpha_2 V_2^2}{2g} + h_L\]</div>
+<p>If the flow is steady and we know where the free surface is, then the pressure terms are simply the depth at their respective locations.</p>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -303,7 +634,7 @@
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Topic 2-1</p>
+                <p class="prevnext-title">Solution of Open Channel Problems</p>
             </div>
         </a>
     </div>
@@ -311,7 +642,7 @@
         <a class="right-next" href="topic2-3.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Topic 2-3</p>
+                <p class="prevnext-title">Discharge Measurements</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
@@ -325,7 +656,7 @@
     <div class="container">
       <p>
         
-          By The Jupyter Book Community<br/>
+          By Theodore G. Cleveland (the JupyterBook parts)<br/>
         
             &copy; Copyright 2021.<br/>
       </p>
