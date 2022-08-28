@@ -114,6 +114,7 @@
 # 
 # *Momentum Accumulating:*
 # The momentum accumulating is the rate of change of linear momentum:
+# 
 # $$
 # \frac{dL}{dt}= \frac{d~(mV)}{dt}=\frac{\partial}{\partial t}(\rho*AV*\delta x)=\rho*\delta x\frac{\partial}{\partial t}(AV)
 # $$
