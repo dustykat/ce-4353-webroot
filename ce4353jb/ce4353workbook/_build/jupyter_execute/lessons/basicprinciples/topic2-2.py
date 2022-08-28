@@ -312,24 +312,11 @@
 # Re-iterating these typical flow regimes:
 # 
 # >1. Uniform flow; algebraic equation.
-#   > $$
-# \begin{split}
-# S_f = S_0 
-# \end{split}
-# $$
+#   > $$ S_f = S_0 $$
 # >2. Gradually varied flow; ordinary differential equation.
-#   > $$
-# \begin{split}
-# S_f = S_0 -  \frac{\partial y}{\partial x} - \frac{V}{g}\frac{\partial V}{\partial x}
-# \end{split}
-# $$
+#   > $$ S_f = S_0 -  \frac{\partial y}{\partial x} - \frac{V}{g}\frac{\partial V}{\partial x} $$
 # >3. Dynamic flow (shallow wave) conditions; partial differential equation.
-#   > $$
-# \begin{split}
-# S_f = S_0 -  \frac{\partial y}{\partial x} - \frac{V}{g}\frac{\partial V}{\partial x}
-# - \frac{1}{g}\frac{\partial V }{\partial t} 
-# \end{split}
-# $$
+#   > $$ S_f = S_0 -  \frac{\partial y}{\partial x} - \frac{V}{g}\frac{\partial V}{\partial x} - \frac{1}{g}\frac{\partial V }{\partial t} $$
 
 # ### Some Foreshadowing
 # 
