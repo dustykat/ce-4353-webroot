@@ -336,16 +336,12 @@
 # The coupled pair of equations, for continuity and momentum are called the St. Venant equations and comprise a coupled hyperbolic differential equation system.
 # 
 # $$
-# ( \frac{\partial y}{\partial t}) *T(y) + \frac{\partial Q}{\partial x} = q
-# \label{eqn:continunity}
+# (\frac{\partial y}{\partial t}) *T(y) + \frac{\partial Q}{\partial x} = q
 # $$
 # 
 # $$
-# \begin{split}
 # S_0 - S_f  -  \frac{\partial z}{\partial x} - \frac{V}{g}\frac{\partial V}{\partial x}
 # - \frac{1}{g}\frac{\partial V }{\partial t} = 0
-# \end{split}
-# \label{eqn:momentum_complete}
 # $$
 # 
 # 
