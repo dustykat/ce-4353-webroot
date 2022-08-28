@@ -243,10 +243,7 @@
 # The second term integral is the sectional flow area, so it simplifies to 
 # 
 # $$
-# \begin{split}
 # -\frac{\partial}{\partial x}(V^2A) - g \frac{\partial y}{\partial x}A + gAS_0~ -  g A S_f   =  \frac{\partial}{\partial t}(AV)
-# \end{split}
-# \label{eqn:momentum_simpler}
 # $$
 # 
 # The term with the square of mean section velocity is expanded by the chain rule, and using continunity becomes (notice the convective acceleration term from the change in area with time)
