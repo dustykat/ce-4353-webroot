@@ -10,6 +10,11 @@ chapters:
   - file: lessons/computationaltools/topic1-1
   - file: lessons/computationaltools/topic1-2
   - file: lessons/computationaltools/topic1-3
+  - file: lessons/computationaltools/1goodgraphs 
+  - file: lessons/computationaltools/2makinggraphs 
+  - file: lessons/computationaltools/3adddata
+  - file: lessons/computationaltools/4loglogcharts
+  - file: lessons/computationaltools/5othercharts 
 - file: lessons/basicprinciples/basicprinciples
   sections:
   - file: lessons/basicprinciples/topic2-1
