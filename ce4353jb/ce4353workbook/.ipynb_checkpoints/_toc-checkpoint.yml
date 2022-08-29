@@ -20,4 +20,8 @@ chapters:
   - file: lessons/basicprinciples/topic2-1
   - file: lessons/basicprinciples/topic2-2
   - file: lessons/basicprinciples/topic2-3
+  
+- file: lessons/specificenergy/specificenergy1
+- file: lessons/weirs/weirs
+- file: lessons/momentum/momentum1
 
