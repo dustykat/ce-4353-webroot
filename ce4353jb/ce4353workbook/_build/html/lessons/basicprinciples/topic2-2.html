@@ -186,6 +186,33 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../specificenergy/specificenergy1.html">
+   Specific Energy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specificenergy/specificenergy2.html">
+     Froude Number
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weirs/weirs.html">
+   Weirs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../momentum/momentum1.html">
+   Momentum
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -290,30 +317,76 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#control-volumes-and-basic-equations">
-   Control Volumes and Basic Equations
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Definitions
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#conservation-of-mass">
-     Conservation of Mass
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#control-volumes-and-basic-equations">
+     Control Volumes and Basic Equations
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#conservation-of-mass">
+       Conservation of Mass
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#application-of-continunity-example-1">
+   Application of Continunity - Example 1
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sketch-s-here">
+     Sketch(s) here
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#conservation-of-momentum">
-     Conservation of Momentum
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#known-quantities">
+     Known quantities
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#some-foreshadowing">
-     Some Foreshadowing
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unknown-quantities">
+     Unknown quantities
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#conservation-of-energy">
-     Conservation of Energy
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#governing-principles">
+     Governing principles
     </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solution-step-by-step-computations">
+     Solution (step-by-step/computations)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discussion">
+     Discussion
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#conservation-of-momentum">
+       Conservation of Momentum
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#some-foreshadowing">
+       Some Foreshadowing
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#conservation-of-energy">
+       Conservation of Energy
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -397,6 +470,78 @@ The product of these two terms is the mass added to storage, expressed as:</p>
 \frac{\partial A}{\partial t}  + \frac{\partial Q}{\partial x} = 0
 \]</div>
 </div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="application-of-continunity-example-1">
+<h1>Application of Continunity - Example 1<a class="headerlink" href="#application-of-continunity-example-1" title="Permalink to this headline">¶</a></h1>
+<p>The river flow at an upstream gauging station is measured as 1500 <span class="math notranslate nohighlight">\(\frac{m^3}{sec}\)</span>, and at another gauging station 3 <span class="math notranslate nohighlight">\(km\)</span> downstream, the discharge is measured as 750 <span class="math notranslate nohighlight">\(\frac{m^3}{sec}\)</span> at the same moment in time. The channel is uniform, with a width of 300 <span class="math notranslate nohighlight">\(m\)</span>.</p>
+<p>Determine:</p>
+<ul class="simple">
+<li><p>The rate of change in the average water surface elevation in meters per hour.</p></li>
+<li><p>Whether the stage (average water surface elevation) is rising or falling.</p></li>
+</ul>
+<div class="section" id="sketch-s-here">
+<h2>Sketch(s) here<a class="headerlink" href="#sketch-s-here" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="known-quantities">
+<h2>Known quantities<a class="headerlink" href="#known-quantities" title="Permalink to this headline">¶</a></h2>
+<p>The problem statement supplies:</p>
+<ul class="simple">
+<li><p>Station 1 is upstream of station 2</p></li>
+<li><p>At station 1;  <span class="math notranslate nohighlight">\(Q_1=~1500 \frac{m^3}{s}\)</span>,<span class="math notranslate nohighlight">\(x_1=0~m\)</span>,<span class="math notranslate nohighlight">\(T_1=300~m\)</span></p></li>
+<li><p>At station 2;  <span class="math notranslate nohighlight">\(Q_2=~750 \frac{m^3}{s}\)</span>,<span class="math notranslate nohighlight">\(x_2=3000~m\)</span>,<span class="math notranslate nohighlight">\(T_2=300~m\)</span><br></p></li>
+</ul>
+</div>
+<div class="section" id="unknown-quantities">
+<h2>Unknown quantities<a class="headerlink" href="#unknown-quantities" title="Permalink to this headline">¶</a></h2>
+<p>The change in <span class="math notranslate nohighlight">\(y\)</span>, and the sign of the change.</p>
+</div>
+<div class="section" id="governing-principles">
+<h2>Governing principles<a class="headerlink" href="#governing-principles" title="Permalink to this headline">¶</a></h2>
+<p>Here we apply continunity in a generalized structure:</p>
+<div class="math notranslate nohighlight">
+\[( \frac{\partial y}{\partial t}) *T(y) + \frac{\partial Q}{\partial x} = 0\]</div>
+</div>
+<div class="section" id="solution-step-by-step-computations">
+<h2>Solution (step-by-step/computations)<a class="headerlink" href="#solution-step-by-step-computations" title="Permalink to this headline">¶</a></h2>
+<p>So we will set-up the computations for this case</p>
+<p><span class="math notranslate nohighlight">\(\frac{\Delta WSE}{\Delta t} = \frac{\partial(y)}{\partial t} + \frac{\partial(z)}{\partial t}\)</span>
+<br>but <span class="math notranslate nohighlight">\(z\)</span> is the channel bottom, which should be time invariant so
+<br><span class="math notranslate nohighlight">\(\frac{\Delta WSE}{\Delta t} = \frac{\partial y}{\partial t}\)</span>
+<br>The spatial change in discharge is given in the problem so that
+<br><span class="math notranslate nohighlight">\(\frac{\partial Q}{\partial x} = \frac{\Delta Q}{\Delta x} = \frac{Q_2 - Q_1}{x_2 - x_1}\)</span>
+<br>Now make the substitutions
+<br><span class="math notranslate nohighlight">\( \frac{\partial y}{\partial t}   =  \frac{(\frac{Q_1 - Q_2}{x_1 - x_2})}{T(y)}\)</span>
+<br>And script a solution</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># script</span>
+<span class="n">Q1</span> <span class="o">=</span> <span class="mi">1500</span>
+<span class="n">Q2</span> <span class="o">=</span> <span class="mi">750</span>
+<span class="n">T1</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">T2</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">X1</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">X2</span> <span class="o">=</span> <span class="mi">3000</span>
+
+<span class="n">DQDX</span> <span class="o">=</span> <span class="p">(</span><span class="n">Q2</span><span class="o">-</span><span class="n">Q1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">X2</span><span class="o">-</span><span class="n">X1</span><span class="p">)</span>
+<span class="n">dydt</span> <span class="o">=</span> <span class="o">-</span><span class="n">DQDX</span><span class="o">/</span><span class="p">((</span><span class="n">T1</span><span class="o">+</span><span class="n">T2</span><span class="p">)</span><span class="o">*</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">dydt</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;WSE is changing at&quot;</span><span class="p">,</span><span class="n">dydt</span><span class="o">*</span><span class="mi">3600</span><span class="p">,</span><span class="s2">&quot;meters per hour, and rising&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;WSE is changing at&quot;</span><span class="p">,</span><span class="n">dydt</span><span class="o">*</span><span class="mi">3600</span><span class="p">,</span><span class="s2">&quot;meters per hour, and falling&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WSE is changing at 3.0 meters per hour, and rising
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="discussion">
+<h2>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">¶</a></h2>
+<p>In this case we used the average topwidth to quantify the storage prism.</p>
 <div class="section" id="conservation-of-momentum">
 <h3>Conservation of Momentum<a class="headerlink" href="#conservation-of-momentum" title="Permalink to this headline">¶</a></h3>
 <p>The conservation of momentum is the statement of the change in momentum in the reach is equal to the net momentum entering the reach plus the sum of the forces on the water in the reach.  As in the mass balance, each component will be considered separately for pedagogical clarity.</p>

@@ -22,6 +22,9 @@ chapters:
   - file: lessons/basicprinciples/topic2-3
   
 - file: lessons/specificenergy/specificenergy1
+  sections:
+  - file: lessons/specificenergy/specificenergy2
+  
 - file: lessons/weirs/weirs
 - file: lessons/momentum/momentum1
 

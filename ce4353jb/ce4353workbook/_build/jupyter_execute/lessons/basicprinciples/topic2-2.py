@@ -92,6 +92,73 @@
 # \frac{\partial A}{\partial t}  + \frac{\partial Q}{\partial x} = 0
 # $$
 
+# # Application of Continunity - Example 1
+# 
+# The river flow at an upstream gauging station is measured as 1500 $\frac{m^3}{sec}$, and at another gauging station 3 $km$ downstream, the discharge is measured as 750 $\frac{m^3}{sec}$ at the same moment in time. The channel is uniform, with a width of 300 $m$.
+# 
+# Determine:
+# 
+# - The rate of change in the average water surface elevation in meters per hour.
+# - Whether the stage (average water surface elevation) is rising or falling.
+# 
+
+# 
+# 
+
+# >## Sketch(s) here
+# >
+# >## Known quantities
+# >The problem statement supplies:
+# >- Station 1 is upstream of station 2
+# >- At station 1;  $Q_1=~1500 \frac{m^3}{s}$,$x_1=0~m$,$T_1=300~m$
+# >- At station 2;  $Q_2=~750 \frac{m^3}{s}$,$x_2=3000~m$,$T_2=300~m$<br>
+# >
+# >## Unknown quantities
+# >
+# >The change in $y$, and the sign of the change.
+# >
+# >## Governing principles
+# >
+# >Here we apply continunity in a generalized structure:
+# >
+# >$$( \frac{\partial y}{\partial t}) *T(y) + \frac{\partial Q}{\partial x} = 0$$
+# >
+# > ## Solution (step-by-step/computations)
+# >
+# >So we will set-up the computations for this case
+# >
+# >$\frac{\Delta WSE}{\Delta t} = \frac{\partial(y)}{\partial t} + \frac{\partial(z)}{\partial t}$
+# ><br>but $z$ is the channel bottom, which should be time invariant so 
+# ><br>$\frac{\Delta WSE}{\Delta t} = \frac{\partial y}{\partial t}$
+# ><br>The spatial change in discharge is given in the problem so that
+# ><br>$\frac{\partial Q}{\partial x} = \frac{\Delta Q}{\Delta x} = \frac{Q_2 - Q_1}{x_2 - x_1}$
+# ><br>Now make the substitutions 
+# ><br>$ \frac{\partial y}{\partial t}   =  \frac{(\frac{Q_1 - Q_2}{x_1 - x_2})}{T(y)}$
+# ><br>And script a solution
+
+# In[1]:
+
+
+# script
+Q1 = 1500
+Q2 = 750
+T1 = 300
+T2 = 300
+X1 = 0
+X2 = 3000
+
+DQDX = (Q2-Q1)/(X2-X1)
+dydt = -DQDX/((T1+T2)*0.5)
+if dydt > 0.0:
+    print("WSE is changing at",dydt*3600,"meters per hour, and rising")
+else:
+    print("WSE is changing at",dydt*3600,"meters per hour, and falling")
+
+
+# >## Discussion
+# >
+# >In this case we used the average topwidth to quantify the storage prism.
+
 # ### Conservation of Momentum
 # The conservation of momentum is the statement of the change in momentum in the reach is equal to the net momentum entering the reach plus the sum of the forces on the water in the reach.  As in the mass balance, each component will be considered separately for pedagogical clarity.
 # 

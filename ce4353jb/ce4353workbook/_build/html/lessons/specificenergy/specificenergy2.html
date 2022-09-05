@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Basic Principles &#8212; CE 4353 Design of Hydraulic Systems</title>
+    <title>Froude Number &#8212; CE 4353 Design of Hydraulic Systems</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Solution of Open Channel Problems" href="topic2-1.html" />
-    <link rel="prev" title="Other Graph Types" href="../computationaltools/5othercharts.html" />
+    <link rel="next" title="Weirs" href="../weirs/weirs.html" />
+    <link rel="prev" title="Specific Energy" href="specificenergy1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -159,32 +159,59 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../basicprinciples/basicprinciples.html">
    Basic Principles
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="topic2-1.html">
+    <a class="reference internal" href="../basicprinciples/topic2-1.html">
      Solution of Open Channel Problems
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="topic2-2.html">
+    <a class="reference internal" href="../basicprinciples/topic2-2.html">
      Definitions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="topic2-3.html">
+    <a class="reference internal" href="../basicprinciples/topic2-3.html">
      Discharge Measurements
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="specificenergy1.html">
+   Specific Energy
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Froude Number
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weirs/weirs.html">
+   Weirs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../momentum/momentum1.html">
+   Momentum
+  </a>
  </li>
 </ul>
 
@@ -227,7 +254,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/lessons/basicprinciples/basicprinciples.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/lessons/specificenergy/specificenergy2.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -247,7 +274,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/basicprinciples/basicprinciples.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/specificenergy/specificenergy2.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -268,7 +295,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/lessons/basicprinciples/basicprinciples.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/lessons/specificenergy/specificenergy2.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -291,31 +318,29 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#characteristics-of-open-channel-flow">
-   Characteristics of Open Channel Flow
+  <a class="reference internal nav-link" href="#critical-depth-non-rectangular">
+   Critical Depth Non-Rectangular
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#free-surface">
-     Free Surface
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cross-sections">
-     Cross Sections
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#flow-resistance">
-     Flow Resistance
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#froude-number">
-     Froude Number
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contractions-expansions">
+   Contractions &amp; Expansions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overbank-flow">
+   Overbank Flow
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples">
+   Examples
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
  </li>
 </ul>
 
@@ -328,84 +353,78 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="basic-principles">
-<h1>Basic Principles<a class="headerlink" href="#basic-principles" title="Permalink to this headline">¶</a></h1>
-<p>Open channel flow - free surface, gravity driven.</p>
-<blockquote>
-<div><p>From pg. 1 of <a class="reference external" href="https://www.amazon.com/Channel-Hydraulics-Third-Terry-Sturm/dp/1260469700">Sturm, T. Open Channel Hydraulics, 1 st Ed.</a></p>
-<p><img alt="" src="../../_images/open-flow-narrative.png" /></p>
-</div></blockquote>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The gravity “drive” is mostly true - I would say such flows are dominated by momentum conditions, mostly with gravity influence.  Open flow can go uphill (adverse to gravitational drive) but not for much distance (os one will run out of momentum)</p>
-</div>
-<p>Common examples of open channels:</p>
-<ul class="simple">
-<li><p>rivers, streams, brooks, creeks, cricks (Applacian meaning small stream), billabongs, bourns, wadis, and many more localized terms for small streams</p></li>
-<li><p>ditches, canals, aqueducts, storm sewers, sanitary sewers</p></li>
-</ul>
-<blockquote>
-<div><p>From pg. 1 of <a class="reference external" href="https://www.amazon.com/Channel-Hydraulics-Third-Terry-Sturm/dp/1260469700">Sturm, T. Open Channel Hydraulics, 1 st Ed.</a></p>
-<p><img alt="" src="../../_images/examples-ocf.png" /></p>
-</div></blockquote>
-<p>Applications of open channel flow principles</p>
-<ul class="simple">
-<li><p>Culvert design, bridge design, spillway design</p></li>
-<li><p>Floodway analysis, and nusiance flooding prediction</p></li>
-<li><p>Fate and transport of yummy/yucky stuff (dissolved and/or suspended)</p></li>
-<li><p>Surge estimation and coastal flooding from cyclonic storms <a class="reference external" href="https://en.wikipedia.org/wiki/Tropical_cyclone">(hurricane,typhoon)</a></p></li>
-</ul>
-<blockquote>
-<div><p>From pg. 1 of <a class="reference external" href="https://www.amazon.com/Channel-Hydraulics-Third-Terry-Sturm/dp/1260469700">Sturm, T. Open Channel Hydraulics, 1 st Ed.</a></p>
-<p><img alt="" src="../../_images/applications-ocf.png" /></p>
-</div></blockquote>
-<div class="section" id="characteristics-of-open-channel-flow">
-<h2>Characteristics of Open Channel Flow<a class="headerlink" href="#characteristics-of-open-channel-flow" title="Permalink to this headline">¶</a></h2>
-<p>Three important characteristics of open channels are</p>
-<ul class="simple">
-<li><p>A free surface</p></li>
-<li><p>Extremely variable cross section geometries</p></li>
-<li><p>Inertia (momentum) and gravitational dominance on flow behavior reflected in the importance of the Froude number on predicting open channel behavior</p></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The Reynolds number still matters, just not as overarching as in closed conduit (pipe) flow</p>
-</div>
-<div class="section" id="free-surface">
-<h3>Free Surface<a class="headerlink" href="#free-surface" title="Permalink to this headline">¶</a></h3>
-<p>The free surface is an extra degree of freedom as compared to a conduit directed boundary; it is usually treatable as a streamline with constant pressure in equilibrium with the local atmosphere (i.e. <span class="math notranslate nohighlight">\(p=0_{gage}\)</span>)</p>
-</div>
-<div class="section" id="cross-sections">
-<h3>Cross Sections<a class="headerlink" href="#cross-sections" title="Permalink to this headline">¶</a></h3>
-<p>The cross section geometries are remarkably variable, but usually can be reduced to a few terms including:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(T\)</span> the topwidth, a function of cross section geometry and depth (above the thalweg reference elevation)</p></li>
-<li><p><span class="math notranslate nohighlight">\(A\)</span> the flow area, a function of cross section geometry and depth (above the thalweg reference elevation).  Shown as the magenta shading in the drawing.</p></li>
-<li><p><span class="math notranslate nohighlight">\(P\)</span> the wetted perimeter, which is the length of the liquid-solid contact curve.  Also a function of cross section geometry and depth (above the thalweg reference elevation)</p></li>
-<li><p><span class="math notranslate nohighlight">\(y\)</span> the flow depth, ususlly measured from the local minimum elevation in the channel.  The locus of these minima in the longitudinal direction (downstream) forms a curve called the <a class="reference external" href="https://en.wikipedia.org/wiki/Thalweg">thalweg</a>.  The term derives from the German <em>talweg</em> whose literal translation is valley path.</p></li>
-</ul>
-<p>A sketch depicting some of the common terms is</p>
-<p><img alt="" src="../../_images/cross-section.png" /></p>
-<p>Some additional terms in common application are:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(R_H\)</span> the hydraulic radius; the ratio of area to wetter perimeter</p></li>
-<li><p><span class="math notranslate nohighlight">\(D_H\)</span> the hydraulic depth; the ratio of area to topwidth</p></li>
-</ul>
-</div>
-<div class="section" id="flow-resistance">
-<h3>Flow Resistance<a class="headerlink" href="#flow-resistance" title="Permalink to this headline">¶</a></h3>
-<p>Flow resistance is acombination of frictional shear at the liquid-solid boundary, as well as form resistance from various “roughness” components (even bridge piers can be grouped into this term) that are collectively modeled in practice as a single term that plays the same role that shear does in Euler’s equation when we discuss viscous flow.</p>
-<p><img alt="" src="../../_images/friction-form.png" /></p>
-</div>
-<div class="section" id="froude-number">
-<h3>Froude Number<a class="headerlink" href="#froude-number" title="Permalink to this headline">¶</a></h3>
-<p>The most important dimensionless parameter in open channel flow is the <strong>Froude</strong> number:</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="froude-number">
+<h1>Froude Number<a class="headerlink" href="#froude-number" title="Permalink to this headline">¶</a></h1>
+<p>Recall the Froude number,</p>
 <div class="math notranslate nohighlight">
-\[ Fr = \frac{V}{\sqrt{gL}} \]</div>
-<p>where <span class="math notranslate nohighlight">\(V\)</span> is the mean section velocity (speed), and <span class="math notranslate nohighlight">\(L\)</span> is a characteristic length scale related to depth.  <span class="math notranslate nohighlight">\(Fr\)</span> is the ratio of inertia to gravity forces.</p>
+\[ Fr = \frac{V}{\sqrt{gy}}\]</div>
+<p>The specific energy diagram identifies three flow regimes:</p>
+<ol class="simple">
+<li><p>supercritical; characterized by small <span class="math notranslate nohighlight">\(y\)</span>, large <span class="math notranslate nohighlight">\(V\)</span>, greater than wave celerity <span class="math notranslate nohighlight">\(c\)</span>, <span class="math notranslate nohighlight">\(Fr &gt;1\)</span></p></li>
+<li><p>critical; minimum specific energy for the channel and flow; <span class="math notranslate nohighlight">\(y=y_c\)</span>, <span class="math notranslate nohighlight">\(Fr = 1\)</span>, velocity is wave celerity.</p></li>
+<li><p>subcritical;characterized by large <span class="math notranslate nohighlight">\(y\)</span>, small <span class="math notranslate nohighlight">\(V\)</span>, smaller than wave celerity <span class="math notranslate nohighlight">\(c\)</span>, <span class="math notranslate nohighlight">\(Fr &lt;1\)</span></p></li>
+</ol>
+<p>Wave celerity is speed of shallow waves on watre surface.  Drop a pebble on water, ripples move away from the impact, speed of the ripples is the celerity - controlled largely by water depth.</p>
+<p>Choking is the situation where the channel bottom is high enough or downstream width is small enough to just start to slow flow and cause the flow depth to increase.</p>
+<div class="section" id="critical-depth-non-rectangular">
+<h2>Critical Depth Non-Rectangular<a class="headerlink" href="#critical-depth-non-rectangular" title="Permalink to this headline">¶</a></h2>
+<p>Generally use the depth measured from thalweg point, and apply principles of continunity already described, key is</p>
+<p><img alt="" src="../../_images/cross-section1.png" /></p>
+<div class="math notranslate nohighlight">
+\[dA = T(y)dy\]</div>
+<p>So the hydraulic characteristics are quite important. We obtain the depth-area, depth-perimeter, depth-topwidth functions for odd shapes by numerical tabulations and interpolation.</p>
+<div class="math notranslate nohighlight">
+\[E = y + \frac{\alpha Q^2}{2gA^2}\]</div>
+<p>at critical depth</p>
+<div class="math notranslate nohighlight">
+\[ \frac{dE}{dy} = 0 = 1 - \frac{\alpha Q^3}{gA^3}\frac{dA}{dy}\]</div>
+<p>In terms of hydraulic depth we have</p>
+<div class="math notranslate nohighlight">
+\[ D = \frac{A}{T}\]</div>
+<p>and at critical flow</p>
+<div class="math notranslate nohighlight">
+\[D_c = \frac{A_c}{T_c}\]</div>
+<p>and substitution gives</p>
+<div class="math notranslate nohighlight">
+\[E_c = y_c + \frac{D_c}{2}\]</div>
+<p>Table 2.1 copied below has geometric element equations for a few common geometries:</p>
+<p><img alt="" src="../../_images/table2-1.png" /></p>
+<blockquote>
+<div><p>An on-line calculator that can handle trapezoidal, triangular and rectangular is at <br>
+<a class="reference external" href="http://54.243.252.9/toolbox/swhydraulics/TrapezoidChannelUS/TrapezoidChannelUS.html">Trapezoidal Channel Geometric Elements</a>
+<br>and a similar tool for circular channels is at <br>
+<a class="reference external" href="http://54.243.252.9/toolbox/swhydraulics/CircularChannelUS/CircularChannelUS.html">Circular Channel Geometric Elements</a></p>
+</div></blockquote>
 </div>
+<div class="section" id="contractions-expansions">
+<h2>Contractions &amp; Expansions<a class="headerlink" href="#contractions-expansions" title="Permalink to this headline">¶</a></h2>
+<p>The general equation for steady flow in expansions</p>
+<p><img alt="" src="../../_images/expansion.png" /></p>
+<p>and/or contractions</p>
+<p><img alt="" src="../../_images/contraction.png" /></p>
+<p>is</p>
+<div class="math notranslate nohighlight">
+\[ y_1 + \frac{\alpha V_1^2}{2g} + z_1 = y_2 + \frac{\alpha V_2^2}{2g} + z_2 + K_L |\frac{1}{A_2^2}-\frac{1}{A_1^2}|\frac{Q^2}{2g}\]</div>
+<p>where the last term is the change in velocity head multiplied by a loss coefficient (structurally like a Darcy-Wiseass head loss model)</p>
+<div class="math notranslate nohighlight">
+\[K_L = \frac{1 - \frac{b_1}{b_2}}{1 + \frac{b_1}{b_2}}\]</div>
+<p>applicable when <span class="math notranslate nohighlight">\(Fr&lt;\frac{1}{2}\)</span></p>
+<p>Expansions tend to have higher head loss because of the flow separation in the wake/shadow formed by the walls at the abrubt change in width.  If the designer arranges for a smooth transition the head loss can be minimized but not eliminated.</p>
+<p>For contractions the following is often applied</p>
+<div class="math notranslate nohighlight">
+\[h_L = (0.11 ~\text{to}~ 0.23)\frac{V^2}{2g}\]</div>
+<p>the lower value for a rounded transition, the larger for a sharp transition.</p>
 </div>
-<div class="toctree-wrapper compound">
+<div class="section" id="overbank-flow">
+<h2>Overbank Flow<a class="headerlink" href="#overbank-flow" title="Permalink to this headline">¶</a></h2>
+<p><img alt="" src="../../_images/overbank.png" /></p>
+<p>Different resistance to flow in different parts of the cross section.  Can obtain different <span class="math notranslate nohighlight">\(y_c\)</span> in each part of the cross section. Can also have large velocity differences across the section with high velocities in the main channel section (usually) and possibly very low velocities in the overbanks.  It creates a problem for 1-D models if the velocity itself is important (as opposed to just getting the total discharge right).</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -422,7 +441,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./lessons/basicprinciples"
+            path: "./lessons/specificenergy"
         },
         predefinedOutput: true
     }
@@ -439,19 +458,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../computationaltools/5othercharts.html" title="previous page">
+        <a class="left-prev" href="specificenergy1.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Other Graph Types</p>
+                <p class="prevnext-title">Specific Energy</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="topic2-1.html" title="next page">
+        <a class="right-next" href="../weirs/weirs.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Solution of Open Channel Problems</p>
+                <p class="prevnext-title">Weirs</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
