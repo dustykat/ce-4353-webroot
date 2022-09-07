@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -52,7 +54,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Momentum" href="../momentum/momentum1.html" />
-    <link rel="prev" title="Specific Energy" href="../specificenergy/specificenergy1.html" />
+    <link rel="prev" title="Froude Number" href="../specificenergy/specificenergy2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -184,10 +186,22 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../specificenergy/specificenergy1.html">
    Specific Energy
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specificenergy/specificenergy2.html">
+     Froude Number
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
@@ -309,14 +323,56 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#stage-control">
-   Stage Control
+  <a class="reference internal nav-link" href="#stage-control-water-quality-enhancement">
+   Stage Control - Water Quality Enhancement
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stage-control-erosion-management">
+   Stage Control - Erosion Management
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stage-control-navigation">
+   Stage Control - Navigation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stage-control-diversion-extraction">
+   Stage Control - Diversion/Extraction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#examples">
    Examples
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sharp-crested-rectangular-notch-weir">
+     Sharp-Crested Rectangular Notch Weir
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shart-crested-triangular-notch-weir">
+     Shart-Crested Triangular Notch Weir
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#broad-crested-weir">
+     Broad-Crested Weir
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#submerged-rectangular-weir">
+     Submerged Rectangular Weir
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#flumes">
+     Flumes
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
@@ -336,17 +392,130 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="weirs">
 <h1>Weirs<a class="headerlink" href="#weirs" title="Permalink to this headline">¶</a></h1>
+<p>Used as flow measuring devices and to maintain specific pool elevations in hydraulic systems.</p>
 <div class="section" id="flow-measurement">
 <h2>Flow Measurement<a class="headerlink" href="#flow-measurement" title="Permalink to this headline">¶</a></h2>
+<p><img alt="" src="../../_images/stream_weir.png" /></p>
 </div>
-<div class="section" id="stage-control">
-<h2>Stage Control<a class="headerlink" href="#stage-control" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="stage-control-water-quality-enhancement">
+<h2>Stage Control - Water Quality Enhancement<a class="headerlink" href="#stage-control-water-quality-enhancement" title="Permalink to this headline">¶</a></h2>
+<p><img alt="" src="../../_images/Dobbsweirvdropsjan2006.png" /></p>
+</div>
+<div class="section" id="stage-control-erosion-management">
+<h2>Stage Control - Erosion Management<a class="headerlink" href="#stage-control-erosion-management" title="Permalink to this headline">¶</a></h2>
+<p><img alt="" src="../../_images/Weir_on_the_river_wear.png" /></p>
+</div>
+<div class="section" id="stage-control-navigation">
+<h2>Stage Control - Navigation<a class="headerlink" href="#stage-control-navigation" title="Permalink to this headline">¶</a></h2>
+<p><img alt="" src="../../_images/bath-weir.png" /></p>
+</div>
+<div class="section" id="stage-control-diversion-extraction">
+<h2>Stage Control - Diversion/Extraction<a class="headerlink" href="#stage-control-diversion-extraction" title="Permalink to this headline">¶</a></h2>
+<p><img alt="" src="../../_images/Typical-weir-system-in-Northern-Thailand-consists-of-weirs-and-canals.png" /></p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>Many types of weirs in the textbook are typically employed for flow measurement.  Most of the weirs pictured are morphologically the same as a handful of well studied types</p>
+<div class="section" id="sharp-crested-rectangular-notch-weir">
+<h3>Sharp-Crested Rectangular Notch Weir<a class="headerlink" href="#sharp-crested-rectangular-notch-weir" title="Permalink to this headline">¶</a></h3>
+<p><img alt="" src="../../_images/sharp-crest.png" /></p>
+<p>A sketch of a sharp-crested weir (weir plate is thin in the flow direction) is shown below</p>
+<p><img alt="" src="../../_images/sharp-crest-sketch.png" /></p>
+<p>Assuming no head loss, atmospheric pressure across AB (implies flow over the crest is like a jet, that is <span class="math notranslate nohighlight">\(\Delta p\)</span>  is small from top to bottom - the assumption becomes weak when the weir becomes flooded), negligible contraction of the <a class="reference external" href="https://en.wikipedia.org/wiki/Nappe_(water)">nappe</a>.</p>
+<p>Integrating the velocity profile from A to B to obtain a mean section speed in the nappe, and multiplying by the cross section width produces (Eqn 2.39)</p>
+<div class="math notranslate nohighlight">
+\[ Q = \frac{2}{3}\sqrt{2g}C_d~L~H^{3/2} \]</div>
+<p>Where <span class="math notranslate nohighlight">\(L\)</span> is the width (weir length) of the notch crest perpindicular to flow, and <span class="math notranslate nohighlight">\(H\)</span> is the static head above the crest height (the flow depth of the nappe at the crest).</p>
+<p>The weir coefficient <span class="math notranslate nohighlight">\(C_d\)</span> is determined by weir morphology:</p>
+<p><img alt="" src="../../_images/weir-charts-one.png" /></p>
+<p>These charts are used with an adjusted formula</p>
+<div class="math notranslate nohighlight">
+\[ Q = \frac{2}{3}\sqrt{2g}C_{de}~L_{e}~H_e^{3/2} \]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[L_{de}=L + k_L\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[H_e=H + k_H\]</div>
+<p><span class="math notranslate nohighlight">\(k_L\)</span> is read from the chart and <span class="math notranslate nohighlight">\(k_H\)</span> is a constant 0.001 m (0.003 ft)</p>
+<p>An alternate approach is a formula for <span class="math notranslate nohighlight">\(C_{de}\)</span> (Kindsvater-Carter formula)</p>
+<p><span class="math notranslate nohighlight">\(C_{de} = \beta_1 + \beta_2 \frac{H}{P}\)</span></p>
+<p>where</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:right head"><p><span class="math notranslate nohighlight">\(\frac{L}{b}\)</span></p></th>
+<th class="text-align:right head"><p><span class="math notranslate nohighlight">\(\beta_1\)</span></p></th>
+<th class="text-align:right head"><p><span class="math notranslate nohighlight">\(\beta_2\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:right"><p>1.0</p></td>
+<td class="text-align:right"><p>0.602</p></td>
+<td class="text-align:right"><p>0.075</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>0.9</p></td>
+<td class="text-align:right"><p>0.599</p></td>
+<td class="text-align:right"><p>0.064</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>0.8</p></td>
+<td class="text-align:right"><p>0.597</p></td>
+<td class="text-align:right"><p>0.045</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>0.7</p></td>
+<td class="text-align:right"><p>0.595</p></td>
+<td class="text-align:right"><p>0.030</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>0.6</p></td>
+<td class="text-align:right"><p>0.593</p></td>
+<td class="text-align:right"><p>0.018</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>0.5</p></td>
+<td class="text-align:right"><p>0.592</p></td>
+<td class="text-align:right"><p>0.011</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>0.4</p></td>
+<td class="text-align:right"><p>0.591</p></td>
+<td class="text-align:right"><p>0.0058</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>0.3</p></td>
+<td class="text-align:right"><p>0.590</p></td>
+<td class="text-align:right"><p>0.0020</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>0.2</p></td>
+<td class="text-align:right"><p>0.589</p></td>
+<td class="text-align:right"><p>-0.0018</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>0.1</p></td>
+<td class="text-align:right"><p>0.588</p></td>
+<td class="text-align:right"><p>-0.0021</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>0.0</p></td>
+<td class="text-align:right"><p>0.587</p></td>
+<td class="text-align:right"><p>-0.0023</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="shart-crested-triangular-notch-weir">
+<h3>Shart-Crested Triangular Notch Weir<a class="headerlink" href="#shart-crested-triangular-notch-weir" title="Permalink to this headline">¶</a></h3>
+<p><img alt="" src="../../_images/V-notch.png" /></p>
+<p><img alt="" src="../../_images/vee-notch-weir-in-brick-tunnel-t.png" /></p>
+</div>
+<div class="section" id="broad-crested-weir">
+<h3>Broad-Crested Weir<a class="headerlink" href="#broad-crested-weir" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="submerged-rectangular-weir">
+<h3>Submerged Rectangular Weir<a class="headerlink" href="#submerged-rectangular-weir" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="flumes">
+<h3>Flumes<a class="headerlink" href="#flumes" title="Permalink to this headline">¶</a></h3>
+</div>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=YkR79oDAgOg">What is a weir? (YouTube)</a></p></li>
+</ol>
 </div>
 </div>
 
@@ -380,11 +549,11 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../specificenergy/specificenergy1.html" title="previous page">
+        <a class="left-prev" href="../specificenergy/specificenergy2.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Specific Energy</p>
+                <p class="prevnext-title">Froude Number</p>
             </div>
         </a>
     </div>
