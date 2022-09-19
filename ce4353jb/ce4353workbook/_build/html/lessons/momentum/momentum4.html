@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -336,20 +338,64 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#definitions">
-   Definitions
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Bridge Piers
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definitions">
+     Definitions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-3-3-from-sturm">
+     Example 3.3 (from Sturm)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-problem-4-from-es-1">
+     Example (Problem 4 from ES-1)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sketch-s-here">
+   sketch(s) here
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#examples">
-   Examples
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-known-quantities">
+   list known quantities
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-unknown-quantities">
+   list unknown quantities
   </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#governing-principles">
+   governing principles
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discussion">
+   discussion
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples">
+     Examples
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#references">
+     References
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -364,10 +410,293 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="bridge-piers">
 <h1>Bridge Piers<a class="headerlink" href="#bridge-piers" title="Permalink to this headline">¶</a></h1>
-<p>What it is</p>
+<p>Momentum balances are useful when analyzing obstructions caused by elements placed in the flow, bridge piers being a prime example.  The obstruction causes backwater effects in subcritical flow and even choking.</p>
 <div class="section" id="definitions">
 <h2>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h2>
+<p>Two flow regimes are shown below.  Type-I is subcritical approach, remaining subcritical passing through the pier array.  Type-II is where critical depth occurs in the constriction (kind of like a flooded broad crested weir).</p>
+<p><img alt="" src="../../_images/piersmorgan.png" /></p>
+<p>For Type-I flow the momentum balance is</p>
+<div class="math notranslate nohighlight">
+\[M_1 = M_4 + \frac{F_D}{\rho g} \]</div>
+<p>where <span class="math notranslate nohighlight">\(F_D\)</span> is the drag force of the piers on the water.</p>
 </div>
+<div class="section" id="example-3-3-from-sturm">
+<h2>Example 3.3 (from Sturm)<a class="headerlink" href="#example-3-3-from-sturm" title="Permalink to this headline">¶</a></h2>
+<p>A bridge is supported by square-noze piers having a width of 1.5 meters and a spacing of 15.0 meters.  The piers have a drag coefficient of 2.0.   If the downstream depth and velocity are 1.90 meters and 2.40 meters per second, what is the backwater (deepening upstream) caused by the piers?</p>
+<p>The book presents an elegant solution, we however will just beat it to submission with numb3rs:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">W</span> <span class="o">=</span> <span class="mf">16.5</span> <span class="c1">#m channel width between equally spaced piers</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.8</span> <span class="c1">#m/s^2 </span>
+<span class="n">yd</span> <span class="o">=</span> <span class="mf">1.9</span> <span class="c1">#m </span>
+<span class="n">ud</span> <span class="o">=</span> <span class="mf">2.40</span> <span class="c1"># m/s</span>
+<span class="n">Cd</span> <span class="o">=</span> <span class="mf">2.00</span> <span class="c1"># given</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="n">ud</span><span class="o">*</span><span class="n">W</span><span class="o">*</span><span class="n">yd</span>
+<span class="n">D</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="c1"># m diameter of a pier</span>
+
+<span class="c1">#now a couple of funckshuns</span>
+
+<span class="k">def</span> <span class="nf">lhs</span><span class="p">(</span><span class="n">yu</span><span class="p">,</span><span class="n">yd</span><span class="p">,</span><span class="n">width</span><span class="p">,</span><span class="n">uu</span><span class="p">,</span><span class="n">Cd</span><span class="p">,</span><span class="n">gravity</span><span class="p">,</span><span class="n">diameter</span><span class="p">):</span>
+    <span class="n">term1</span> <span class="o">=</span> <span class="p">(</span><span class="n">gravity</span><span class="o">*</span><span class="n">width</span><span class="o">*</span><span class="n">yu</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+    <span class="n">term2</span> <span class="o">=</span> <span class="p">(</span><span class="n">gravity</span><span class="o">*</span><span class="n">width</span><span class="o">*</span><span class="n">yd</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+    <span class="n">term3</span> <span class="o">=</span> <span class="p">(</span><span class="n">Cd</span><span class="o">*</span><span class="n">diameter</span><span class="o">*</span><span class="n">yu</span><span class="o">*</span><span class="n">uu</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+    <span class="n">lhs</span> <span class="o">=</span> <span class="n">term1</span><span class="o">-</span><span class="n">term2</span><span class="o">-</span><span class="n">term3</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">lhs</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">rhs</span><span class="p">(</span><span class="n">uu</span><span class="p">,</span><span class="n">ud</span><span class="p">,</span><span class="n">Q</span><span class="p">):</span>
+    <span class="n">rhs</span> <span class="o">=</span> <span class="p">(</span><span class="n">ud</span><span class="o">-</span><span class="n">uu</span><span class="p">)</span><span class="o">*</span><span class="n">Q</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">rhs</span><span class="p">)</span>
+
+<span class="c1"># by brute force - guess yu, compute uu from Q supply to lhs,rhs when same have a solution print result</span>
+
+<span class="n">tolerance</span> <span class="o">=</span> <span class="mf">0.03</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">yrange</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">/</span><span class="mi">10000</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="mi">100000</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Depth (m) |&quot;</span><span class="p">,</span><span class="s2">&quot;Velocity (m/s) |&quot;</span><span class="p">,</span><span class="s2">&quot;Momentum Error &quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">irow</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">yrange</span><span class="p">)):</span>
+    <span class="n">yu</span> <span class="o">=</span> <span class="n">yrange</span><span class="p">[</span><span class="n">irow</span><span class="p">]</span>
+    <span class="n">uu</span> <span class="o">=</span> <span class="n">Q</span><span class="o">/</span><span class="p">(</span><span class="n">W</span><span class="o">*</span><span class="n">yu</span><span class="p">)</span>
+    <span class="n">test</span> <span class="o">=</span> <span class="n">lhs</span><span class="p">(</span><span class="n">yu</span><span class="p">,</span><span class="n">yd</span><span class="p">,</span><span class="n">W</span><span class="p">,</span><span class="n">uu</span><span class="p">,</span><span class="n">Cd</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">D</span><span class="p">)</span><span class="o">-</span><span class="n">rhs</span><span class="p">(</span><span class="n">uu</span><span class="p">,</span><span class="n">ud</span><span class="p">,</span><span class="n">Q</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">test</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">tolerance</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">yu</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot; | &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">uu</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot;  | &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">lhs</span><span class="p">(</span><span class="n">yu</span><span class="p">,</span><span class="n">yd</span><span class="p">,</span><span class="n">W</span><span class="p">,</span><span class="n">uu</span><span class="p">,</span><span class="n">Cd</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">D</span><span class="p">)</span><span class="o">-</span><span class="n">rhs</span><span class="p">(</span><span class="n">uu</span><span class="p">,</span><span class="n">ud</span><span class="p">,</span><span class="n">Q</span><span class="p">),</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="c1">#yrange</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Depth (m) | Velocity (m/s) | Momentum Error 
+0.726  |  6.285   |  0.027
+0.726  |  6.284   |  -0.021
+1.971  |  2.313   |  -0.013
+1.972  |  2.313   |  0.011
+</pre></div>
+</div>
+</div>
+</div>
+<p>So the computed upstream depth is between <span class="math notranslate nohighlight">\(1.971\)</span> and <span class="math notranslate nohighlight">\(1.972\)</span> meters.  The smaller zero does not make sense (the piers are not likely to force water to a shallower depth upstream of the disturbance.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We can check our conjecture by computing the downstream Fr number, if it is less than 1.0 (subcritical) it is possible the piers could cause a transition from supercritical, but pretty unlikely unless the after pier Fr number is pretty large (say 0.8-ish)</p>
+</div>
+<p>Using 1.972 as our upstream depth, the backwater induced by the pier(s) is 1.972 - 1.90 (<span class="math notranslate nohighlight">\(y_u - y_d\)</span>)=0.072 meters which agrees nicely with the elegant, graphical solution in the book of 0.076 meters.  In our case with working scripts we have a useable NBR (No Brains Required) solution.</p>
+</div>
+<div class="section" id="example-problem-4-from-es-1">
+<h2>Example (Problem 4 from ES-1)<a class="headerlink" href="#example-problem-4-from-es-1" title="Permalink to this headline">¶</a></h2>
+<p><em>This example is not particularly special except the drag coefficient is <strong>unspecified</strong> and is determined from the Reynolds number based on depth for the flow field.</em></p>
+<p>A bridge has cylindrical piers 1 <span class="math notranslate nohighlight">\(m\)</span> in diameter and spaced 15 <span class="math notranslate nohighlight">\(m\)</span> apart.<br />
+Downstream of the bridge, where the flow disturbance from the piers is no longer present, the flow depth is 2.9 <span class="math notranslate nohighlight">\(m\)</span> and the mean velocity is 2.5 <span class="math notranslate nohighlight">\(\frac{m}{sec}\)</span></p>
+<p>Figure 4 is a typical graph of drag coefficient for a single cylinder</p>
+<blockquote>
+<div><p>Figure 4 adapted from <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0301679X18301324">Wenjun Gao, Daniel Nelias, Yaguo Lyu, Nicolas Boisson,
+Numerical investigations on drag coefficient of circular cylinder with two free ends in roller bearings,
+Tribology International,
+Volume 123,
+2018,
+Pages 43-49,
+ISSN 0301-679X,
+https://doi.org/10.1016/j.triboint.2018.02.044.</a></p>
+</div></blockquote>
+<figure align="center">
+<!--<img src="./cylinderdrages1.png" width="600" >-->
+<img src="http://54.243.252.9/ce-4353-webroot/2-Exercises/ES1/Cdforacylinder.png" width="600" >
+<figcaption>Figure 4: The drag coefficient, $C_D$, for a circular cylinder as a function of Reynolds number. </figcaption>
+</figure>
+<p>Determine</p>
+<ul class="simple">
+<li><p>The Reynolds number for the flow described (use the flow depth as the characteristic length)</p></li>
+<li><p>The drag coefficient, <span class="math notranslate nohighlight">\(C_d\)</span> for a cylinder at the computed Reynolds number</p></li>
+<li><p>The depth of flow upstream of the bridge</p></li>
+<li><p>The head loss caused by the piers</p></li>
+</ul>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="sketch-s-here">
+<h1>sketch(s) here<a class="headerlink" href="#sketch-s-here" title="Permalink to this headline">¶</a></h1>
+<p>The sketch below ia a plan view of the described conditions, we will analyze a 16 meter wide portion of the flow field; total width is unknown, and we will assume the single pier estimate applies across entire width.</p>
+<p><img alt="" src="http://54.243.252.9/ce-4353-webroot/2-Exercises/ES1/pierplanview.png" /></p>
+<p>An elevation view sketch is below - showing the energy grade line (as a nice gradient, in actuality all the head loss will be quite near the pier.</p>
+<p><img alt="" src="http://54.243.252.9/ce-4353-webroot/2-Exercises/ES1/pierelevationview.png" /></p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="list-known-quantities">
+<h1>list known quantities<a class="headerlink" href="#list-known-quantities" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(y_d = 2.9\)</span> meters</p></li>
+<li><p><span class="math notranslate nohighlight">\(u_d = 2.5\)</span> meters per second</p></li>
+<li><p><span class="math notranslate nohighlight">\(D_{pier} = 1.0\)</span> meter</p></li>
+<li><p>Pier array spacing is 15 meters</p></li>
+</ul>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="list-unknown-quantities">
+<h1>list unknown quantities<a class="headerlink" href="#list-unknown-quantities" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(y_o = ?\)</span> meters</p></li>
+<li><p><span class="math notranslate nohighlight">\(u_o = ?\)</span> meters per second</p></li>
+</ul>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="governing-principles">
+<h1>governing principles<a class="headerlink" href="#governing-principles" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Continunity; will appear as specific discharge <span class="math notranslate nohighlight">\(\frac{Q}{width} = const.\)</span></p></li>
+<li><p>Conservation of linear momentum</p></li>
+<li><p>Concept of drag force</p></li>
+</ul>
+<p>Approach is use Continunity and Momentum to find the upstream depth and velocity, then use the energy equation to infer head loss.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## solution (step-by-step/computations)</span>
+
+<span class="c1"># Material Properties</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1">#kg/m^3</span>
+<span class="n">mu</span> <span class="o">=</span> <span class="mf">0.001</span> <span class="c1">#N-s/m^2</span>
+<span class="n">nu</span> <span class="o">=</span> <span class="mf">1e-06</span> <span class="c1">#s/m^2</span>
+<span class="n">vd</span> <span class="o">=</span> <span class="mf">2.5</span> <span class="c1"># downstream velocity</span>
+<span class="n">dchar</span> <span class="o">=</span> <span class="mf">2.9</span> <span class="c1"># characteristic depth</span>
+
+<span class="c1">## Reynolds number</span>
+<span class="k">def</span> <span class="nf">Re</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">nu</span><span class="p">):</span>
+    <span class="n">Re</span> <span class="o">=</span> <span class="n">v</span><span class="o">*</span><span class="n">d</span><span class="o">/</span><span class="n">nu</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">Re</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Reynolds Number based on depth&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Re</span><span class="p">(</span><span class="n">vd</span><span class="p">,</span><span class="n">dchar</span><span class="p">,</span><span class="n">nu</span><span class="p">),</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reynolds Number based on depth 7250000.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Discharge/unit width</span>
+
+<span class="n">q</span> <span class="o">=</span> <span class="n">vd</span><span class="o">*</span><span class="n">dchar</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Specific discharge &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot; m^2/sec&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Specific discharge  7.25  m^2/sec
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Cd</span> <span class="o">=</span> <span class="mf">0.96</span> <span class="c1">#look up in chart</span>
+
+<span class="k">def</span> <span class="nf">Fd</span><span class="p">(</span><span class="n">Cd</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">rho</span><span class="p">,</span><span class="n">V</span><span class="p">):</span>
+    <span class="n">Fd</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">Cd</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">rho</span><span class="o">*</span><span class="n">V</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">Fd</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Drag on Cylinder &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Fd</span><span class="p">(</span><span class="n">Cd</span><span class="p">,</span><span class="mi">1</span><span class="o">*</span><span class="n">dchar</span><span class="p">,</span><span class="n">rho</span><span class="p">,</span><span class="n">vd</span><span class="p">),</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot; Newtons&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Drag on Cylinder  8700.0  Newtons
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now some more analysis</p>
+<p>First a control volume on a 16-meter wide portion of channel that encloses 1 pier (as in the plan view)</p>
+<p><img alt="" src="http://54.243.252.9/ce-4353-webroot/2-Exercises/ES1/CVanalysis.png" /></p>
+<p>Now the force balance rendering</p>
+<p><img alt="" src="http://54.243.252.9/ce-4353-webroot/2-Exercises/ES1/mombalance.png" /></p>
+<p>Next some algebra</p>
+<p><img alt="" src="http://54.243.252.9/ce-4353-webroot/2-Exercises/ES1/algebra.png" /></p>
+<p>We can probably switch back to code</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">W</span> <span class="o">=</span> <span class="mi">16</span> <span class="c1">#m channel withn between equally spaced piers</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.8</span> <span class="c1">#m/s^2 our friend grabity</span>
+<span class="n">yd</span> <span class="o">=</span> <span class="mf">2.9</span> <span class="c1">#m yes i know its the same as dchar, but dont want python equivalence here</span>
+<span class="n">ud</span> <span class="o">=</span> <span class="mf">2.5</span> <span class="c1"># m/s</span>
+<span class="n">Cd</span> <span class="o">=</span> <span class="mf">0.96</span> <span class="c1"># from above</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="n">q</span><span class="o">*</span><span class="n">W</span>
+<span class="n">D</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c1"># m diameter of a pier</span>
+
+<span class="c1">#now a couple of fun shuns</span>
+
+<span class="k">def</span> <span class="nf">lhs</span><span class="p">(</span><span class="n">yu</span><span class="p">,</span><span class="n">yd</span><span class="p">,</span><span class="n">width</span><span class="p">,</span><span class="n">uu</span><span class="p">,</span><span class="n">Cd</span><span class="p">,</span><span class="n">gravity</span><span class="p">,</span><span class="n">diameter</span><span class="p">):</span>
+    <span class="n">term1</span> <span class="o">=</span> <span class="p">(</span><span class="n">gravity</span><span class="o">*</span><span class="n">width</span><span class="o">*</span><span class="n">yu</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+    <span class="n">term2</span> <span class="o">=</span> <span class="p">(</span><span class="n">gravity</span><span class="o">*</span><span class="n">width</span><span class="o">*</span><span class="n">yd</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+    <span class="n">term3</span> <span class="o">=</span> <span class="p">(</span><span class="n">Cd</span><span class="o">*</span><span class="n">diameter</span><span class="o">*</span><span class="n">yu</span><span class="o">*</span><span class="n">uu</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+    <span class="n">lhs</span> <span class="o">=</span> <span class="n">term1</span><span class="o">-</span><span class="n">term2</span><span class="o">-</span><span class="n">term3</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">lhs</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">rhs</span><span class="p">(</span><span class="n">uu</span><span class="p">,</span><span class="n">ud</span><span class="p">,</span><span class="n">Q</span><span class="p">):</span>
+    <span class="n">rhs</span> <span class="o">=</span> <span class="p">(</span><span class="n">ud</span><span class="o">-</span><span class="n">uu</span><span class="p">)</span><span class="o">*</span><span class="n">Q</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">rhs</span><span class="p">)</span>
+
+<span class="c1"># check using </span>
+
+<span class="c1">#print(lhs(2.92,yd,W,2.48,Cd,g,D))</span>
+<span class="c1">#print(rhs(2.48,ud,Q))</span>
+
+<span class="c1"># by brute force - guess yu, compute uu from Q supply to lhs,rhs when same have a solution print result</span>
+
+<span class="n">tolerance</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">yrange</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">/</span><span class="mi">1000</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="mi">10000</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Depth (m) |&quot;</span><span class="p">,</span><span class="s2">&quot;Velocity (m/s) |&quot;</span><span class="p">,</span><span class="s2">&quot;Momentum Error &quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">irow</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">yrange</span><span class="p">)):</span>
+    <span class="n">yu</span> <span class="o">=</span> <span class="n">yrange</span><span class="p">[</span><span class="n">irow</span><span class="p">]</span>
+    <span class="n">uu</span> <span class="o">=</span> <span class="n">Q</span><span class="o">/</span><span class="p">(</span><span class="n">W</span><span class="o">*</span><span class="n">yu</span><span class="p">)</span>
+    <span class="n">test</span> <span class="o">=</span> <span class="n">lhs</span><span class="p">(</span><span class="n">yu</span><span class="p">,</span><span class="n">yd</span><span class="p">,</span><span class="n">W</span><span class="p">,</span><span class="n">uu</span><span class="p">,</span><span class="n">Cd</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">D</span><span class="p">)</span><span class="o">-</span><span class="n">rhs</span><span class="p">(</span><span class="n">uu</span><span class="p">,</span><span class="n">ud</span><span class="p">,</span><span class="n">Q</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">test</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">tolerance</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">yu</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot; | &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">uu</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot;  | &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">lhs</span><span class="p">(</span><span class="n">yu</span><span class="p">,</span><span class="n">yd</span><span class="p">,</span><span class="n">W</span><span class="p">,</span><span class="n">uu</span><span class="p">,</span><span class="n">Cd</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">D</span><span class="p">)</span><span class="o">-</span><span class="n">rhs</span><span class="p">(</span><span class="n">uu</span><span class="p">,</span><span class="n">ud</span><span class="p">,</span><span class="n">Q</span><span class="p">),</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="c1">#yrange</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Depth (m) | Velocity (m/s) | Momentum Error 
+2.923  |  2.48   |  -0.413
+2.924  |  2.479   |  -0.05
+2.925  |  2.479   |  0.313
+</pre></div>
+</div>
+</div>
+</div>
+<p>So by a brute force search, the following values are indicated</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(y_o = 2.924\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(u_o = 2.479\)</span></p></li>
+</ul>
+<p>The momentum balance error is <span class="math notranslate nohighlight">\(-0.05\)</span>, if we wanted could jack the search a bit to get another digit maybe.  But this is probably close enough.</p>
+<p>Now finally determine the energy loss from</p>
+<div class="math notranslate nohighlight">
+\[ y_o + \frac{u_o^2}{2g} = y_d + \frac{u_d^2}{2g} + \Delta H \]</div>
+<p>Solve for <span class="math notranslate nohighlight">\(\Delta H\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yu</span> <span class="o">=</span> <span class="mf">2.924</span>
+<span class="n">uu</span> <span class="o">=</span> <span class="mf">2.479</span>
+<span class="n">Eup</span> <span class="o">=</span> <span class="n">yu</span> <span class="o">+</span> <span class="p">(</span><span class="n">uu</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">g</span><span class="p">)</span>
+<span class="n">Edown</span> <span class="o">=</span> <span class="n">yd</span> <span class="o">+</span> <span class="p">(</span><span class="n">ud</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">g</span><span class="p">)</span>
+<span class="n">DeltaH</span> <span class="o">=</span> <span class="n">Eup</span> <span class="o">-</span> <span class="n">Edown</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Head loss &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">DeltaH</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot; meters&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Head loss  0.019  meters
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="discussion">
+<h1>discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">¶</a></h1>
+<p>This is just a fluid mechanics problem, to find the drag force impact on flow, then definition of head loss.  Only hard part is finding Nemo (<span class="math notranslate nohighlight">\(C_d\)</span>)</p>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 </div>
