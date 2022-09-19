@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -343,8 +345,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#examples">
-   Examples
+  <a class="reference internal nav-link" href="#example">
+   Example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-3-2-from-book">
+   Example 3.2 (from Book)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -365,12 +372,197 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="surges">
 <h1>Surges<a class="headerlink" href="#surges" title="Permalink to this headline">¶</a></h1>
-<p>What it is</p>
+<p>The sudden changes of flow in open channel results in the increase or decrease of flow depth is called
+a “surge” in open channel. The phenomenon occurs when there is a breaching of dams from say an earthquake or regulating the overflow/underflow sluice gates, which results in positive and negative surges in
+downstream river channel or in downstream tail channel of hydropower projects. The phenomenon
+also occurs to some extent when there is flooding (unsteady flow) in channels and the hydrograph significantly varies as the rainfall inputs change. The flood wave speed generated during the positive or negative surges is called the celerity (wave velocity).</p>
+<p>The analysis of surge waves matters in the design of canals, especially for the hydropower &amp; irrigation projects they play a vital role for the design of the canals. The design depth of the
+flow in the canals during the surges must be able to accommodate the required discharge
+accumulated during the propagation of the surges in downstream or upstream of the canals. Typically
+the designer specifies enough free board in the canals to accommodate the additional height of the surges in addition to the normal depth of the canal flow.</p>
 <div class="section" id="definitions">
 <h2>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h2>
+<p>A sketch of typical surge wave is</p>
+<p><img alt="" src="../../_images/surge-diagram.png" /></p>
+<p>The positive or negative surge travels downstream or upstream depending on the situation.
+The increase in flow depth would become the crest of the surges and the decrease in the flow depth
+would become the trough of the surges.</p>
+<p>The phenomenon is an unsteady flow situation, but in many practical instances can be analyzed as a steady flow situation by switching from an inertial fixed reference frame (Euler), to a moving reference frame (LaGrange) fixed on some part of the surge wave.  With the moving reference frame, the surge appears as a standing wave (like a hydraulic jump).</p>
+<p><img alt="" src="../../_images/standingwave.png" /></p>
+<p>The speed of the wave is related to the depth of flow and the velocity <span class="math notranslate nohighlight">\(c=\sqrt{gy} \pm V\)</span></p>
+<p>A continunity across the surge (CV moving at the surge velocity) is</p>
+<div class="math notranslate nohighlight">
+\[ (V_1+V_S)A_1 = (V_2+V_S)A_2 \]</div>
+<p>Solving for the surge velocity, (setting <span class="math notranslate nohighlight">\(V_2 =0\)</span>)</p>
+<div class="math notranslate nohighlight">
+\[ V_S = \frac{V_1 A_1}{A_2 - A_1} \]</div>
+<p>The momentum balance for the same situation is</p>
+<div class="math notranslate nohighlight">
+\[ \frac{(V_1+V_S)^2}{g~A_1} = \frac{1}{2}\frac{A_2}{A_1}(1+\frac{A_2}{A_1}) \]</div>
+<p>For a rectangular channel, the areas <span class="math notranslate nohighlight">\(A_i\)</span> can be replaced with the flow depths <span class="math notranslate nohighlight">\(y_i\)</span> to obtain equations identical to the book.</p>
 </div>
-<div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>A rectangular tailrace channel of hydropower project, <span class="math notranslate nohighlight">\(15~m\)</span> wide having bed slope <span class="math notranslate nohighlight">\(0.0002\)</span> and
+manning roughness coefficient of <span class="math notranslate nohighlight">\(n= 0.017\)</span> conveys a steady discharge of <span class="math notranslate nohighlight">\(45~\frac{m^3}{s}\)</span> from the hydropower installation. A power increase results from a sudden increase in flow to the turbines to <span class="math notranslate nohighlight">\(100~\frac{m^3}{s}\)</span>.</p>
+<p>Estimate the depth and celerity of the resulting surge wave in the tailrace channel.</p>
+<p><img alt="" src="../../_images/powerchannel.png" /></p>
+<p>In this example, <span class="math notranslate nohighlight">\(V_2\)</span> is associated with the <span class="math notranslate nohighlight">\(45~\frac{m^3}{s}\)</span> flow and <span class="math notranslate nohighlight">\(V_1\)</span> is associated with the <span class="math notranslate nohighlight">\(100~\frac{m^3}{s}\)</span></p>
+<p>First apply Manning’s equation to the <span class="math notranslate nohighlight">\(Q_2\)</span> side of the tailrace, a safe bet being that before the change on output power that channel had already equilibrated to the flow and would be running at normal depth.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># </span>
+<span class="n">Snot</span> <span class="o">=</span> <span class="mf">0.0002</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mf">15.0</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mf">0.017</span>
+<span class="n">Qtarget</span> <span class="o">=</span> <span class="mf">45.0</span>
+
+<span class="k">def</span> <span class="nf">Qm</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">S</span><span class="p">):</span>
+    <span class="n">Qm</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">B</span><span class="o">*</span><span class="n">Y</span><span class="p">)</span><span class="o">*</span><span class="p">((</span><span class="n">B</span><span class="o">*</span><span class="n">Y</span><span class="o">/</span><span class="p">(</span><span class="n">B</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">Y</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span><span class="o">*</span><span class="n">S</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">Qm</span><span class="p">)</span>
+
+<span class="c1">#yguess = 2.5  #trial-n-error</span>
+<span class="c1">#yguess = 2.45  #trial-n-error</span>
+<span class="c1">#yguess = 2.40  #trial-n-error</span>
+<span class="c1">#yguess = 2.41  #trial-n-error</span>
+<span class="c1">#yguess = 2.415  #trial-n-error</span>
+<span class="n">yguess</span> <span class="o">=</span> <span class="mf">2.414</span>  <span class="c1">#trial-n-error</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Discharge :&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Qm</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">yguess</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">Snot</span><span class="p">),</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot; m^3/s&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Velocity : &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Qm</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">yguess</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">Snot</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">B</span><span class="o">*</span><span class="n">yguess</span><span class="p">),</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot; m/s&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Discharge : 45.005  m^3/s
+Velocity :  1.243  m/s
+</pre></div>
+</div>
+</div>
+</div>
+<p>So now we have the downstream depth value and velocity</p>
+<p>Apply equation 3.16 in the book (or the above equations for rectangular channel).  Notice the sign change because relative velocities on upstream side appear to add to the moving observer and subtract on the downstream side (this is a negative surge)</p>
+<div class="math notranslate nohighlight">
+\[ (V_1+V_S)(y_1*15.0) = (1.243+V_S)(2.414*15.0) \]</div>
+<p>Now substitute the velocity representation</p>
+<div class="math notranslate nohighlight">
+\[ (\frac{100}{y_1*15}+V_S)(y_1*15.0) = (1.243+V_S)(2.414*15.0) \]</div>
+<p>We can solve for <span class="math notranslate nohighlight">\(V_S\)</span></p>
+<div class="math notranslate nohighlight">
+\[ V_S = \frac{(\frac{100}{y_1*15}(y_1*15) - 1.243*2.414*15)}{1.243*2.414*15 - (y_1*15)} =  \]</div>
+<p>So thats one equation, two unknowns - next use momentum in the same way.  First momentum for the (moving) CV.</p>
+<div class="math notranslate nohighlight">
+\[  (\rho~g~ \frac{1}{2}~y^2_1 B) + \rho Q~V_1 = (\rho~g~ \frac{1}{2}~y^2_2 B) + \rho Q~V_2\]</div>
+<p>Next substitute known values</p>
+<div class="math notranslate nohighlight">
+\[  (\rho~g~ \frac{15}{2}~y^2_1) + \rho~100~(\frac{100}{y_1*15}+V_S) = (\rho~g~ \frac{15}{2}~(2.414)^2) + \rho~ 45*(1.243+V_S)\]</div>
+<p>Divide by specific weight</p>
+<div class="math notranslate nohighlight">
+\[  (\frac{15}{2}~y^2_1) + \frac{100}{g}~(\frac{100}{y_1*15}+V_S) = (\frac{15}{2}~(2.414)^2) + \frac{ 45}{g}*(1.243+V_S)\]</div>
+<p>Now either solve the two simultaneously, or substitute <span class="math notranslate nohighlight">\(V_S\)</span> into momentum.</p>
+<p>A trial-and-error approach is:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Guess Vs each equation, find the y values.  Stop when all satisfied.</span>
+
+<span class="k">def</span> <span class="nf">VS</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">V1</span><span class="p">,</span><span class="n">V2</span><span class="p">):</span>
+    <span class="n">VS</span> <span class="o">=</span> <span class="p">(</span><span class="n">V1</span><span class="o">*</span><span class="n">y1</span><span class="o">-</span><span class="n">V2</span><span class="o">*</span><span class="n">y2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">y2</span><span class="o">-</span><span class="n">y1</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">VS</span><span class="p">)</span>
+
+<span class="n">Q1</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">Q2</span> <span class="o">=</span> <span class="mi">45</span>
+
+<span class="n">y1</span> <span class="o">=</span> <span class="mf">2.945</span> <span class="c1">#&lt;&lt;&lt;&lt; Guess This Value</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="mf">2.414</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">V1</span> <span class="o">=</span> <span class="n">Q1</span><span class="o">/</span><span class="p">(</span><span class="n">y1</span><span class="o">*</span><span class="n">B</span><span class="p">)</span>
+<span class="n">V2</span> <span class="o">=</span> <span class="n">Q2</span><span class="o">/</span><span class="p">(</span><span class="n">y2</span><span class="o">*</span><span class="n">B</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y1 :&quot;</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="s2">&quot; y2 :&quot;</span><span class="p">,</span><span class="n">y2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;V1 :&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">V1</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot; V2 :&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">V2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="n">Vs</span> <span class="o">=</span> <span class="n">VS</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">V1</span><span class="p">,</span><span class="n">V2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wave speed :&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Vs</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot; m/s&quot;</span><span class="p">)</span> <span class="c1"># &lt;&lt;&lt;&lt; Get this value</span>
+
+<span class="k">def</span> <span class="nf">C1</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">V1</span><span class="p">,</span><span class="n">V2</span><span class="p">,</span><span class="n">VS</span><span class="p">,</span><span class="n">B</span><span class="p">):</span>
+    <span class="n">C1</span> <span class="o">=</span> <span class="p">(</span><span class="n">V1</span><span class="o">+</span><span class="n">VS</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y1</span><span class="o">*</span><span class="n">B</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">V2</span><span class="o">+</span><span class="n">VS</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y2</span><span class="o">*</span><span class="n">B</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">C1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Continunity Error :&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">C1</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">V1</span><span class="p">,</span><span class="n">V2</span><span class="p">,</span><span class="n">Vs</span><span class="p">,</span><span class="n">B</span><span class="p">),</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">M1</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">V1</span><span class="p">,</span><span class="n">V2</span><span class="p">,</span><span class="n">VS</span><span class="p">,</span><span class="n">Q1</span><span class="p">,</span><span class="n">Q2</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">g</span><span class="p">):</span>
+    <span class="n">M1</span> <span class="o">=</span> <span class="p">(</span><span class="n">B</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y1</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">Q1</span><span class="o">/</span><span class="n">g</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">V1</span><span class="o">+</span><span class="n">VS</span><span class="p">)</span> <span class="o">-</span> <span class="p">((</span><span class="n">B</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y2</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">Q2</span><span class="o">/</span><span class="n">g</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">V2</span><span class="o">+</span><span class="n">VS</span><span class="p">))</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">M1</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Momentum Error :&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">M1</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">V1</span><span class="p">,</span><span class="n">V2</span><span class="p">,</span><span class="n">Vs</span><span class="p">,</span><span class="n">Q1</span><span class="p">,</span><span class="n">Q2</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">g</span><span class="p">),</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>y1 : 2.945  y2 : 2.414
+V1 : 2.264  V2 : 1.243
+Wave speed : -6.905  m/s
+Continunity Error : 0.0
+Momentum Error : 0.003
+</pre></div>
+</div>
+</div>
+</div>
+<p>So for the case depicted the wave speed is <span class="math notranslate nohighlight">\(-6 m/s\)</span> (a negative surge), and the upstream flow depth is <span class="math notranslate nohighlight">\(2.95~m\)</span> so if this is a typical power change, we would want the tail race to have the ability to convey the flow without overtopping.</p>
+</div>
+<div class="section" id="example-3-2-from-book">
+<h2>Example 3.2 (from Book)<a class="headerlink" href="#example-3-2-from-book" title="Permalink to this headline">¶</a></h2>
+<p>Steady flow in a rectangular channel with velocity <span class="math notranslate nohighlight">\(1 m/s\)</span> and depth <span class="math notranslate nohighlight">\(3.0 m\)</span> is stopped suddenly by a sluice gate (or landslide!) closure.  What are the height and speed of the upstream surge?</p>
+<p>Here we just reuse code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">VS</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">V1</span><span class="p">,</span><span class="n">V2</span><span class="p">):</span>
+    <span class="n">VS</span> <span class="o">=</span> <span class="p">(</span><span class="n">V1</span><span class="o">*</span><span class="n">y1</span><span class="o">-</span><span class="n">V2</span><span class="o">*</span><span class="n">y2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">y2</span><span class="o">-</span><span class="n">y1</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">VS</span><span class="p">)</span>
+
+<span class="n">y1</span> <span class="o">=</span> <span class="mf">3.0</span> 
+<span class="n">y2</span> <span class="o">=</span> <span class="mf">3.578</span> <span class="c1"># &lt;&lt;&lt;&lt; Guess this value</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">Q1</span> <span class="o">=</span> <span class="n">y1</span><span class="o">*</span><span class="n">B</span>
+<span class="n">Q2</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="c1"># &lt;&lt;&lt; Given</span>
+<span class="n">V1</span> <span class="o">=</span> <span class="n">Q1</span><span class="o">/</span><span class="p">(</span><span class="n">y1</span><span class="o">*</span><span class="n">B</span><span class="p">)</span>
+<span class="n">V2</span> <span class="o">=</span> <span class="n">Q2</span><span class="o">/</span><span class="p">(</span><span class="n">y2</span><span class="o">*</span><span class="n">B</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y1 :&quot;</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="s2">&quot; y2 :&quot;</span><span class="p">,</span><span class="n">y2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;V1 :&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">V1</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot; V2 :&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">V2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="n">Vs</span> <span class="o">=</span> <span class="n">VS</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">V1</span><span class="p">,</span><span class="n">V2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wave speed :&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Vs</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot; m/s&quot;</span><span class="p">)</span> <span class="c1"># &lt;&lt;&lt;&lt; Get this value</span>
+
+<span class="k">def</span> <span class="nf">C1</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">V1</span><span class="p">,</span><span class="n">V2</span><span class="p">,</span><span class="n">VS</span><span class="p">,</span><span class="n">B</span><span class="p">):</span>
+    <span class="n">C1</span> <span class="o">=</span> <span class="p">(</span><span class="n">V1</span><span class="o">+</span><span class="n">VS</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y1</span><span class="o">*</span><span class="n">B</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">V2</span><span class="o">+</span><span class="n">VS</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y2</span><span class="o">*</span><span class="n">B</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">C1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Continunity Error :&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">C1</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">V1</span><span class="p">,</span><span class="n">V2</span><span class="p">,</span><span class="n">Vs</span><span class="p">,</span><span class="n">B</span><span class="p">),</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">M1</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">V1</span><span class="p">,</span><span class="n">V2</span><span class="p">,</span><span class="n">VS</span><span class="p">,</span><span class="n">Q1</span><span class="p">,</span><span class="n">Q2</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">g</span><span class="p">):</span>
+    <span class="n">M1</span> <span class="o">=</span> <span class="p">(</span><span class="n">B</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y1</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">Q1</span><span class="o">/</span><span class="n">g</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">V1</span><span class="o">+</span><span class="n">VS</span><span class="p">)</span> <span class="o">-</span> <span class="p">((</span><span class="n">B</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y2</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">Q2</span><span class="o">/</span><span class="n">g</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">V2</span><span class="o">+</span><span class="n">VS</span><span class="p">))</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">M1</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Momentum Error :&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">M1</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">V1</span><span class="p">,</span><span class="n">V2</span><span class="p">,</span><span class="n">Vs</span><span class="p">,</span><span class="n">Q1</span><span class="p">,</span><span class="n">Q2</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">g</span><span class="p">),</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>y1 : 3.0  y2 : 3.578
+V1 : 1.0  V2 : 0.0
+Wave speed : 5.19  m/s
+Continunity Error : 0.0
+Momentum Error : -0.008
+</pre></div>
+</div>
+</div>
+</div>
+<p>The answer agrees with the values in the textbook!</p>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
