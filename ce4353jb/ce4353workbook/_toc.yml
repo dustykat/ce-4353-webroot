@@ -27,4 +27,9 @@ chapters:
   
 - file: lessons/weirs/weirs
 - file: lessons/momentum/momentum1
+  sections:
+  - file: lessons/momentum/momentum2
+  - file: lessons/momentum/momentum3
+  - file: lessons/momentum/momentum4
+
 
