@@ -36,3 +36,5 @@ chapters:
   - file: lessons/momentum/contractions
 
 - file: lessons/uniformflow/uniformflow
+  sections:
+  - file: lessons/uniformflow/gutters

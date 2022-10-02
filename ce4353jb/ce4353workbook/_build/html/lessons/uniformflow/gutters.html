@@ -5,53 +5,53 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hydraulic Systems Design/Open Channel Flow &#8212; CE 4353 Design of Hydraulic Systems</title>
+    <title>Gutter Flow and Gravity Sewer Design &#8212; CE 4353 Design of Hydraulic Systems</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Introduction" href="lessons/introduction/introduction.html" />
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Uniform Flow" href="uniformflow.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -68,38 +68,38 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+    <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="_static/river.png" class="logo" alt="logo">
+      <img src="../../_static/river.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">CE 4353 Design of Hydraulic Systems</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
- <li class="toctree-l1 current">
-  <a class="reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
    Hydraulic Systems Design/Open Channel Flow
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/introduction/introduction.html">
+  <a class="reference internal" href="../introduction/introduction.html">
    Introduction
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="lessons/computationaltools/computationaltools.html">
+  <a class="reference internal" href="../computationaltools/computationaltools.html">
    Computational Tools
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -109,27 +109,27 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="lessons/computationaltools/topic1-1.html">
+    <a class="reference internal" href="../computationaltools/topic1-1.html">
      Jupyter Notebooks
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="lessons/computationaltools/topic1-2.html">
+    <a class="reference internal" href="../computationaltools/topic1-2.html">
      Excel/Libre Office Spreadsheets
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="lessons/computationaltools/topic1-3.html">
+    <a class="reference internal" href="../computationaltools/topic1-3.html">
      HEC-RAS River Analysis Software
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="lessons/computationaltools/1goodgraphs.html">
+    <a class="reference internal" href="../computationaltools/1goodgraphs.html">
      Characteristics of a Good Graph
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="lessons/computationaltools/2makinggraphs.html">
+    <a class="reference internal" href="../computationaltools/2makinggraphs.html">
      The
      <code class="docutils literal notranslate">
       <span class="pre">
@@ -140,24 +140,24 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="lessons/computationaltools/3adddata.html">
+    <a class="reference internal" href="../computationaltools/3adddata.html">
      Adding Data to Plot Lists
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="lessons/computationaltools/4loglogcharts.html">
+    <a class="reference internal" href="../computationaltools/4loglogcharts.html">
      Logarithmic Charts
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="lessons/computationaltools/5othercharts.html">
+    <a class="reference internal" href="../computationaltools/5othercharts.html">
      Other Graph Types
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="lessons/basicprinciples/basicprinciples.html">
+  <a class="reference internal" href="../basicprinciples/basicprinciples.html">
    Basic Principles
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -167,24 +167,24 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="lessons/basicprinciples/topic2-1.html">
+    <a class="reference internal" href="../basicprinciples/topic2-1.html">
      Solution of Open Channel Problems
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="lessons/basicprinciples/topic2-2.html">
+    <a class="reference internal" href="../basicprinciples/topic2-2.html">
      Definitions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="lessons/basicprinciples/topic2-3.html">
+    <a class="reference internal" href="../basicprinciples/topic2-3.html">
      Discharge Measurements
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="lessons/specificenergy/specificenergy1.html">
+  <a class="reference internal" href="../specificenergy/specificenergy1.html">
    Specific Energy
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -194,19 +194,19 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="lessons/specificenergy/specificenergy2.html">
+    <a class="reference internal" href="../specificenergy/specificenergy2.html">
      Froude Number
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lessons/weirs/weirs.html">
+  <a class="reference internal" href="../weirs/weirs.html">
    Weirs
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="lessons/momentum/momentum1.html">
+  <a class="reference internal" href="../momentum/momentum1.html">
    Momentum
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -216,49 +216,49 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="lessons/momentum/momentum2.html">
+    <a class="reference internal" href="../momentum/momentum2.html">
      Rectangular Cross Sections
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="lessons/momentum/momentum3.html">
+    <a class="reference internal" href="../momentum/momentum3.html">
      Surges
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="lessons/momentum/momentum4.html">
+    <a class="reference internal" href="../momentum/momentum4.html">
      Bridge Piers
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="lessons/momentum/momentum5.html">
+    <a class="reference internal" href="../momentum/momentum5.html">
      Spur Dikes
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="lessons/momentum/stillingbasins.html">
+    <a class="reference internal" href="../momentum/stillingbasins.html">
      Stilling Basins
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="lessons/momentum/contractions.html">
+    <a class="reference internal" href="../momentum/contractions.html">
      Supercritical Contractions and Expansions
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="lessons/uniformflow/uniformflow.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="uniformflow.html">
    Uniform Flow
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="lessons/uniformflow/gutters.html">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Gutter Flow and Gravity Sewer Design
     </a>
    </li>
@@ -305,9 +305,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/intro.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/lessons/uniformflow/gutters.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -325,7 +325,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/uniformflow/gutters.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -341,6 +341,23 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/lessons/uniformflow/gutters.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -352,13 +369,23 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#syllabus">
-   Syllabus
+  <a class="reference internal nav-link" href="#gutter-geometry">
+   Gutter Geometry
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#textbook">
-   Textbook
+  <a class="reference internal nav-link" href="#inlets">
+   Inlets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gravity-sewers">
+   Gravity Sewers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples">
+   Examples
   </a>
  </li>
 </ul>
@@ -372,22 +399,19 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="hydraulic-systems-design-open-channel-flow">
-<h1>Hydraulic Systems Design/Open Channel Flow<a class="headerlink" href="#hydraulic-systems-design-open-channel-flow" title="Permalink to this headline">¶</a></h1>
-<p>Design of open channel conveyance systems for water; includes introduction to HEC-RAS.</p>
-<div class="section" id="syllabus">
-<h2>Syllabus<a class="headerlink" href="#syllabus" title="Permalink to this headline">¶</a></h2>
-<p>The syllabus for the current semester is located at <a class="reference external" href="http://54.243.252.9/ce-4353-webroot/0-Syllabus/ce-4353-2022-3-Syllabus.html">http://54.243.252.9/ce-4353-webroot/0-Syllabus/ce-4353-2022-3-Syllabus.html</a></p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="gutter-flow-and-gravity-sewer-design">
+<h1>Gutter Flow and Gravity Sewer Design<a class="headerlink" href="#gutter-flow-and-gravity-sewer-design" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="gutter-geometry">
+<h2>Gutter Geometry<a class="headerlink" href="#gutter-geometry" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="textbook">
-<h2>Textbook<a class="headerlink" href="#textbook" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://www.amazon.com/Channel-Hydraulics-Third-Terry-Sturm/dp/1260469700">Sturm, T. Open Channel Hydraulics, 3 rd Ed.</a> Amazon.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The 1st Edition is available on the mighty internet, I would still recomend you actually buy the current book.  There is a lot of newer content in the 3rd edition.</p>
+<div class="section" id="inlets">
+<h2>Inlets<a class="headerlink" href="#inlets" title="Permalink to this headline">¶</a></h2>
 </div>
+<div class="section" id="gravity-sewers">
+<h2>Gravity Sewers<a class="headerlink" href="#gravity-sewers" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="toctree-wrapper compound">
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -404,7 +428,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./."
+            path: "./lessons/uniformflow"
         },
         predefinedOutput: true
     }
@@ -420,15 +444,15 @@
 
 <div class='prev-next-bottom'>
     
-     <div id="next">
-        <a class="right-next" href="lessons/introduction/introduction.html" title="next page">
+    <div id="prev">
+        <a class="left-prev" href="uniformflow.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Introduction</p>
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Uniform Flow</p>
             </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
         </a>
-     </div>
+    </div>
 
 </div>
         
@@ -450,7 +474,7 @@
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
   
   </body>
