@@ -353,6 +353,36 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manning-chezy">
+   Manning-Chezy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#composite-sections">
+   Composite Sections
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-4-1">
+     Example 4.1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-4-2">
+     Example 4-2
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -376,6 +406,222 @@ If the water surface is parallel to the channel bottom, flow is uniform and the 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Despite the obvious Darwinian advantage of grinding up kids - dead meat does not pay taxes; support old folks; nor serve as a supply of harvestable kidneys.  Hence we try to save them.</p>
+</div>
+<p>In these applications the resistance to flow is balanced by a driving force provided by gravity.</p>
+<p>Resistance is a consequence of cross-section shape, soil, vegetation, materials (in engineered channels).  In pipelines the resistance was understood by laboratory experimenters by the 1930’s.  In open channels interest started later</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Obviously people have built working open channels much earlier, but techniques of design were empirical passed down by secret societies who wore wizard hats and flew on brooms!</p>
+</div>
+<p>Consider a generic force balance diagram over a short section of channel, <span class="math notranslate nohighlight">\(\Delta L\)</span> long:</p>
+<p><img alt="" src="../../_images/controlvolume1.png" /></p>
+<p>Now insert the Energy Grade Line (EGL)</p>
+<p><img alt="" src="../../_images/cvcomplete.png" /></p>
+<p>In the case of uniform flow the flow depths are the same at each end of the section, the section length is such that the end areas are about the same, hence the upstream and downstream pressure force are the same, and the remaining forces are gravity (drive) and friction:</p>
+<div class="math notranslate nohighlight">
+\[ W sin \theta = \rho g A \Delta L sin \theta = Fr \]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the above expression <span class="math notranslate nohighlight">\(Fr\)</span> is the frictional shear force, not the Froude number.  Use the principle of algebraic substitution, and give friction any name you want in the drawing, except Elroy</p>
+</div>
+<p>If friction is stipulated to be generated only by the shear force induced at the solid-liquid interface (and not at the free surface) then the expression becomes</p>
+<div class="math notranslate nohighlight">
+\[ \rho g A \Delta L sin \theta = \tau_0 P \Delta L \]</div>
+<p>where <span class="math notranslate nohighlight">\(P\)</span> is the wetted perimeter</p>
+<p>Divide by <span class="math notranslate nohighlight">\(P \Delta L\)</span> to obtain</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\rho g A \Delta L sin \theta}{P \Delta L} = \tau_0  \]</div>
+<p>observe the hydraulic radius, <span class="math notranslate nohighlight">\(R_h = \frac{A}{P}\)</span> appears</p>
+<div class="math notranslate nohighlight">
+\[ \rho g R_h sin \theta = \tau_0  \]</div>
+<p>The boundary shear stress is the factor that expresses the resistance properties of the fluid (wasser) and the solid material (conduit wall).  A usual simplification is to observe that the angle is usuall pretty small so that</p>
+<div class="math notranslate nohighlight">
+\[ sin \theta~\approx~S_0 \]</div>
+<p>In pipe flow (CE 3305) the shear stress was something like</p>
+<div class="math notranslate nohighlight">
+\[ \tau_0 = \frac{f \rho V^2}{8}\]</div>
+<p>Or more usefully (in that context)</p>
+<div class="math notranslate nohighlight">
+\[ f= \frac{8\tau_0}{\rho V^2}\]</div>
+<p>And one either looked up a value in the Moody chart or applied Swammee-Jain equations to find <span class="math notranslate nohighlight">\(f\)</span> for various Reynolds numbers and material relative roughness.</p>
+<p>Returning to our situation we have</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\Delta h}{\Delta L}= \frac{\tau_O}{\rho g R}=\frac{\frac{f \rho V^2}{8}}{\rho g R}= \frac{f}{4R}\frac{V^2}{2g}\]</div>
+<p>So now we need some way to express <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<div class="section" id="manning-chezy">
+<h2>Manning-Chezy<a class="headerlink" href="#manning-chezy" title="Permalink to this headline">¶</a></h2>
+<p><strong>Chezy Correlation</strong></p>
+<div class="math notranslate nohighlight">
+\[V = (\frac{8g}{f})^{1/2} \sqrt{R S_0} = C \sqrt{R S_0}\]</div>
+<p>and the value <span class="math notranslate nohighlight">\(C\)</span> is the Chezy coefficient.</p>
+<p><strong>Manning Correlation</strong></p>
+<p>Manning several years before his football career developed a similar correlation but observed that the hydraulic radius varied by the 2/3 power as</p>
+<div class="math notranslate nohighlight">
+\[V  = C R^{2/3} S_0^{1/2}\]</div>
+<p>There is meaningful theory to relate surface roughness to the “<span class="math notranslate nohighlight">\(C\)</span>” values</p>
+<p><img alt="" src="../../_images/velocitydistributions.png" /></p>
+<p>From here one can relate the friction factor back to Manning’s n or the Chezy coefficient:</p>
+<p><img alt="" src="../../_images/mann_n-explain.png" /></p>
+<p>The usual way to specify Manning’s n is by a table lookup such as <a class="reference external" href="http://54.243.252.9/toolbox/Databases/ManningN/ManningsN.html">http://54.243.252.9/toolbox/Databases/ManningN/ManningsN.html</a></p>
+<p>or tables similar to those in our book</p>
+<p><img alt="" src="../../_images/mann1.png" />
+<img alt="" src="../../_images/mann2.png" />
+<img alt="" src="../../_images/mann3.png" />
+<img alt="" src="../../_images/mann4.png" /></p>
+<p>or by comparison with photographs of channels</p>
+<ol class="simple">
+<li><p>Barnes, 1967 (A classic reference document) <a class="reference external" href="https://pubs.usgs.gov/wsp/wsp_1849/pdf/wsp_1849.pdf">https://pubs.usgs.gov/wsp/wsp_1849/pdf/wsp_1849.pdf</a></p></li>
+<li><p><a class="reference external" href="https://www.usgs.gov/centers/sawsc/science/mannings-roughness-coefficients-south-carolina-streams#overview">https://www.usgs.gov/centers/sawsc/science/mannings-roughness-coefficients-south-carolina-streams#overview</a></p></li>
+<li><p><a class="reference external" href="https://pubs.usgs.gov/ds/668/pdf/DataSeries_668_2.pdf">https://pubs.usgs.gov/ds/668/pdf/DataSeries_668_2.pdf</a></p></li>
+</ol>
+<p>and many others.</p>
+</div>
+<div class="section" id="composite-sections">
+<h2>Composite Sections<a class="headerlink" href="#composite-sections" title="Permalink to this headline">¶</a></h2>
+<p><img alt="" src="../../_images/compositesections1.png" /></p>
+<p><img alt="" src="../../_images/compositesectionstxdot.png" /></p>
+<p>Normal Flow Calculations</p>
+<div class="math notranslate nohighlight">
+\[Q=VA= \frac{K_n}{n} A R^{2/3} S_0^{1/2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(S_0\)</span> is the bed slope, <span class="math notranslate nohighlight">\(S_f\)</span> is the slope of the energy grade line (called the friction slope).</p>
+<p>Typical cases:</p>
+<ol class="simple">
+<li><p>Know <span class="math notranslate nohighlight">\(y_0\)</span> or <span class="math notranslate nohighlight">\(y_n\)</span>, shape, <span class="math notranslate nohighlight">\(S_0\)</span>,<span class="math notranslate nohighlight">\(n\)</span>, compute <span class="math notranslate nohighlight">\(Q\)</span> directly.</p></li>
+<li><p>Know <span class="math notranslate nohighlight">\(y_0\)</span>, shape, <span class="math notranslate nohighlight">\(Q\)</span>,<span class="math notranslate nohighlight">\(n\)</span>, compute <span class="math notranslate nohighlight">\(S_0\)</span> directly.</p></li>
+<li><p>Know shape, <span class="math notranslate nohighlight">\(Q\)</span>,<span class="math notranslate nohighlight">\(n\)</span>,<span class="math notranslate nohighlight">\(S_0\)</span> compute <span class="math notranslate nohighlight">\(y_0\)</span> iteratively.</p></li>
+</ol>
+<div class="section" id="example-4-1">
+<h3>Example 4.1<a class="headerlink" href="#example-4-1" title="Permalink to this headline">¶</a></h3>
+<p>A trapezoidal channel has a bottom width of 20 feets with 2:1 side slopes, bed slope is 0.001.  Design discharge is 1000 cubic feets persecond.  Manning’s n is 0.027.  Find normal depth.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># prototype functions</span>
+
+<span class="k">def</span> <span class="nf">Qman</span><span class="p">(</span><span class="n">Kn</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">S</span><span class="p">):</span>
+    <span class="n">Qman</span><span class="o">=</span><span class="p">(</span><span class="n">Kn</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">R</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">S</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">Qman</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">TopTrap</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">TopTrap</span><span class="o">=</span><span class="n">b</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">y</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">TopTrap</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">AreaTrap</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">AreaTrap</span><span class="o">=</span><span class="n">y</span><span class="o">*</span><span class="p">(</span><span class="n">b</span><span class="o">+</span><span class="n">m</span><span class="o">*</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">AreaTrap</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">PerTrap</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">PerTrap</span><span class="o">=</span><span class="n">b</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">y</span><span class="o">*</span><span class="n">m</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">y</span><span class="o">*</span><span class="n">m</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> 
+    <span class="k">return</span><span class="p">(</span><span class="n">PerTrap</span><span class="p">)</span>  
+
+<span class="n">Qdesign</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">Slope</span> <span class="o">=</span> <span class="mf">0.001</span>
+<span class="n">Mann</span> <span class="o">=</span> <span class="mf">0.027</span>
+<span class="n">SideSlope</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">Bottom</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="c1"># Using Newton&#39;s Method</span>
+
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">newton</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">Qdesign</span><span class="p">,</span><span class="n">Slope</span><span class="p">,</span><span class="n">Mann</span><span class="p">,</span><span class="n">SideSlope</span><span class="p">,</span><span class="n">Bottom</span> <span class="c1">#set as global variables so can access from outside the function.  DANGER WILLY!</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="n">AreaTrap</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">SideSlope</span><span class="p">,</span><span class="n">Bottom</span><span class="p">)</span>
+    <span class="n">perimeter</span> <span class="o">=</span> <span class="n">PerTrap</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">SideSlope</span><span class="p">,</span><span class="n">Bottom</span><span class="p">)</span>
+    <span class="n">radius</span> <span class="o">=</span> <span class="n">area</span><span class="o">/</span><span class="n">perimeter</span>
+    <span class="n">Qout</span> <span class="o">=</span> <span class="n">Qman</span><span class="p">(</span><span class="mf">1.49</span><span class="p">,</span><span class="n">Mann</span><span class="p">,</span><span class="n">area</span><span class="p">,</span><span class="n">radius</span><span class="p">,</span><span class="n">Slope</span><span class="p">)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">Qout</span><span class="o">-</span><span class="n">Qdesign</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">yguess</span> <span class="o">=</span>  <span class="mf">10.507</span>
+<span class="c1">#print(newton(f, yguess))</span>
+<span class="n">ysolve</span> <span class="o">=</span> <span class="n">newton</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">yguess</span><span class="p">)</span>
+<span class="n">area</span> <span class="o">=</span> <span class="n">AreaTrap</span><span class="p">(</span><span class="n">ysolve</span><span class="p">,</span><span class="n">SideSlope</span><span class="p">,</span><span class="n">Bottom</span><span class="p">)</span>
+<span class="n">perimeter</span> <span class="o">=</span> <span class="n">PerTrap</span><span class="p">(</span><span class="n">ysolve</span><span class="p">,</span><span class="n">SideSlope</span><span class="p">,</span><span class="n">Bottom</span><span class="p">)</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="n">area</span><span class="o">/</span><span class="n">perimeter</span>
+<span class="n">Qout</span> <span class="o">=</span> <span class="n">Qman</span><span class="p">(</span><span class="mf">1.49</span><span class="p">,</span><span class="n">Mann</span><span class="p">,</span><span class="n">area</span><span class="p">,</span><span class="n">radius</span><span class="p">,</span><span class="n">Slope</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y_n is&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">ysolve</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot; feet </span><span class="se">\n</span><span class="s2">Computed Discharge is &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Qout</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot; CFS&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Flow Balance Error is &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Qout</span> <span class="o">-</span> <span class="n">Qdesign</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>y_n is 6.497  feet 
+Computed Discharge is  1000.0  CFS
+Flow Balance Error is  0.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="example-4-2">
+<h3>Example 4-2<a class="headerlink" href="#example-4-2" title="Permalink to this headline">¶</a></h3>
+<p>Parabolic drainage channel has maximum topwodth of 30 ft. Design flow is 80 CFS. Bed slope is 0.005. Manning’s n is 0.040. Find normal depth in the channel.</p>
+<p><img alt="" src="../../_images/parabolicgeometry.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># simply reuse code</span>
+
+<span class="k">def</span> <span class="nf">Qman</span><span class="p">(</span><span class="n">Kn</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">S</span><span class="p">):</span>
+    <span class="n">Qman</span><span class="o">=</span><span class="p">(</span><span class="n">Kn</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">R</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">S</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">Qman</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">TopPara</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">h</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">TopPara</span><span class="o">=</span><span class="n">b</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">h</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">TopPara</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">AreaPara</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">h</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">AreaPara</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="p">(</span><span class="n">b</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">h</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">AreaPara</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">PerPara</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">h</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">math</span>
+    <span class="n">x</span><span class="o">=</span><span class="mi">4</span><span class="o">*</span><span class="n">y</span><span class="o">/</span><span class="n">b</span>
+    <span class="n">t1</span><span class="o">=</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">t2</span><span class="o">=</span><span class="n">t1</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">t3</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span>
+    <span class="n">PerPara</span><span class="o">=</span><span class="p">(</span><span class="n">b</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">t2</span> <span class="o">+</span> <span class="n">t3</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">t2</span><span class="p">))</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">PerPara</span><span class="p">)</span>  
+
+<span class="n">Qdesign</span> <span class="o">=</span> <span class="mi">80</span>
+<span class="n">Slope</span> <span class="o">=</span> <span class="mf">0.005</span>
+<span class="n">Mann</span> <span class="o">=</span> <span class="mf">0.040</span>
+<span class="n">Bmax</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">Ymax</span> <span class="o">=</span> <span class="mf">1.55</span> <span class="c1">#&lt;&lt;&lt; need to specify this value, not provided in the example, by a little trial-and-error to macth book solution</span>
+
+<span class="c1"># Using Newton&#39;s Method</span>
+
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">newton</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">Qdesign</span><span class="p">,</span><span class="n">Slope</span><span class="p">,</span><span class="n">Mann</span><span class="p">,</span><span class="n">Ymax</span><span class="p">,</span><span class="n">Bmax</span> <span class="c1">#set as global variables so can access from outside the function.  DANGER WILLY!</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="n">AreaPara</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">Ymax</span><span class="p">,</span><span class="n">Bmax</span><span class="p">)</span>
+    <span class="n">perimeter</span> <span class="o">=</span> <span class="n">PerPara</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">Ymax</span><span class="p">,</span><span class="n">Bmax</span><span class="p">)</span>
+    <span class="n">radius</span> <span class="o">=</span> <span class="n">area</span><span class="o">/</span><span class="n">perimeter</span>
+    <span class="n">Qout</span> <span class="o">=</span> <span class="n">Qman</span><span class="p">(</span><span class="mf">1.49</span><span class="p">,</span><span class="n">Mann</span><span class="p">,</span><span class="n">area</span><span class="p">,</span><span class="n">radius</span><span class="p">,</span><span class="n">Slope</span><span class="p">)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">Qout</span><span class="o">-</span><span class="n">Qdesign</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">yguess</span> <span class="o">=</span>  <span class="n">Ymax</span>
+<span class="c1">#print(newton(f, yguess))</span>
+<span class="n">ysolve</span> <span class="o">=</span> <span class="n">newton</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">yguess</span><span class="p">)</span>
+<span class="n">area</span> <span class="o">=</span> <span class="n">AreaPara</span><span class="p">(</span><span class="n">ysolve</span><span class="p">,</span><span class="n">Ymax</span><span class="p">,</span><span class="n">Bmax</span><span class="p">)</span>
+<span class="n">perimeter</span> <span class="o">=</span> <span class="n">PerPara</span><span class="p">(</span><span class="n">ysolve</span><span class="p">,</span><span class="n">Ymax</span><span class="p">,</span><span class="n">Bmax</span><span class="p">)</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="n">area</span><span class="o">/</span><span class="n">perimeter</span>
+<span class="n">Qout</span> <span class="o">=</span> <span class="n">Qman</span><span class="p">(</span><span class="mf">1.49</span><span class="p">,</span><span class="n">Mann</span><span class="p">,</span><span class="n">area</span><span class="p">,</span><span class="n">radius</span><span class="p">,</span><span class="n">Slope</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y_n is&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">ysolve</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span><span class="s2">&quot; feet </span><span class="se">\n</span><span class="s2">Computed Discharge is &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Qout</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot; CFS&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Flow Balance Error is &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Qout</span> <span class="o">-</span> <span class="n">Qdesign</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>y_n is 1.52677  feet 
+Computed Discharge is  80.0  CFS
+Flow Balance Error is  0.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
