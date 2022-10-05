@@ -231,6 +231,10 @@ print('Section Velocity',round(Qcap/A,3))
 
 # 4. Now check the critical cleansing velocities,  at the two discharges the section velocity is larger than the critical velocity, so these sewers should have acceptable self-cleansing properties.
 
+# ### Slope Classification
+# 
+# ![](slopeclassify.png)
+
 # In[ ]:
 
 
