@@ -43,6 +43,12 @@
 
 # ## Gravity Sewers
 # 
+# ![](grabitysewer.png)
+# 
+# ![](grabitysewer2.png)
+# 
+# ![](lurkers.png)
+# 
 # [Conduit Design Procedure (Taxes Hydraulics Manual 2019)](http://onlinemanuals.txdot.gov/txdotmanuals/hyd/conduit_systems.htm#QBDUPXXE)
 # 
 # ### Example 4.6
