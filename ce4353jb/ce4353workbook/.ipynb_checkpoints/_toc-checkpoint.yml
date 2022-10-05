@@ -38,4 +38,4 @@ chapters:
 - file: lessons/uniformflow/uniformflow
   sections:
   - file: lessons/uniformflow/gutters
-  - file: lessons/uniformflow/compoundchannel
+  - file: lessons/uniformflow/compoundchannels
