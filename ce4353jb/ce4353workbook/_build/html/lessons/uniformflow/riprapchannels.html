@@ -462,9 +462,9 @@
 </div>
 </div>
 </div>
-<ol class="simple">
-<li><p>Estimate Manning’s n</p></li>
-</ol>
+<blockquote>
+<div><p>4.Estimate Manning’s n</p>
+</div></blockquote>
 <p><img alt="" src="../../_images/mannN6-1.png" /></p>
 <p>and calculate discharge</p>
 <div class="cell docutils container">
@@ -500,9 +500,9 @@ Design Discharge Q : 0.42 Computed Discharge Q : 2.22
 </div>
 </div>
 </div>
-<ol class="simple">
-<li><p>This discharge is is more than 5 percent different from the design flow, we need to go back to step 3 to estimate a new flow depth.</p></li>
-</ol>
+<blockquote>
+<div><p>5.This discharge is is more than 5 percent different from the design flow, we need to go back to step 3 to estimate a new flow depth.</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Qdes</span> <span class="o">=</span> <span class="mf">0.42</span> <span class="c1">#given</span>
@@ -535,9 +535,9 @@ Design Discharge Q : 0.42 Computed Discharge Q : 0.428
 </div>
 </div>
 </div>
-<ol class="simple">
-<li><p>Update is within 5 % of design flow, so can proceede without further iteration; however lest channel our inner overachiever and iterate one more time</p></li>
-</ol>
+<blockquote>
+<div><p>6.Update is within 5 % of design flow, so can proceede without further iteration; however lest channel our inner overachiever and iterate one more time</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Qdes</span> <span class="o">=</span> <span class="mf">0.42</span> <span class="c1">#given</span>
@@ -570,9 +570,13 @@ Design Discharge Q : 0.42 Computed Discharge Q : 0.42
 </div>
 </div>
 </div>
-<p>Ok were good, now compute shear stress</p>
+<blockquote>
+<div><p>Ok were good, now compute shear stress</p>
+</div></blockquote>
 <p><img alt="" src="../../_images/shearstresseqn31.png" /></p>
-<p>and compare to permissible stress in Table below</p>
+<blockquote>
+<div><p>and compare to permissible stress in Table below</p>
+</div></blockquote>
 <p><img alt="" src="../../_images/table23.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -590,10 +594,12 @@ Design Discharge Q : 0.42 Computed Discharge Q : 0.42
 </div>
 </div>
 </div>
-<p>The computed shear stress exceeds the permissible (20 &gt; 19 <span class="math notranslate nohighlight">\(N/m^3\)</span>), so the lining is <strong>Unstable</strong></p>
+<blockquote>
+<div><p>The computed shear stress exceeds the permissible (20 &gt; 19 <span class="math notranslate nohighlight">\(N/m^3\)</span>), so the lining is <strong>Unstable</strong></p>
+</div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This is quite close, a slightly larger gravel would satisfy the design table. :::</p>
+<p>… but dang close, a slightly larger gravel would satisfy the design goal.</p>
 </div>
 </div>
 <div class="section" id="vegetative-lined-channels">
@@ -602,15 +608,8 @@ Design Discharge Q : 0.42 Computed Discharge Q : 0.42
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Grass-lined channels have been widely used in drainage systems for many years.
-They are easily constructed and maintained and work well in a variety of climates and soilconditions. Grass linings provide good erosion protection and can trap sediment and related
-contaminants in the channel section. Routine maintenance of grass-lined channels consists of
-mowing, control of weedy plants and woody vegetation, repair of damaged areas and removal
-of sediment deposits.
-The behavior of grass in an open channel lining is complicated by the fact that grass stems
-bend as flow depth and shear stress increase. This reduces the roughness height and
-increases velocity and flow rate. For some lining materials (bare earth and rigid linings), the
-roughness height remains constant regardless of the velocity or depth of flow in the channel. As
-a result, a grass-lined channel cannot be described by a single roughness coefficient.</p>
+They are easily constructed and maintained and work well in a variety of climates and soilconditions. Grass linings provide good erosion protection and can trap sediment and relatedcontaminants in the channel section. Routine maintenance of grass-lined channels consists of mowing, control of weedy plants and woody vegetation, repair of damaged areas and removal of sediment deposits and dead bodies.
+The behavior of grass in an open channel lining is complicated by the fact that grass stems bend as flow depth and shear stress increase. This reduces the roughness height and increases velocity and flow rate. For some lining materials (bare earth and rigid linings), the roughness height remains constant regardless of the velocity or depth of flow in the channel. As a result, a grass-lined channel cannot be described by a single roughness coefficient.</p>
 </div>
 <p>Trapezoidal lined channel 1.5 meters bottom width, 3:1 side slope, <span class="math notranslate nohighlight">\(S_0\)</span> is 0.012 (1.2 percent). Grass-legume mixture with mature growth height of 15-20 cm.  What is maximum allowable discharge for this lining (without detaching the lining)?</p>
 </div>

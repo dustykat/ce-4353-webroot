@@ -59,7 +59,7 @@ RRR = Rhyd(Atrap(dinitial,Bwide,Zslope),Ptrap(dinitial,Bwide,Zslope))
 print("Hydraulic Radius R :",round(Rhyd(Atrap(dinitial,Bwide,Zslope),Ptrap(dinitial,Bwide,Zslope)),3))
 
 
-# 4. Estimate Manning's n
+# >4.Estimate Manning's n
 # 
 # ![](mannN6-1.png)
 # 
@@ -91,7 +91,7 @@ print("Design Discharge Q :",round(Qdes,3),"Computed Discharge Q :",round(Qman(1
 dold = dinitial #use this below
 
 
-# 5. This discharge is is more than 5 percent different from the design flow, we need to go back to step 3 to estimate a new flow depth.
+# >5.This discharge is is more than 5 percent different from the design flow, we need to go back to step 3 to estimate a new flow depth.
 
 # In[4]:
 
@@ -116,7 +116,7 @@ print("Design Discharge Q :",round(Qdes,3),"Computed Discharge Q :",round(Qman(1
 dold = dnew #use this below
 
 
-# 6. Update is within 5 \% of design flow, so can proceede without further iteration; however lest channel our inner overachiever and iterate one more time
+# >6.Update is within 5 \% of design flow, so can proceede without further iteration; however lest channel our inner overachiever and iterate one more time
 
 # In[5]:
 
@@ -141,11 +141,11 @@ print("Design Discharge Q :",round(Qdes,3),"Computed Discharge Q :",round(Qman(1
 dold = dnew #use this below
 
 
-# Ok were good, now compute shear stress
+# > Ok were good, now compute shear stress
 # 
 # ![](shearstresseqn31.png)
 # 
-# and compare to permissible stress in Table below
+# >and compare to permissible stress in Table below
 # 
 # ![](table23.png)
 
@@ -159,10 +159,11 @@ def tauD(gamma,depth,slope):
 print("Shear stress max : ",round(tauD(9800,dnew,S0),3))
 
 
-# The computed shear stress exceeds the permissible (20 > 19 $N/m^3$), so the lining is **Unstable** 
+# >The computed shear stress exceeds the permissible (20 > 19 $N/m^3$), so the lining is **Unstable** 
 # 
 # :::{note}
-# This is quite close, a slightly larger gravel would satisfy the design table. :::
+# ... but dang close, a slightly larger gravel would satisfy the design goal. 
+# :::
 
 # ## Vegetative Lined Channels
 # 
@@ -170,15 +171,8 @@ print("Shear stress max : ",round(tauD(9800,dnew,S0),3))
 # 
 # :::{note}
 # Grass-lined channels have been widely used in drainage systems for many years.
-# They are easily constructed and maintained and work well in a variety of climates and soilconditions. Grass linings provide good erosion protection and can trap sediment and related
-# contaminants in the channel section. Routine maintenance of grass-lined channels consists of
-# mowing, control of weedy plants and woody vegetation, repair of damaged areas and removal
-# of sediment deposits.
-# The behavior of grass in an open channel lining is complicated by the fact that grass stems
-# bend as flow depth and shear stress increase. This reduces the roughness height and
-# increases velocity and flow rate. For some lining materials (bare earth and rigid linings), the
-# roughness height remains constant regardless of the velocity or depth of flow in the channel. As
-# a result, a grass-lined channel cannot be described by a single roughness coefficient.
+# They are easily constructed and maintained and work well in a variety of climates and soilconditions. Grass linings provide good erosion protection and can trap sediment and relatedcontaminants in the channel section. Routine maintenance of grass-lined channels consists of mowing, control of weedy plants and woody vegetation, repair of damaged areas and removal of sediment deposits and dead bodies.
+# The behavior of grass in an open channel lining is complicated by the fact that grass stems bend as flow depth and shear stress increase. This reduces the roughness height and increases velocity and flow rate. For some lining materials (bare earth and rigid linings), the roughness height remains constant regardless of the velocity or depth of flow in the channel. As a result, a grass-lined channel cannot be described by a single roughness coefficient.
 # :::
 
 # Trapezoidal lined channel 1.5 meters bottom width, 3:1 side slope, $S_0$ is 0.012 (1.2 percent). Grass-legume mixture with mature growth height of 15-20 cm.  What is maximum allowable discharge for this lining (without detaching the lining)?
