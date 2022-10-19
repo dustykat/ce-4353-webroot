@@ -46,4 +46,4 @@ chapters:
   - file: lessons/graduallyvariedflow/wspcomputation
   - file: lessons/graduallyvariedflow/wspfixeddepth
   - file: lessons/graduallyvariedflow/wspfixedspace
-#  - file: lessons/graduallyvariedflow/wspnatural
+  - file: lessons/graduallyvariedflow/wspnatural

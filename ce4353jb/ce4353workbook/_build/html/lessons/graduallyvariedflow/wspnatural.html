@@ -1,0 +1,1142 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Natural Channels &#8212; CE 4353 Design of Hydraulic Systems</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Standard Spatial-Step Method" href="wspfixedspace.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/river.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">CE 4353 Design of Hydraulic Systems</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Hydraulic Systems Design/Open Channel Flow
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../computationaltools/computationaltools.html">
+   Computational Tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/topic1-1.html">
+     Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/topic1-2.html">
+     Excel/Libre Office Spreadsheets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/topic1-3.html">
+     HEC-RAS River Analysis Software
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/1goodgraphs.html">
+     Characteristics of a Good Graph
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/2makinggraphs.html">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       matplotlib
+      </span>
+     </code>
+     package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/3adddata.html">
+     Adding Data to Plot Lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/4loglogcharts.html">
+     Logarithmic Charts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/5othercharts.html">
+     Other Graph Types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../basicprinciples/basicprinciples.html">
+   Basic Principles
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basicprinciples/topic2-1.html">
+     Solution of Open Channel Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basicprinciples/topic2-2.html">
+     Definitions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basicprinciples/topic2-3.html">
+     Discharge Measurements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../specificenergy/specificenergy1.html">
+   Specific Energy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specificenergy/specificenergy2.html">
+     Froude Number
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weirs/weirs.html">
+   Weirs
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../momentum/momentum1.html">
+   Momentum
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/momentum2.html">
+     Rectangular Cross Sections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/momentum3.html">
+     Surges
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/momentum4.html">
+     Bridge Piers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/momentum5.html">
+     Spur Dikes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/stillingbasins.html">
+     Stilling Basins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/contractions.html">
+     Supercritical Contractions and Expansions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../uniformflow/uniformflow.html">
+   Uniform Flow
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../uniformflow/gutters.html">
+     Gutter Flow and Gravity Sewer Design
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../uniformflow/compoundchannels.html">
+     Compound Channels
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../uniformflow/riprapchannels.html">
+     Rip-Rap Lined Channels
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="graduallyvaried1.html">
+   Gradually Varied Flow
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="wspcomputation.html">
+     Water Surface Profile Computation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="wspfixeddepth.html">
+     Direct Step Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="wspfixedspace.html">
+     Standard Spatial-Step Method
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Natural Channels
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lessons/graduallyvariedflow/wspnatural.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/graduallyvariedflow/wspnatural.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/lessons/graduallyvariedflow/wspnatural.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#finite-difference-method-for-unsteady-open-channel-flow">
+   Finite-Difference Method for Unsteady Open Channel Flow
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#governing-difference-equations-lax-scheme">
+     Governing Difference Equations – Lax Scheme
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#continunity">
+     Continunity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#momentum">
+     Momentum
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mapping-from-the-physical-to-computational-domain">
+     Mapping from the Physical to Computational Domain
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#building-the-difference-equations">
+     Building the Difference Equations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#time-differences">
+     Time Differences
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#space-differences">
+     Space Differences
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Continunity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Momentum
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-1-steady-flow-over-a-weir">
+     Example 1: Steady Flow over a Weir
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#building-a-tool">
+     Building a Tool
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="natural-channels">
+<h1>Natural Channels<a class="headerlink" href="#natural-channels" title="Permalink to this headline">¶</a></h1>
+<p>Simulation in natural channels is a straightforward extension of the previous concepts, with added complications of arbitrary geometry, and possibly transient flow (Chapter 8)</p>
+<p>Below the essential features of both natural channel simulation and unsteady flow are discussed - the focus is on the mapping from real conditions into the computer.</p>
+<div class="section" id="finite-difference-method-for-unsteady-open-channel-flow">
+<h2>Finite-Difference Method for Unsteady Open Channel Flow<a class="headerlink" href="#finite-difference-method-for-unsteady-open-channel-flow" title="Permalink to this headline">¶</a></h2>
+<p>Recall early in the class we derived the linked continunity and momentum equations called the St. Venant equations.  Solving the St. Venant Equations is accomplished by mapping the physical system and the set of partial differential equations into an algebraic structure that a computer can  manipulate.   Finite-difference,  finite-element,  finite-volume,  and  marker-in-cell are the typical methods.</p>
+<p>The simplest form of solution that is conditionally stable and reasonably straightforward to program is called the Lax-Diffusion scheme.  This  scheme  is  reasonably  accurate  and  useful  for  practical  problems  as  well  as  to learn what goes on under the hood of a professional tool like SWMM or HEC-RAS.</p>
+<div class="section" id="governing-difference-equations-lax-scheme">
+<h3>Governing Difference Equations – Lax Scheme<a class="headerlink" href="#governing-difference-equations-lax-scheme" title="Permalink to this headline">¶</a></h3>
+<p>The finite-difference analysis converts the two PDEs into an algebraic update struc-ture and maps boundary conditions onto a computational domain.  The two PDEs are continuity and momentum.  As a quick refresher:</p>
+<p>The continuity equation for a computational cell (reach) is</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\frac{\partial y}{\partial t} = -\frac{A}{B}\frac{\partial V}{\partial x}-V\frac{\partial y}{\partial x}
+\end{equation}
+\]</div>
+</div>
+<div class="section" id="continunity">
+<h3>Continunity<a class="headerlink" href="#continunity" title="Permalink to this headline">¶</a></h3>
+<p><span class="math notranslate nohighlight">\(A\)</span> is the depth-area function (a function of x and y).
+<span class="math notranslate nohighlight">\(B\)</span> is the depth-topwidth function (a function of x and y).
+The Lax scheme uses spatial averaging to represent the <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, and <span class="math notranslate nohighlight">\(V\)</span> terms that appear as coefficients on the partial derivatives on the right-hand side of the equation.
+The time derivative is accomplished with a conventional forward-in-time first order finite difference model, and the spatial derivatives are conventional first-order centered differences. Both these differencing schemes are prestented shortly.</p>
+</div>
+<div class="section" id="momentum">
+<h3>Momentum<a class="headerlink" href="#momentum" title="Permalink to this headline">¶</a></h3>
+<p>The momentum equation is
+$<span class="math notranslate nohighlight">\(
+\begin{equation}
+\frac{\partial V}{\partial t} = g(S_0-S_f)-V\frac{\partial V}{\partial x}-g\frac{\partial y}{\partial x}
+\end{equation}
+\)</span>$</p>
+<p>and also uses spatial averages for the coefficients on the spatial derivatives in the right hand side of the equation as well as spatial averages for the friction and topographic slopes.</p>
+<p>Friction slope can be recovered using any resistance model, Chezy-Manning’s is typical.</p>
+</div>
+<div class="section" id="mapping-from-the-physical-to-computational-domain">
+<h3>Mapping from the Physical to Computational Domain<a class="headerlink" href="#mapping-from-the-physical-to-computational-domain" title="Permalink to this headline">¶</a></h3>
+<p>The next important step is to map the physical world to the computer world.</p>
+<p><img alt="" src="../../_images/stream-schematic.png" /></p>
+<p>The figure above is a plan view of a stream that is to be modeled. The stream has some width, depth, and path.  Flow in figure is from left to right.
+The dashed line in the figure is the thalweg and is the pathline of the stream.  Distances in the computational model are along this path.  The conventional orientation is “looking downstream.” So when the cross sections are stationed the distances in a cross section are usually referenced as distanced from the left bank, looking downstream.</p>
+<p>The figure below is a schematic that depicts the relationship of left-bank, cross section, elevations, and such – all referenced to the concept of “looking downstream.”</p>
+<p><img alt="" src="../../_images/stream-section-schematic.png" /></p>
+<p>The figure below is a schematic of the next step of mapping into the computational domain.</p>
+<p><img alt="" src="../../_images/stream-discritize.png" /></p>
+<p>In the figure the stream is divided into cells called reaches (or cells, depends on context and author). The centroid of the reach is called the node, and most of the arithmetic is written with the understanding that all properties of the reach are somehow “averaged” and these averages are assigned to these nodes.  Adjacent nodes are connected (in the computer) by links (which represent conduits between nodes). The continuity and momentum equations collectively describe the node average behavior (such as depth) and link behavior (such as momentum flux).</p>
+<p>The next figure is a schematic of three adjacent nodes that is used to develop the difference equations.</p>
+<p><img alt="" src="../../_images/stream-node-scheme.png" /></p>
+<p>In the figure both the velocities and depths are mapped to the node (Lax-Diffusion scheme), but other schemes map the velocities to the interfaces. Again this decision affects the differencing scheme; the differencing scheme chooses the location. A kind of chicken and egg situation.</p>
+<p>At this point the mapping has <strong>abstracted</strong> considerably from the physical world and the computer world loses the sense of
+sinuosity. In this development, we will assume the reach lengths are all the same value, the velocities are all parallel to the local thalweg and perpendicular to the cross sections, and the depth is measured from the channel bottom. The differencing scheme then replaces the continuity and momentum PDEs with update equations to map the water surface position and mean section velocity at the nodes to different moments in time. The updating is called time-stepping.</p>
+</div>
+<div class="section" id="building-the-difference-equations">
+<h3>Building the Difference Equations<a class="headerlink" href="#building-the-difference-equations" title="Permalink to this headline">¶</a></h3>
+<p>The partial derivatives are replaced with difference quotients that approximate their behavior.<br />
+The mapping in some sense influences the resulting difference scheme.</p>
+</div>
+<div class="section" id="time-differences">
+<h3>Time Differences<a class="headerlink" href="#time-differences" title="Permalink to this headline">¶</a></h3>
+<p>A first-order time difference is</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\frac{\partial y}{\partial t}~\approx~\frac{y_i^{t+\Delta t}-y_i^t}{\Delta t}
+\end{equation}
+\]</div>
+<p>Lax replaced the known time-level term with its spatial average from adjacent cells.
+For the depth;</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\frac{\partial y}{\partial t}~\approx~\frac{y_i^{t+\Delta t}-\frac{1}{2}(y_{i-1}^t+y_{i+1}^t)}{\Delta t}
+\end{equation}
+\]</div>
+<p>Similarly for mean section velocity</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\frac{\partial V}{\partial t}~\approx~\frac{V_i^{t+\Delta t}-\frac{1}{2}(V_{i-1}^t+V_{i+1}^t)}{\Delta t}
+\end{equation}
+\]</div>
+</div>
+<div class="section" id="space-differences">
+<h3>Space Differences<a class="headerlink" href="#space-differences" title="Permalink to this headline">¶</a></h3>
+<p>Lax used centered differences for the spatial derivatives</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\frac{\partial y}{\partial x}~\approx~\frac{y_{i+1}^{t}-y_{i-1}^t}{2\Delta x}
+\end{equation}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\frac{\partial V}{\partial x}~\approx~\frac{V_{i+1}^{t}-V_{i-1}^t}{2\Delta x}
+\end{equation}
+\]</div>
+<p>Lax also used spatial averages for the depth-area and slope functions</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\frac{1}{2}(\frac{A}{B}\vert_{i-1}^t + \frac{A}{B}\vert_{i+1}^t)
+\end{equation}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\frac{1}{2}(S_{f,i-1}^t + S_{f,i+1}^t)
+\end{equation}
+\]</div>
+<p>These difference formulations are substituted into continunity and momentum and then rearranged to isolate the terms at the <span class="math notranslate nohighlight">\(t+\Delta t\)</span> time level.</p>
+</div>
+<div class="section" id="id1">
+<h3>Continunity<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Starting with the PDE,</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\frac{\partial y}{\partial t} = -\frac{A}{B}\frac{\partial V}{\partial x}-V\frac{\partial y}{\partial x}
+\end{equation}
+\]</div>
+<p>first replace the time derivative</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\frac{y_i^{t+\Delta t}-\frac{1}{2}(y_{i-1}^t+y_{i+1}^t}{\Delta t} = -\frac{A}{B}\frac{\partial V}{\partial x}-V\frac{\partial y}{\partial x}
+\end{equation}
+\]</div>
+<p>then replace the space derivatives</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\frac{y_i^{t+\Delta t}-\frac{1}{2}(y_{i-1}^t+y_{i+1}^t}{\Delta t} = -\frac{A}{B}\frac{V_{i+1}^{t}-V_{i-1}^t}{2\Delta x}-V\frac{y_{i+1}^{t}-y_{i-1}^t}{2\Delta x}
+\end{equation}
+\]</div>
+<p>then the spatial averages for the remaining terms.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation}
+\begin{matrix}
+\frac{y_i^{t+\Delta t}-\frac{1}{2}(y_{i-1}^t+y_{i+1}^t)}{\Delta t} = -\frac{1}{2}(\frac{A}{B}\vert_{i-1}^t + \frac{A}{B}\vert_{i+1}^t)\frac{V_{i+1}^{t}-V_{i-1}^t}{2\Delta x}-\frac{1}{2}(V_{f,i-1}^t + V_{f,i+1}^t)\frac{y_{i+1}^{t}-y_{i-1}^t}{2\Delta x}\\
+~\\
+ \end{matrix}
+\end{equation}
+\end{split}\]</div>
+<p>Next multiply by <span class="math notranslate nohighlight">\(\Delta t\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation}
+\begin{matrix}
+y_i^{t+\Delta t}-\frac{1}{2}(y_{i-1}^t+y_{i+1}^t) = -\Delta t\frac{1}{2}(\frac{A}{B}\vert_{i-1}^t + \frac{A}{B}\vert_{i+1}^t)\frac{V_{i+1}^{t}-V_{i-1}^t}{2\Delta x}-\Delta t \frac{1}{2}(V_{f,i-1}^t + V_{f,i+1}^t)\frac{y_{i+1}^{t}-y_{i-1}^t}{2\Delta x}\\
+~\\
+ \end{matrix}
+\end{equation}
+\end{split}\]</div>
+<p>Move the time level <span class="math notranslate nohighlight">\(t\)</span> term to the right hand side</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation}
+\begin{matrix}
+y_i^{t+\Delta t} = \frac{1}{2}(y_{i-1}^t+y_{i+1}^t) -\Delta t\frac{1}{2}(\frac{A}{B}\vert_{i-1}^t + \frac{A}{B}\vert_{i+1}^t)\frac{V_{i+1}^{t}-V_{i-1}^t}{2\Delta x}-\Delta t \frac{1}{2}(V_{f,i-1}^t + V_{f,i+1}^t)\frac{y_{i+1}^{t}-y_{i-1}^t}{2\Delta x}\\
+~\\
+ \end{matrix}
+\end{equation}
+\end{split}\]</div>
+<p>Rename the constant  <span class="math notranslate nohighlight">\(\frac{\Delta t}{2 \Delta x} = r\)</span> and simplify</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation}
+\begin{matrix}
+y_i^{t+\Delta t} = \frac{1}{2}(y_{i-1}^t+y_{i+1}^t) -\frac{r}{2}(\frac{A}{B}\vert_{i-1}^t + \frac{A}{B}\vert_{i+1}^t)(V_{i+1}^{t}-V_{i-1}^t)-\frac{r}{2}(V_{f,i-1}^t + V_{f,i+1}^t)(y_{i+1}^{t}-y_{i-1}^t) \\
+~\\
+ \end{matrix}
+ \label{eqn:lax-continunity}
+\end{equation}
+\end{split}\]</div>
+</div>
+<div class="section" id="id2">
+<h3>Momentum<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Again, starting with the PDE, make the time substitution</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\frac{V_i^{t+\Delta t}-\frac{1}{2}(V_{i-1}^t+V_{i+1}^t)}{\Delta t} = g(S_0-S_f)-V\frac{\partial V}{\partial x}-g\frac{\partial y}{\partial x}
+\end{equation}
+\]</div>
+<p>next the space derivatives</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation}
+\begin{matrix}
+\frac{V_i^{t+\Delta t}-\frac{1}{2}(V_{i-1}^t+V_{i+1}^t)}{\Delta t} = g(S_0-S_f)-V\frac{V_{i+1}^{t}-V_{i-1}^t}{2\Delta x}-g\frac{y_{i+1}^{t}-y_{i-1}^t}{2\Delta x}\\
+~\\
+\end{matrix}
+\end{equation}
+\end{split}\]</div>
+<p>then the spatial averages (If the channel slope is changing, then this would be subjected to a spatial averaging scheme too!)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation}
+\begin{matrix}
+\frac{V_i^{t+\Delta t}-\frac{1}{2}(V_{i-1}^t+V_{i+1}^t)}{\Delta t} = 
+g(S_0-\frac{1}{2}(S_{f,i-1}^t + S_{f,i+1}^t))
+-\frac{1}{2}(V_{i-1}^t+V_{i+1}^t) \frac{V_{i+1}^{t}-V_{i-1}^t}{2\Delta x}
+-g\frac{y_{i+1}^{t}-y_{i-1}^t}{2\Delta x}\\
+~\\
+\end{matrix}
+\end{equation}
+\end{split}\]</div>
+<p>Multiply by <span class="math notranslate nohighlight">\(\Delta t\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation}
+\begin{matrix}
+V_i^{t+\Delta t}-\frac{1}{2}(V_{i-1}^t+V_{i+1}^t)= 
+\Delta t  g(S_0-\frac{1}{2}(S_{f,i-1}^t + S_{f,i+1}^t))
+-\Delta t  \frac{1}{2}(V_{i-1}^t+V_{i+1}^t) \frac{V_{i+1}^{t}-V_{i-1}^t}{2\Delta x}
+-\Delta t  g\frac{y_{i+1}^{t}-y_{i-1}^t}{2\Delta x}\\
+~\\
+\end{matrix}
+\end{equation}
+\end{split}\]</div>
+<p>Rename the constant  <span class="math notranslate nohighlight">\(\frac{\Delta t}{2 \Delta x} = r\)</span> and isolate the <span class="math notranslate nohighlight">\(t + \Delta t\)</span> term</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation}
+\begin{matrix}
+V_i^{t+\Delta t}=\frac{1}{2}(V_{i-1}^t+V_{i+1}^t) +
+\Delta t  g(S_0-\frac{1}{2}(S_{f,i-1}^t + S_{f,i+1}^t))
+- \frac{r}{2}(V_{i-1}^t+V_{i+1}^t) (V_{i+1}^{t}-V_{i-1}^t)
+-rg(y_{i+1}^{t}-y_{i-1}^t)\\
+~\\
+\end{matrix}
+\label{eqn:lax-momentum}
+\end{equation}
+\end{split}\]</div>
+<p>The pair of update equations are the interior point update equations.</p>
+<p>The figure below depicts the updating information transfer including:</p>
+<ul class="simple">
+<li><p>Relation of the linked reaches to solution of the equations in the XT-plane.</p></li>
+<li><p>Explicit updating (as used herein) uses the three values at the known time level to project (update) the unknown value at the next time level.</p></li>
+<li><p>Boundary behavior is a separate calculation, dependent on the evolution of the interior solution</p></li>
+</ul>
+<p><img alt="" src="../../_images/space-time-map.png" /></p>
+<p>At each cell the three known values of a variable (<span class="math notranslate nohighlight">\(y\)</span> or <span class="math notranslate nohighlight">\(V\)</span>) are projected to the next time line as depicted in the figure.</p>
+<p>Boundary conditions are the next challenge. These are usually handled using a characteristic equation approach (unless the boundaries are really simple).  For the time being we will use pretty simple boundary conditions, and complicate as necessary.</p>
+</div>
+<div class="section" id="example-1-steady-flow-over-a-weir">
+<h3>Example 1: Steady Flow over a Weir<a class="headerlink" href="#example-1-steady-flow-over-a-weir" title="Permalink to this headline">¶</a></h3>
+<p>The backwater curve situation for a rectangular channel with discharge over a weir is repeated.  The channel width is 5 meters, bottom slope <span class="math notranslate nohighlight">\(0.001\)</span>, Manning’s <span class="math notranslate nohighlight">\(n=0.02\)</span> and discharge <span class="math notranslate nohighlight">\(Q=55.4 \frac{m^3}{sec}\)</span>.</p>
+<p>We will build a transient solver, although this problem is a steady flow case that we can check with an independent tool (Hamming’s approach above).  We will start with the flow depth artificially large and observe that the transient solver will eventually produce an <em>equilibrium</em> solution that is more or less the same as the steady-flow solver.</p>
+<p>Generally such a simulation is a good idea to test a new algorithm – it should be stable enough to converge to and maintain a steady solution.</p>
+<p>Why we would consider a transient solver is to examine cases such as that depicted in the photograph below</p>
+<p><img alt="" src="../../_images/tidal-bore.png" /></p>
+</div>
+<div class="section" id="building-a-tool">
+<h3>Building a Tool<a class="headerlink" href="#building-a-tool" title="Permalink to this headline">¶</a></h3>
+<p>The script is comprised of several parts, and eventually for the sake of taking advantage of the ability to read and operate on files, the script will have several “libraries” that are read by a main control program.</p>
+<p>The main program controls the overall solution process, while the library functions can be built and tested in advance.  What follows is a port from an old FORTRAN and later R program that is specific to this problem, we will get it working first, then generalize for reuse.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># hydraulic functions </span>
+<span class="c1"># depth == flow depth          </span>
+<span class="c1"># bottom == bottom width of trapezoidal channel</span>
+<span class="c1"># side == side slope (same value both sides) of trapezoidal channel</span>
+<span class="c1"># computed values:</span>
+<span class="c1"># bt == computed topwidth :: ar == flow area, used in fd update :: wp == wetted perimeter, used in fd update</span>
+
+<span class="k">def</span> <span class="nf">bt</span><span class="p">(</span><span class="n">depth</span><span class="p">,</span><span class="n">bottom</span><span class="p">,</span><span class="n">side</span><span class="p">):</span>   <span class="c1"># depth-topwidth function</span>
+    <span class="n">topwidth</span> <span class="o">=</span> <span class="p">(</span><span class="n">bottom</span> <span class="o">+</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">side</span><span class="o">*</span><span class="n">depth</span><span class="p">);</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">topwidth</span><span class="p">);</span>
+
+<span class="k">def</span> <span class="nf">ar</span><span class="p">(</span><span class="n">depth</span><span class="p">,</span><span class="n">bottom</span><span class="p">,</span><span class="n">side</span><span class="p">):</span>  <span class="c1"># depth area function</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="p">(</span><span class="n">depth</span><span class="o">*</span><span class="p">(</span><span class="n">bottom</span><span class="o">+</span><span class="n">side</span><span class="o">*</span><span class="n">depth</span><span class="p">));</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">area</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">wp</span><span class="p">(</span><span class="n">depth</span><span class="p">,</span><span class="n">bottom</span><span class="p">,</span><span class="n">side</span><span class="p">):</span>   <span class="c1"># depth perimeter</span>
+    <span class="kn">import</span> <span class="nn">math</span>
+    <span class="n">perimeter</span> <span class="o">=</span> <span class="p">(</span><span class="n">bottom</span><span class="o">+</span><span class="mf">2.0</span><span class="o">*</span><span class="n">depth</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">1.0</span><span class="o">+</span><span class="n">side</span><span class="o">*</span><span class="n">side</span><span class="p">));</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">perimeter</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">###### Problem Constants #######</span>
+<span class="c1"># these are constants that define the problem</span>
+<span class="c1"># change for different problems</span>
+<span class="c1"># a good habit is to assign constants to names so the</span>
+<span class="c1"># program is readable by people in a few years</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span> <span class="c1"># gravitational acceleration, obviously SI units</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># number of reaches</span>
+<span class="n">q0</span> <span class="o">=</span> <span class="mf">55.4</span> <span class="c1"># initial discharge</span>
+<span class="n">yd</span> <span class="o">=</span> <span class="mf">8.000</span> <span class="c1"># initial flow depth in the model</span>
+<span class="n">yu</span> <span class="o">=</span> <span class="mf">5.000</span> <span class="c1"># upstream constant depth</span>
+<span class="n">mn</span> <span class="o">=</span> <span class="mf">0.020</span> <span class="c1"># Manning&#39;s n</span>
+<span class="n">b0</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># bottom width</span>
+<span class="n">s0</span> <span class="o">=</span> <span class="mf">0.001</span> <span class="c1"># longitudinal slope (along direction of flow)</span>
+<span class="n">s</span>  <span class="o">=</span> <span class="mf">0.0</span> <span class="c1"># side slope (passed to calls to hydraulic variables)</span>
+<span class="n">l</span>  <span class="o">=</span> <span class="mf">11380.0</span> <span class="c1"># total length (the length of computational domain)</span>
+<span class="n">tmax</span> <span class="o">=</span> <span class="mi">7000</span> <span class="c1"># total simulation time in seconds</span>
+<span class="n">iprt</span> <span class="o">=</span>  <span class="mi">31</span> <span class="c1"># print every iprt time steps</span>
+<span class="n">nn</span> <span class="o">=</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span> <span class="c1"># how many nodes, will jack with boundaries later</span>
+<span class="n">mn2</span> <span class="o">=</span> <span class="n">mn</span><span class="o">*</span><span class="n">mn</span> <span class="c1"># Manning&#39;s n squared, will appear a lot.</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">ar</span><span class="p">(</span><span class="n">yd</span><span class="p">,</span><span class="n">b0</span><span class="p">,</span><span class="n">s</span><span class="p">)</span> <span class="c1"># flow area at beginning of time</span>
+<span class="n">v0</span> <span class="o">=</span> <span class="n">q0</span><span class="o">/</span><span class="n">a</span> <span class="c1"># initial velocity</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">######## Here we build storage vectors ###############</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">nn</span> <span class="c1"># create nn elements of vector y, all zero</span>
+<span class="n">yp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">nn</span> <span class="c1"># updates go in this vector, same length as y</span>
+<span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">nn</span> <span class="c1"># create nn elements of vector v</span>
+<span class="n">vp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">nn</span> <span class="c1"># updates go in this vector, same length and v</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">nn</span>
+<span class="n">ytmp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">nn</span>
+<span class="n">vtmp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">nn</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">yd</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">y</span><span class="p">]</span> <span class="c1"># populate y with nn things, each thing has value yd</span>
+<span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">v0</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">y</span><span class="p">]</span> <span class="c1"># populate v with nn things, each thing has value v0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">bt</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">b0</span><span class="p">,</span><span class="n">s</span><span class="p">)</span> <span class="c1"># topwidth at downstream end</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">g</span><span class="o">*</span><span class="n">a</span><span class="o">/</span><span class="n">b</span><span class="p">)</span> <span class="c1"># celerity at initial conditions</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="n">l</span><span class="o">/</span><span class="n">n</span> <span class="c1"># delta x, length of a reach</span>
+<span class="c1">#dx</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xx</span> <span class="o">=</span> <span class="p">[</span><span class="n">dx</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nn</span><span class="p">)]</span> <span class="c1"># Spatial locations of nodes, used for plotting</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bse</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span> <span class="o">-</span> <span class="n">s0</span><span class="o">*</span><span class="n">xx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nn</span><span class="p">)]</span> <span class="c1"># bottom channel elevation</span>
+<span class="n">wse</span> <span class="o">=</span> <span class="p">[</span><span class="n">bse</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nn</span><span class="p">)]</span> <span class="c1"># water surface elevation</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">dx</span><span class="o">/</span><span class="p">(</span><span class="n">v0</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span> <span class="c1"># the time step that satisfies the courant condtions</span>
+<span class="n">kmax</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">tmax</span><span class="o">/</span><span class="n">dt</span><span class="p">)</span>  <span class="c1"># set maximum number of time steps</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bse</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[12.0,
+ 10.862,
+ 9.724,
+ 8.586,
+ 7.4479999999999995,
+ 6.31,
+ 5.172,
+ 4.034,
+ 2.895999999999999,
+ 1.7579999999999991,
+ 0.6199999999999992]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Celerity = &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Delta x  = &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">dx</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Delta t  = &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ITmax = &quot;</span><span class="p">,(</span><span class="n">kmax</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Celerity =  8.859
+Delta x  =  1138.0
+Delta t  =  111.091
+ITmax =  63
+</pre></div>
+</div>
+</div>
+</div>
+<p>The next set of functions are prototype functions for reporting the output – it will be cleaner to build the output functions separate from the control program, and send the necessary vectors when we want to actually print results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># display functions </span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+
+<span class="k">def</span> <span class="nf">writenow</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">dt</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">b0</span><span class="p">,</span><span class="n">s</span><span class="p">):</span> <span class="c1"># printing functions</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;__________&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Time = &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot; seconds.&quot;</span><span class="p">,</span><span class="s2">&quot;Time step length = &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot; seconds &quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;IROW &quot;</span><span class="p">,</span><span class="s2">&quot; DEPTH &quot;</span><span class="p">,</span><span class="s2">&quot; VELOCITY &quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">irow</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">irow</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">irow</span><span class="p">],</span><span class="mi">3</span><span class="p">),</span><span class="nb">round</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">irow</span><span class="p">],</span><span class="mi">3</span><span class="p">))</span>
+    <span class="k">return</span><span class="p">()</span>  <span class="c1">#observe a NULL return, this function messages to the output device, so there is nothing to return.</span>
+
+<span class="k">def</span> <span class="nf">plot2lines</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span><span class="n">list2</span><span class="p">,</span><span class="n">list3</span><span class="p">,</span><span class="n">list4</span><span class="p">,</span><span class="n">strx</span><span class="p">,</span><span class="n">stry</span><span class="p">,</span><span class="n">strtitle</span><span class="p">):</span> <span class="c1"># plot list1 on x, list2 on y, xlabel, ylabel, title</span>
+    <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span> <span class="c1"># import the plotting library from matplotlibplt.show()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;brown&#39;</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span><span class="s1">&#39;solid&#39;</span><span class="p">)</span> <span class="c1"># create a line chart, years on x-axis, gdp on y-axis</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">list3</span><span class="p">,</span> <span class="n">list4</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span><span class="s1">&#39;solid&#39;</span><span class="p">)</span> <span class="c1"># create a line chart, years on x-axis, gdp on y-axis</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">strtitle</span><span class="p">)</span><span class="c1"># add a title</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">stry</span><span class="p">)</span><span class="c1"># add a label to the x and y-axes</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">strx</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># display the plot</span>
+    <span class="k">return</span> <span class="c1">#null return</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># time counter</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="c1"># elapsed time</span>
+<span class="n">writenow</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">dt</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">b0</span><span class="p">,</span><span class="n">s</span><span class="p">)</span> <span class="c1">#print the start conditions</span>
+<span class="k">for</span> <span class="n">itime</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">kmax</span><span class="p">):</span> <span class="c1"># begin time stepping loop scope</span>
+<span class="c1">#print(&#39;Iteration Count = &#39;,itime)</span>
+<span class="c1">######## Adaptive Time Step Based on Current mesh courant number ###</span>
+    <span class="n">bestdt</span> <span class="o">=</span> <span class="n">dt</span> <span class="c1"># start with current time step</span>
+<span class="c1">### begin courant number each cell loop scope</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nn</span><span class="p">):</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">ar</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">b0</span><span class="p">,</span><span class="n">s</span><span class="p">);</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">bt</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">b0</span><span class="p">,</span><span class="n">s</span><span class="p">);</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">g</span><span class="o">*</span><span class="n">a</span><span class="o">/</span><span class="n">b</span><span class="p">);</span>
+        <span class="n">dtn</span> <span class="o">=</span> <span class="n">dx</span><span class="o">/</span><span class="nb">abs</span><span class="p">((</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="n">c</span><span class="p">)</span>
+    <span class="c1"># now test</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">dtn</span> <span class="o">&lt;</span> <span class="n">bestdt</span><span class="p">):</span>
+            <span class="n">bestdt</span> <span class="o">=</span> <span class="n">dtn</span>
+<span class="c1">### end courant number each cell loop scope</span>
+    <span class="n">dt</span> <span class="o">=</span> <span class="n">bestdt</span>
+    <span class="c1">#print(&#39;adaptive&#39;)</span>
+    <span class="c1">#print(&#39;time-step length = &#39;,dt)</span>
+    <span class="c1">#writenow(t,dt,y,v,b0,s)</span>
+
+
+<span class="c1">###### Finite Difference #################################</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">dt</span><span class="o">/</span><span class="n">dx</span><span class="p">;</span>
+<span class="c1">###### LEFT BOUNDARY #####################################</span>
+<span class="c1"># UPSTREAM FIXED STAGE AT PRESCRIBED NORMAL DEPTH        #</span>
+<span class="c1">##########################################################</span>
+    <span class="n">yp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">yu</span>
+    <span class="n">ab</span> <span class="o">=</span> <span class="n">ar</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">b0</span><span class="p">,</span><span class="n">s</span><span class="p">);</span>
+    <span class="n">bb</span> <span class="o">=</span> <span class="n">bt</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">b0</span><span class="p">,</span><span class="n">s</span><span class="p">);</span>
+    <span class="n">cb</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">g</span><span class="o">*</span><span class="n">bb</span><span class="o">/</span><span class="n">ab</span><span class="p">);</span>
+    <span class="n">rb</span> <span class="o">=</span> <span class="n">ab</span><span class="o">/</span><span class="n">wp</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">b0</span><span class="p">,</span><span class="n">s</span><span class="p">);</span>
+    <span class="n">sfb</span> <span class="o">=</span> <span class="p">(</span><span class="n">mn2</span><span class="o">*</span><span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">rb</span><span class="o">**</span><span class="p">(</span><span class="mf">1.333</span><span class="p">));</span>
+    <span class="n">cn</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span><span class="n">cb</span><span class="o">*</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span> <span class="n">g</span><span class="o">*</span><span class="p">(</span><span class="n">s0</span><span class="o">-</span><span class="n">sfb</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span><span class="p">;</span>
+    <span class="n">vp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">cn</span> <span class="o">+</span> <span class="n">cb</span><span class="o">*</span><span class="n">yp</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="c1">###### RIGHT BOUNDARY ####################################</span>
+<span class="c1">#         FIXED STAGE AT DOWNSTREAM END                  #</span>
+<span class="c1">##########################################################</span>
+<span class="c1"># reflection boundary, find velocity along a characteristic</span>
+    <span class="n">yp</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">yd</span> <span class="p">;</span>
+    <span class="n">aa</span> <span class="o">=</span> <span class="n">ar</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">b0</span><span class="p">,</span><span class="n">s</span><span class="p">);</span>
+    <span class="n">ba</span> <span class="o">=</span> <span class="n">bt</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">b0</span><span class="p">,</span><span class="n">s</span><span class="p">);</span>
+    <span class="n">ca</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">g</span><span class="o">*</span><span class="n">ba</span><span class="o">/</span><span class="n">aa</span><span class="p">);</span>
+    <span class="n">ra</span> <span class="o">=</span> <span class="n">aa</span><span class="o">/</span><span class="n">wp</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">b0</span><span class="p">,</span><span class="n">s</span><span class="p">);</span>
+    <span class="n">sfa</span> <span class="o">=</span> <span class="p">(</span><span class="n">mn2</span><span class="o">*</span><span class="n">v</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">v</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">ra</span><span class="o">**</span><span class="p">(</span><span class="mf">4.0</span><span class="o">/</span><span class="mf">3.0</span><span class="p">));</span>
+    <span class="n">cp</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">ca</span><span class="o">*</span><span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">g</span><span class="o">*</span><span class="p">(</span><span class="n">s0</span><span class="o">-</span><span class="n">sfa</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span><span class="p">;</span>
+<span class="c1">##yp[nn] &lt;&lt;- (cp - vp[nn])/ca;</span>
+    <span class="n">vp</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">cp</span> <span class="o">-</span> <span class="n">yp</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="n">ca</span> 
+<span class="c1">######## INTERIOR NODES AND REACHES ###############</span>
+<span class="c1">### loop through the interior nodes</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span> <span class="c1"># begin interior node loop scope</span>
+        <span class="n">aa</span> <span class="o">=</span> <span class="n">ar</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">b0</span><span class="p">,</span><span class="n">s</span><span class="p">);</span>
+        <span class="n">ba</span> <span class="o">=</span> <span class="n">bt</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">b0</span><span class="p">,</span><span class="n">s</span><span class="p">);</span>
+        <span class="n">pa</span> <span class="o">=</span> <span class="n">wp</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">b0</span><span class="p">,</span><span class="n">s</span><span class="p">);</span>
+        <span class="n">ra</span> <span class="o">=</span> <span class="n">aa</span><span class="o">/</span><span class="n">pa</span><span class="p">;</span>
+        <span class="n">sfa</span> <span class="o">=</span> <span class="p">(</span><span class="n">mn2</span><span class="o">*</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">ra</span><span class="o">**</span><span class="p">(</span><span class="mf">4.0</span><span class="o">/</span><span class="mf">3.0</span><span class="p">));</span>
+        <span class="n">ab</span> <span class="o">=</span> <span class="n">ar</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span><span class="n">b0</span><span class="p">,</span><span class="n">s</span><span class="p">);</span>
+        <span class="n">bb</span> <span class="o">=</span> <span class="n">bt</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span><span class="n">b0</span><span class="p">,</span><span class="n">s</span><span class="p">);</span>
+        <span class="n">pb</span> <span class="o">=</span> <span class="n">wp</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span><span class="n">b0</span><span class="p">,</span><span class="n">s</span><span class="p">);</span>
+        <span class="n">rb</span> <span class="o">=</span> <span class="n">ab</span><span class="o">/</span><span class="n">pb</span><span class="p">;</span>
+        <span class="n">sfb</span> <span class="o">=</span> <span class="p">(</span><span class="n">mn2</span><span class="o">*</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">rb</span><span class="o">**</span><span class="p">(</span><span class="mf">4.0</span><span class="o">/</span><span class="mf">3.0</span><span class="p">));</span>
+<span class="c1"># need averages of sf, hydraulic depth</span>
+        <span class="n">dm</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">aa</span><span class="o">/</span><span class="n">ba</span> <span class="o">+</span> <span class="n">ab</span><span class="o">/</span><span class="n">bb</span><span class="p">);</span>
+        <span class="n">sfm</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">sfa</span><span class="o">+</span><span class="n">sfb</span><span class="p">);</span>
+        <span class="n">vm</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]);</span>
+        <span class="n">ym</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]);</span>
+<span class="c1"># new momentum</span>
+        <span class="n">vp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">vm</span> <span class="o">-</span><span class="n">r</span><span class="o">*</span><span class="n">g</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span><span class="n">r</span><span class="o">*</span><span class="n">vm</span><span class="o">*</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">g</span><span class="o">*</span><span class="n">dt</span><span class="o">*</span><span class="p">(</span><span class="n">s0</span><span class="o">-</span><span class="n">sfm</span><span class="p">);</span>
+<span class="c1"># new depth</span>
+        <span class="n">yp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">ym</span> <span class="o">-</span> <span class="n">r</span><span class="o">*</span><span class="n">dm</span><span class="o">*</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span><span class="n">r</span><span class="o">*</span><span class="n">vm</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span>
+<span class="c1">### end of interior node loop scope</span>
+<span class="c1"># update time, count, depth and momentum</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">t</span><span class="o">+</span><span class="n">dt</span><span class="p">;</span> <span class="c1"># Increment simulation time</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> <span class="c1"># Increment loop counter</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">vp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">yp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">k</span><span class="o">%</span><span class="k">iprt</span> == 0): # Write current conditions every iprt time steps
+        <span class="n">writenow</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">dt</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">b0</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
+    <span class="n">dt</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">dt</span> <span class="c1">#artificially inflate the time step to force adaptive update</span>
+<span class="c1"># end time step loop</span>
+
+<span class="c1"># provisional code to make a plot - wonder if this could be put into the loop</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nn</span><span class="p">):</span>
+    <span class="n">wse</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">bse</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="n">plot2lines</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">bse</span><span class="p">,</span><span class="n">xx</span><span class="p">,</span><span class="n">wse</span><span class="p">,</span><span class="s2">&quot;location&quot;</span><span class="p">,</span><span class="s2">&quot;elevation&quot;</span><span class="p">,</span><span class="s2">&quot;title&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>__________
+Time =  0.0  seconds. Time step length =  111.091  seconds 
+IROW   DEPTH   VELOCITY 
+0 8.0 1.385
+1 8.0 1.385
+2 8.0 1.385
+3 8.0 1.385
+4 8.0 1.385
+5 8.0 1.385
+6 8.0 1.385
+7 8.0 1.385
+8 8.0 1.385
+9 8.0 1.385
+10 8.0 1.385
+__________
+Time =  3261.431  seconds. Time step length =  108.903  seconds 
+IROW   DEPTH   VELOCITY 
+0 5.0 2.082
+1 5.102 2.103
+2 5.248 2.081
+3 5.435 2.053
+4 5.655 2.023
+5 5.935 1.984
+6 6.254 1.939
+7 6.649 1.887
+8 7.087 1.814
+9 7.637 1.795
+10 8.0 1.385
+__________
+Time =  6649.498  seconds. Time step length =  109.419  seconds 
+IROW   DEPTH   VELOCITY 
+0 5.0 2.097
+1 5.091 2.117
+2 5.227 2.094
+3 5.398 2.066
+4 5.613 2.032
+5 5.879 1.989
+6 6.203 1.936
+7 6.593 1.876
+8 7.046 1.799
+9 7.6 1.766
+10 8.0 1.385
+</pre></div>
+</div>
+<img alt="../../_images/wspnatural_24_1.png" src="../../_images/wspnatural_24_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id3">
+<h2>References<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lessons/graduallyvariedflow"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="wspfixedspace.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Standard Spatial-Step Method</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Theodore G. Cleveland (the JupyterBook parts)<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

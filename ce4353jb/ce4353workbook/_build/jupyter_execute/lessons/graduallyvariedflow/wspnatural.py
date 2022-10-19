@@ -49,34 +49,22 @@
 # 
 # ![](stream-schematic.png)
 # 
-# |Figure 1. Plan view of a stream.  Flow in figure is from left to right|
-# |:---|
-# 
-# Figure 1 is a schematic of a stream that is to be modeled. The stream has some width, depth, and path. 
+# The figure above is a plan view of a stream that is to be modeled. The stream has some width, depth, and path.  Flow in figure is from left to right.
 # The dashed line in the figure is the thalweg and is the pathline of the stream.  Distances in the computational model are along this path.  The conventional orientation is "looking downstream." So when the cross sections are stationed the distances in a cross section are usually referenced as distanced from the left bank, looking downstream.
 # 
-# Figure 2 is a schematic that depicts the relationship of left-bank, cross section, elevations, and such -- all referenced to the concept of "looking downstream."
+# The figure below is a schematic that depicts the relationship of left-bank, cross section, elevations, and such -- all referenced to the concept of "looking downstream."
 # 
 # ![](stream-section-schematic.png)
 # 
-# |Figure 2. Schematic of relationship of cross-section, elevation, and left bank|
-# |:---|
-# 
-# Figure 3 is a schematic of the next step of mapping into the computational domain. 
+# The figure below is a schematic of the next step of mapping into the computational domain. 
 # 
 # ![](stream-discritize.png)
 # 
-# |Figure 3. Schematic of physical interpretation of a reach, cell, and node|
-# |:---|
-# 
 # In the figure the stream is divided into cells called reaches (or cells, depends on context and author). The centroid of the reach is called the node, and most of the arithmetic is written with the understanding that all properties of the reach are somehow "averaged" and these averages are assigned to these nodes.  Adjacent nodes are connected (in the computer) by links (which represent conduits between nodes). The continuity and momentum equations collectively describe the node average behavior (such as depth) and link behavior (such as momentum flux).
 # 
-# Figure 4 is a schematic of three adjacent nodes that is used to develop the difference equations.
+# The next figure is a schematic of three adjacent nodes that is used to develop the difference equations.
 # 
 # ![](stream-node-scheme.png)
-# 
-# |Figure 4. Schematic of three adjacent nodes, with average depth and section velocity depicted at the node.|
-# |:---|
 # 
 # In the figure both the velocities and depths are mapped to the node (Lax-Diffusion scheme), but other schemes map the velocities to the interfaces. Again this decision affects the differencing scheme; the differencing scheme chooses the location. A kind of chicken and egg situation. 
 # 
@@ -285,17 +273,16 @@
 
 # The pair of update equations are the interior point update equations.
 # 
-# Figure 5 depicts the updating information transfer. 
+# The figure below depicts the updating information transfer including:
+# - Relation of the linked reaches to solution of the equations in the XT-plane. 
+# - Explicit updating (as used herein) uses the three values at the known time level to project (update) the unknown value at the next time level. 
+# - Boundary behavior is a separate calculation, dependent on the evolution of the interior solution
+# 
+# ![](space-time-map.png) 
 # 
 # At each cell the three known values of a variable ($y$ or $V$) are projected to the next time line as depicted in the figure.
 # 
 # Boundary conditions are the next challenge. These are usually handled using a characteristic equation approach (unless the boundaries are really simple).  For the time being we will use pretty simple boundary conditions, and complicate as necessary.
-# 
-# ![](space-time-map.png) 
-# 
-# |Figure 5. Relation of the linked reaches to solution of the equations in the XT-plane. Explicit updating (as used herein) uses the three values at the known time level to project (update) the unknown value at the next time level. Boundary behavior is a separate calculation, dependent on the evolution of the interior solution|
-# |:---|
-# 
 
 # ### Example 1: Steady Flow over a Weir
 # 
@@ -306,12 +293,11 @@
 # 
 # Generally such a simulation is a good idea to test a new algorithm -- it should be stable enough to converge to and maintain a steady solution.
 # 
-# Why we would consider a transient solver is to examine cases such as that depicted in Figure 1
+# Why we would consider a transient solver is to examine cases such as that depicted in the photograph below
 # 
-# ![](tidal-bore-14[8].png)
+# ![](tidal-bore.png)
 # 
-# |Figure 1. Image of a tidal bore propagating upstream|
-# |:---|
+# 
 # 
 # 
 
@@ -554,6 +540,8 @@ for i in range(0,nn):
     wse[i]=bse[i]+y[i]
 plot2lines(xx,bse,xx,wse,"location","elevation","title")
 
+
+# ## References
 
 # ## References
 
