@@ -44,3 +44,4 @@ chapters:
 - file: lessons/graduallyvariedflow/graduallyvaried1
   sections:
   - file: lessons/graduallyvariedflow/wspcomputation
+  - file: lessons/graduallyvariedflow/wspfixedspace

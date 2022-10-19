@@ -14,6 +14,8 @@
 # - Unknown appears on both sides of the equation dy = f(y)dx
 # - For natural channels for which cross-sectional properties are determined beforehand at particular locations.
 # 
+# **Important Assumptions**
+# Slope of the energy grade line, $S_f$, can be evaluated from Manning's or Chezy's equation using the local value of depth.
 
 # ### Finite Difference Methods — Depth-Step Backwater Method
 # 
@@ -261,14 +263,13 @@ for i in range(how_many):
 # 
 # Printing the distance and depth table we conclude that at the edge the flow depth is 0.35 meters - still supercritical but relatively close to the critical depth and pending instability.
 
-# ## Readings
+# ## References
 # 
-# <!--1. [CE-3305-2022-2 (Summer2) Syllabus](http://54.243.252.9/ce-3305-webroot-su22/0-Syllabus/ce-3305-2022-1-syllabus.html)-->
+# Koutitas, C. G. 1983. Elements of Computational Hydraulics. ISBN 0-412-00361-9. Pentech Press Ltd. London. (Chapter 4) [http://54.243.252.9/ce-5362-webroot/3-Readings/PracticalComputationalHydraulics-Kousitas/ElementsOfComputationalHydraulics.pdf](http://54.243.252.9/ce-5362-webroot/3-Readings/PracticalComputationalHydraulics-Kousitas/ElementsOfComputationalHydraulics.pdf)
 # 
-# <!--2. Hibbeler, R.C, Fluid Mechanics, 2ed. Prentice Hall, 2018. ISBN: 9780134655413 pp. 3-14-->
+# Roberson, J. A., Cassidy, J.J., and Chaudry, M. H., (1988) Hydraulic Engineering, Houghton Mifflin Co (Chapter 10) [http://54.243.252.9/ce-5362-webroot/3-Readings/HydraulicEngineering/](http://54.243.252.9/ce-5362-webroot/3-Readings/HydraulicEngineering/)
 # 
-# 3. DF Elger, BC Williams, Crowe, CT and JA Roberson, *Engineering Fluid Mechanics 10th edition*, John Wiley & Sons, Inc., 2013. <!--[http://54.243.252.9/ce-3305-webroot/3-Readings/EFM-21.pdf](http://54.243.252.9/ce-3305-webroot/3-Readings/EFM-1.pdf)-->
+# Sturm T.W (2001) Open Channel Hydraulics, 1ed., McGraw-Hill, New York. Note: This PDF is from an international edition published in Singapore. [http://54.243.252.9/ce-5362-webroot/3-Readings/OpenChannelHYdraulics/](http://54.243.252.9/ce-5362-webroot/3-Readings/OpenChannelHYdraulics/)
 # 
-# <!--4. Cleveland, T. G. (2014) *Fluid Mechanics Notes to Accompany CE 3305 at Jade-Holshule (TTU Study Abroad 2015-2019)*, Department of Civil, Environmental, and Construction Engineering, Whitacre College of Engineering. [http://54.243.252.9/ce-3305-webroot/3-Readings/ce3305-lecture-001.1.pdf](http://54.243.252.9/ce-3305-webroot/3-Readings/ce3305-lecture-001.1.pdf)-->
-
-# 
+# Cunge, J.A., Holly, F.M., Verwey, A. (1980). Practical Aspects of Computational
+# River Hydraulics. Pittman Publishing Inc. , Boston, MA. pp. 7-50
