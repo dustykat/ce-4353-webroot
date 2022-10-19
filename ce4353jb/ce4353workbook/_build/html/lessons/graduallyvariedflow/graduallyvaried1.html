@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gradually Varied Flow (GVF) &#8212; CE 4353 Design of Hydraulic Systems</title>
+    <title>Gradually Varied Flow &#8212; CE 4353 Design of Hydraulic Systems</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,6 +53,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Water Surface Profile Computation" href="wspcomputation.html" />
     <link rel="prev" title="Rip-Rap Lined Channels" href="../uniformflow/riprapchannels.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -276,10 +277,22 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active">
+ <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
-   Gradually Varied Flow (GVF)
+   Gradually Varied Flow
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="wspcomputation.html">
+     Water Surface Profile Computation
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -399,6 +412,18 @@
   <a class="reference internal nav-link" href="#control-sections">
    Control Sections
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lake-discharge-type-problems">
+     Lake Discharge Type Problems
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
  </li>
 </ul>
 
@@ -411,8 +436,8 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="gradually-varied-flow-gvf">
-<h1>Gradually Varied Flow (GVF)<a class="headerlink" href="#gradually-varied-flow-gvf" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="gradually-varied-flow">
+<h1>Gradually Varied Flow<a class="headerlink" href="#gradually-varied-flow" title="Permalink to this headline">¶</a></h1>
 <!--Steady non-uniform flow in comparatively straight, prisimatic channels.  Bottom slope $S_0$ changes from one reach to the next, but is constant within a particular reach.  (i.e. no slope change within a reach)-->
 <p>Steady non-uniform flow in a prismatic channel with gradual changes in its water surface elevation</p>
 <p>For example,</p>
@@ -487,6 +512,12 @@
 <br>thus GVF computations have to begin or end a short distance away from the critical-depth location.</p>
 </div></blockquote>
 <p><img alt="" src="../../_images/profiletypes.png" /></p>
+<p>From our textbook</p>
+<p><img alt="" src="../../_images/profilelines.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The designations “mild” and “steep” are determined from the relative position of <span class="math notranslate nohighlight">\(y_n\)</span> and <span class="math notranslate nohighlight">\(y_c\)</span> values, not necessarily the slope of the physical bottom of the channel although in most cases the parallel is indeed true.</p>
+</div>
 </div>
 <div class="section" id="control-sections">
 <h2>Control Sections<a class="headerlink" href="#control-sections" title="Permalink to this headline">¶</a></h2>
@@ -505,6 +536,99 @@
 <div><p>The direction of computation of subcritical profiles is upstream, and for supercritical, it is downstream.</p>
 </div></blockquote>
 <p><img alt="" src="../../_images/controlsections.png" /></p>
+<p>From our textbook, some profiles with control points:</p>
+<p><img alt="" src="../../_images/controlpoints.png" /></p>
+<p><strong>Practice possible profiles</strong></p>
+<p><img alt="" src="../../_images/GVFprofilePractice1.png" /></p>
+<p><strong>Practice possible profiles</strong></p>
+<p><img alt="" src="../../_images/GVFprofilePractice2.png" /></p>
+<div class="section" id="lake-discharge-type-problems">
+<h3>Lake Discharge Type Problems<a class="headerlink" href="#lake-discharge-type-problems" title="Permalink to this headline">¶</a></h3>
+<p>Similar in spirit to the classic <a class="reference external" href="http://54.243.252.9/toolbox/pipehydraulics/Q2ReservoirSI/Q2ReservoirSI.html">flow between two reservoirs in pipe flow</a>, the connecting conduit can be an open channel.</p>
+<p>Whether the channel behaves as hydraulically steep or mild affects how solutions are found.</p>
+<p><img alt="" src="../../_images/lakeflow.png" /></p>
+<p><strong>Consider the example in the textbook</strong></p>
+<p>A long wreckedangular channel connects two reservoirs with slope of 5%.  The channel is 10 meters wide, with Manning’s n of 0.030.  The upstream reservoir surface is 3.50 meters above the channel bottom (headwater pool depth relative to channel invert) and the tailwater pool elevation is 2.50 meters above the outlet invert.  Estimate the steady discharge in the channel.</p>
+<p>Solution</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># prototype functions</span>
+
+<span class="k">def</span> <span class="nf">Arect</span><span class="p">(</span><span class="n">depth</span><span class="p">,</span><span class="n">width</span><span class="p">):</span>
+    <span class="n">Arect</span><span class="o">=</span><span class="n">depth</span><span class="o">*</span><span class="n">width</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">Arect</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Prect</span><span class="p">(</span><span class="n">depth</span><span class="p">,</span><span class="n">width</span><span class="p">):</span>
+    <span class="n">Prect</span><span class="o">=</span><span class="n">depth</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="n">width</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">Prect</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">MCE</span><span class="p">(</span><span class="n">depth</span><span class="p">,</span><span class="n">width</span><span class="p">,</span><span class="n">slope</span><span class="p">,</span><span class="n">konstant</span><span class="p">,</span><span class="n">mann</span><span class="p">,</span><span class="n">gee</span><span class="p">):</span>
+    <span class="n">qqq</span> <span class="o">=</span> <span class="p">(</span><span class="n">konstant</span><span class="o">/</span><span class="n">mann</span><span class="p">)</span><span class="o">*</span><span class="n">Arect</span><span class="p">(</span><span class="n">depth</span><span class="p">,</span><span class="n">width</span><span class="p">)</span><span class="o">*</span><span class="p">((</span><span class="n">Arect</span><span class="p">(</span><span class="n">depth</span><span class="p">,</span><span class="n">width</span><span class="p">)</span><span class="o">/</span><span class="n">Prect</span><span class="p">(</span><span class="n">depth</span><span class="p">,</span><span class="n">width</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span><span class="o">*</span><span class="n">slope</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">MCE</span> <span class="o">=</span> <span class="n">depth</span> <span class="o">+</span> <span class="p">(</span><span class="n">qqq</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">gee</span><span class="o">*</span><span class="p">(</span><span class="n">Arect</span><span class="p">(</span><span class="n">depth</span><span class="p">,</span><span class="n">width</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">MCE</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">W</span> <span class="o">=</span> <span class="mf">10.0</span> <span class="c1">#given</span>
+<span class="n">S0</span> <span class="o">=</span> <span class="mf">0.005</span> <span class="c1">#given</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mf">0.030</span> <span class="c1">#given</span>
+<span class="n">HW</span> <span class="o">=</span> <span class="mf">3.50</span> <span class="c1">#given</span>
+<span class="n">TW</span> <span class="o">=</span> <span class="mf">2.50</span> <span class="c1">#given</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span> <span class="c1">#Napolean&#39;s fault the dumb little squirt declared the meter a bit too long.</span>
+<span class="n">tolerance</span> <span class="o">=</span> <span class="mf">0.0001</span>
+<span class="c1"># Assume steep</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(1) Assume channel is hydraulically steep&quot;</span><span class="p">)</span>
+
+<span class="n">ycrit</span> <span class="o">=</span> <span class="p">(</span><span class="mf">2.</span><span class="o">/</span><span class="mf">3.</span><span class="p">)</span><span class="o">*</span><span class="n">HW</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">g</span><span class="o">*</span><span class="p">(</span><span class="n">Arect</span><span class="p">(</span><span class="n">ycrit</span><span class="p">,</span><span class="n">W</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="n">W</span> <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   y_c :&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">ycrit</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot; Q :&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="c1"># Check limiting slope</span>
+<span class="n">K</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+<span class="n">slopeL</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">Q</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">((</span><span class="n">K</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">Arect</span><span class="p">(</span><span class="n">ycrit</span><span class="p">,</span><span class="n">W</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">((</span><span class="n">Arect</span><span class="p">(</span><span class="n">ycrit</span><span class="p">,</span><span class="n">W</span><span class="p">)</span><span class="o">/</span><span class="n">Prect</span><span class="p">(</span><span class="n">ycrit</span><span class="p">,</span><span class="n">W</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="p">)))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(2) Compute Limiting Slope : &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">slopeL</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">S0</span> <span class="o">&lt;</span> <span class="n">slopeL</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(3) Test Limiting Slope </span><span class="se">\n</span><span class="s2">    Bottom slope smaller than limit slope, so channel is hydraulically mild&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(4) Iteratively find flow depth for mild slope from MCE function, report result(s)&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
+        <span class="n">dtest</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="p">(</span><span class="n">HW</span><span class="p">)</span><span class="o">/</span><span class="mi">10000</span><span class="o">+</span><span class="mf">0.00001</span> <span class="c1">#small offset to prevent zero depths</span>
+        <span class="n">nrg</span> <span class="o">=</span> <span class="n">MCE</span><span class="p">(</span><span class="n">dtest</span><span class="p">,</span><span class="n">W</span><span class="p">,</span><span class="n">S0</span><span class="p">,</span><span class="n">K</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">g</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">nrg</span><span class="o">-</span><span class="n">HW</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">tolerance</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    Flow depth y: &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">dtest</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot; Energy E: &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">nrg</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot; HW Energy HW:&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">HW</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;    Discharge Q:&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">((</span><span class="n">K</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">Arect</span><span class="p">(</span><span class="n">dtest</span><span class="p">,</span><span class="n">W</span><span class="p">)</span><span class="o">*</span><span class="p">((</span><span class="n">Arect</span><span class="p">(</span><span class="n">dtest</span><span class="p">,</span><span class="n">W</span><span class="p">)</span><span class="o">/</span><span class="n">Prect</span><span class="p">(</span><span class="n">dtest</span><span class="p">,</span><span class="n">W</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span><span class="o">*</span><span class="n">S0</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot; cubic meters per second&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">    Bottom slope greater than limit slope, so channel is hydraulically steep, use solution(s) above&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1) Assume channel is hydraulically steep
+   y_c : 2.333  Q : 111.635
+(2) Compute Limiting Slope :  0.011
+(3) Test Limiting Slope 
+    Bottom slope smaller than limit slope, so channel is hydraulically mild
+(4) Iteratively find flow depth for mild slope from MCE function, report result(s)
+    Flow depth y:  2.869  Energy E:  3.5  HW Energy HW: 3.5
+    Discharge Q: 100.929  cubic meters per second
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="toctree-wrapper compound">
 </div>
 </div>
 
@@ -546,6 +670,15 @@
             </div>
         </a>
     </div>
+     <div id="next">
+        <a class="right-next" href="wspcomputation.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Water Surface Profile Computation</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
 
 </div>
         

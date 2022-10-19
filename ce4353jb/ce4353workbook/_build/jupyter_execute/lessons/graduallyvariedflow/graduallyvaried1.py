@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Gradually Varied Flow (GVF)
+# # Gradually Varied Flow 
 # 
 # <!--Steady non-uniform flow in comparatively straight, prisimatic channels.  Bottom slope $S_0$ changes from one reach to the next, but is constant within a particular reach.  (i.e. no slope change within a reach)-->
 # 
@@ -88,6 +88,16 @@
 # > <br>thus GVF computations have to begin or end a short distance away from the critical-depth location.
 # 
 # ![](profiletypes.png)
+# 
+# From our textbook
+# 
+# ![](profilelines.png)
+# 
+# :::{note}
+# The designations "mild" and "steep" are determined from the relative position of $y_n$ and $y_c$ values, not necessarily the slope of the physical bottom of the channel although in most cases the parallel is indeed true.
+# :::
+# 
+# 
 
 # ## Control Sections
 # 
@@ -104,6 +114,95 @@
 # > The direction of computation of subcritical profiles is upstream, and for supercritical, it is downstream.
 # 
 # ![](controlsections.png)
+# 
+# From our textbook, some profiles with control points:
+# 
+# ![](controlpoints.png)
+
+# **Practice possible profiles**
+# 
+# ![](GVFprofilePractice1.png)
+# 
+# **Practice possible profiles**
+# 
+# ![](GVFprofilePractice2.png)
+
+# ### Lake Discharge Type Problems
+# 
+# Similar in spirit to the classic [flow between two reservoirs in pipe flow](http://54.243.252.9/toolbox/pipehydraulics/Q2ReservoirSI/Q2ReservoirSI.html), the connecting conduit can be an open channel.
+# 
+# Whether the channel behaves as hydraulically steep or mild affects how solutions are found.
+# 
+# ![](lakeflow.png)
+# 
+
+# **Consider the example in the textbook**
+# 
+# A long wreckedangular channel connects two reservoirs with slope of 5\%.  The channel is 10 meters wide, with Manning's n of 0.030.  The upstream reservoir surface is 3.50 meters above the channel bottom (headwater pool depth relative to channel invert) and the tailwater pool elevation is 2.50 meters above the outlet invert.  Estimate the steady discharge in the channel.
+# 
+# Solution
+
+# In[1]:
+
+
+# prototype functions
+
+def Arect(depth,width):
+    Arect=depth*width
+    return(Arect)
+
+def Prect(depth,width):
+    Prect=depth*2 + width
+    return(Prect)
+
+def MCE(depth,width,slope,konstant,mann,gee):
+    qqq = (konstant/mann)*Arect(depth,width)*((Arect(depth,width)/Prect(depth,width))**(2/3))*slope**(1/2)
+    MCE = depth + (qqq**2)/(2*gee*(Arect(depth,width)**2))
+    return(MCE)
+import math
+
+
+# In[2]:
+
+
+W = 10.0 #given
+S0 = 0.005 #given
+n = 0.030 #given
+HW = 3.50 #given
+TW = 2.50 #given
+g = 9.81 #Napolean's fault the dumb little squirt declared the meter a bit too long.
+tolerance = 0.0001
+# Assume steep
+
+print("(1) Assume channel is hydraulically steep")
+
+ycrit = (2./3.)*HW
+Q = math.sqrt( g*(Arect(ycrit,W)**3)/W )
+
+print("   y_c :",round(ycrit,3)," Q :",round(Q,3))
+
+# Check limiting slope
+K = 1.0
+
+slopeL = (n**2)*(Q**2)/((K**2)*(Arect(ycrit,W)**2)*((Arect(ycrit,W)/Prect(ycrit,W))**(4/3)))
+
+print("(2) Compute Limiting Slope : ",round(slopeL,3))
+
+if S0 < slopeL:
+    print("(3) Test Limiting Slope \n    Bottom slope smaller than limit slope, so channel is hydraulically mild")
+    print("(4) Iteratively find flow depth for mild slope from MCE function, report result(s)")
+    for i in range(10000):
+        dtest = i*(HW)/10000+0.00001 #small offset to prevent zero depths
+        nrg = MCE(dtest,W,S0,K,n,g)
+        if abs(nrg-HW) <= tolerance:
+            print("    Flow depth y: ",round(dtest,3)," Energy E: ",round(nrg,3)," HW Energy HW:",round(HW,3))
+            print("    Discharge Q:",round((K/n)*Arect(dtest,W)*((Arect(dtest,W)/Prect(dtest,W))**(2/3))*S0**(1/2),3)," cubic meters per second")
+else:
+    print("\n    Bottom slope greater than limit slope, so channel is hydraulically steep, use solution(s) above")
+
+
+# ## References
+# 
 
 # In[ ]:
 
