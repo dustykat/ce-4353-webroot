@@ -47,3 +47,7 @@ chapters:
   - file: lessons/graduallyvariedflow/wspfixeddepth
   - file: lessons/graduallyvariedflow/wspfixedspace
   - file: lessons/graduallyvariedflow/wspnatural
+
+- file: lessons/hecras/hecras
+  sections:
+  - file: lessons/hecras/homebrewtohecras
