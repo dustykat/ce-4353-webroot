@@ -51,3 +51,4 @@ chapters:
 - file: lessons/hecras/hecras
   sections:
   - file: lessons/hecras/homebrewtohecras
+  - file: lessons/hecras/junctions
