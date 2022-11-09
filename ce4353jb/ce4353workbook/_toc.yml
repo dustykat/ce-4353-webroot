@@ -52,3 +52,7 @@ chapters:
   sections:
   - file: lessons/hecras/homebrewtohecras
   - file: lessons/hecras/junctions
+  
+- file: lessons/hydraulicstructures/hydraulicStructures
+  sections:
+  - file: lessons/hydraulicstructures/example2
