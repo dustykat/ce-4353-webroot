@@ -77,3 +77,10 @@
 # ## References
 # 
 # 1. [Mays 2005 Water Resources Engineering (16.2)](http://54.243.252.9/ce-4353-webroot/3-Readings/MaysCh16.pdf)
+# 2. [HEC-RAS Culvert Workshop (M. Garner 2022)](http://54.243.252.9/ce-4353-webroot/3-Readings/HEC-RAS-Notes-Garner.pdf)
+
+# In[ ]:
+
+
+
+
