@@ -56,3 +56,5 @@ chapters:
 - file: lessons/hydraulicstructures/hydraulicStructures
   sections:
   - file: lessons/hydraulicstructures/example2
+  
+- file: lessons/sedimenttransport/sedimenttransport
