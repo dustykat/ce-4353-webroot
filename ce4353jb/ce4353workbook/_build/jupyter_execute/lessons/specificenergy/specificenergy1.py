@@ -203,7 +203,15 @@ plt.show()
 # 
 # then the condition is called choking (or throttling) and the depth upstream of the choke must rise to maintain enough energy for the depth over the step to be at least at critical depth.
 # 
+# :::{note}
+# The choking condition in an open channel occurs when the width of a rectangular channel decreases as we move downstream. As the channel width narrows, the flow area available for the water to pass through becomes restricted. This reduction in flow area leads to an increase in flow velocity according to the principle of continuity, which states that the product of flow area and velocity remains constant.
 # 
+# As the flow velocity increases due to the narrowing channel width, it can reach a critical value at which the flow becomes unstable. This critical velocity is known as the critical velocity of choking. When the flow velocity exceeds the critical velocity, the flow is said to be in a choking condition.
+# 
+# In the choking condition, the flow becomes highly turbulent and chaotic. The water surface rises significantly, and large waves or standing waves may form downstream of the constriction. The increased turbulence and energy losses in the choking flow can lead to excessive erosion, sediment transport, and increased resistance to flow.
+# 
+# Choking can have detrimental effects on the hydraulic performance and stability of the channel. It can cause localized scouring, erosion of banks, and increased flood risk. Therefore, it is essential to carefully design and analyze open channels to avoid or mitigate the choking condition by considering the channel width, flow rates, and velocity profiles.
+# :::
 # 
 
 # In[5]:

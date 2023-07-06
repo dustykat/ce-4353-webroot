@@ -309,6 +309,55 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../hecras/hecras.html">
+   HEC-RAS
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../hecras/homebrewtohecras.html">
+     Homebrew Examples to HEC-RAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../hecras/junctions.html">
+     Junctions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../hydraulicstructures/hydraulicStructures.html">
+   Hydraulic Structures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../hydraulicstructures/example2.html">
+     Example 16.2.2 from Mays
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sedimenttransport/sedimenttransport.html">
+   Sediment Transport
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hydraulicprofiles/hydraulicprofiles.html">
+   Hydraulic Profiles through Treatment Plants
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -648,6 +697,13 @@
 <div class="math notranslate nohighlight">
 \[ \Delta z &gt; E_1 - E_{min} =  y_1 + \frac{ Q^2}{2g B^2 y_1^2} - (y_c + \frac{ Q^2}{2g B^2 y_c^2}) \]</div>
 <p>then the condition is called choking (or throttling) and the depth upstream of the choke must rise to maintain enough energy for the depth over the step to be at least at critical depth.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The choking condition in an open channel occurs when the width of a rectangular channel decreases as we move downstream. As the channel width narrows, the flow area available for the water to pass through becomes restricted. This reduction in flow area leads to an increase in flow velocity according to the principle of continuity, which states that the product of flow area and velocity remains constant.</p>
+<p>As the flow velocity increases due to the narrowing channel width, it can reach a critical value at which the flow becomes unstable. This critical velocity is known as the critical velocity of choking. When the flow velocity exceeds the critical velocity, the flow is said to be in a choking condition.</p>
+<p>In the choking condition, the flow becomes highly turbulent and chaotic. The water surface rises significantly, and large waves or standing waves may form downstream of the constriction. The increased turbulence and energy losses in the choking flow can lead to excessive erosion, sediment transport, and increased resistance to flow.</p>
+<p>Choking can have detrimental effects on the hydraulic performance and stability of the channel. It can cause localized scouring, erosion of banks, and increased flood risk. Therefore, it is essential to carefully design and analyze open channels to avoid or mitigate the choking condition by considering the channel width, flow rates, and velocity profiles.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Froude Number</span>
