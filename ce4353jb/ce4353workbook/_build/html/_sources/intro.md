@@ -3,7 +3,7 @@ Design of open channel conveyance systems for water; includes introduction to HE
 
 ## Syllabus
 
-The syllabus for the current semester is located at [http://54.243.252.9/ce-4353-webroot/0-Syllabus/ce-4353-2022-3-Syllabus.html](http://54.243.252.9/ce-4353-webroot/0-Syllabus/ce-4353-2022-3-Syllabus.html)
+The syllabus for the current semester is located at [http://54.243.252.9/ce-4353-webroot/0-Syllabus/ce-4353-2023-3-Syllabus.html](http://54.243.252.9/ce-4353-webroot/0-Syllabus/ce-4353-2023-3-Syllabus.html)
 
 ## Textbook
 
