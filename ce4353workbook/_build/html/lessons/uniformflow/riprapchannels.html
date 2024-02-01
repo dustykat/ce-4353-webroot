@@ -1,0 +1,772 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rip-Rap Lined Channels &#8212; Design of Hydraulic Systems</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Gradually Varied Flow" href="../graduallyvariedflow/graduallyvaried1.html" />
+    <link rel="prev" title="Compound Channels" href="compoundchannels.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/river.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Design of Hydraulic Systems</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Hydraulic Systems Design/Open Channel Flow
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../computationaltools/computationaltools.html">
+   Computational Tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/topic1-1.html">
+     Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/topic1-2.html">
+     Excel/Libre Office Spreadsheets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/topic1-3.html">
+     HEC-RAS River Analysis Software
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/1goodgraphs.html">
+     Characteristics of a Good Graph
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/2makinggraphs.html">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       matplotlib
+      </span>
+     </code>
+     package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/3adddata.html">
+     Adding Data to Plot Lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/4loglogcharts.html">
+     Logarithmic Charts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/5othercharts.html">
+     Other Graph Types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../basicprinciples/basicprinciples.html">
+   Basic Principles
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basicprinciples/topic2-1.html">
+     Solution of Open Channel Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basicprinciples/topic2-2.html">
+     Definitions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basicprinciples/topic2-3.html">
+     Discharge Measurements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../specificenergy/specificenergy1.html">
+   Specific Energy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specificenergy/specificenergy2.html">
+     Froude Number
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weirs/weirs.html">
+   Weirs
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../momentum/momentum1.html">
+   Momentum
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/momentum2.html">
+     Rectangular Cross Sections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/momentum3.html">
+     Surges
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/momentum4.html">
+     Bridge Piers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/momentum5.html">
+     Spur Dikes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/stillingbasins.html">
+     Stilling Basins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/contractions.html">
+     Supercritical Contractions and Expansions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="uniformflow.html">
+   Uniform Flow
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="gutters.html">
+     Gutter Flow and Gravity Sewer Design
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="compoundchannels.html">
+     Compound Channels
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Rip-Rap Lined Channels
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../graduallyvariedflow/graduallyvaried1.html">
+   Gradually Varied Flow
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../graduallyvariedflow/wspcomputation.html">
+     Water Surface Profile Computation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../graduallyvariedflow/wspfixeddepth.html">
+     Direct Step Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../graduallyvariedflow/wspfixedspace.html">
+     Standard Spatial-Step Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../graduallyvariedflow/wspnatural.html">
+     Natural Channels
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../hecras/hecras.html">
+   HEC-RAS
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../hecras/homebrewtohecras.html">
+     Homebrew Examples to HEC-RAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../hecras/junctions.html">
+     Junctions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../hydraulicstructures/hydraulicStructures.html">
+   Hydraulic Structures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../hydraulicstructures/example2.html">
+     Example 16.2.2 from Mays
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sedimenttransport/sedimenttransport.html">
+   Sediment Transport
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hydraulicprofiles/hydraulicprofiles.html">
+   Hydraulic Profiles through Treatment Plants
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lessons/uniformflow/riprapchannels.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/uniformflow/riprapchannels.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/lessons/uniformflow/riprapchannels.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#design-example-channel">
+   Design Example (Channel)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vegetative-lined-channels">
+   Vegetative Lined Channels
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="rip-rap-lined-channels">
+<h1>Rip-Rap Lined Channels<a class="headerlink" href="#rip-rap-lined-channels" title="Permalink to this headline">¶</a></h1>
+<p>Rip-rap lined channels refers to engineered channels with a flexible lining in distinct contrast with a rigid lined channel (i.e. concrete).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Riprap (in North American English), also known as rip rap, rip-rap, shot rock, rock armour (in British English) or rubble, is human-placed rock or other material used to protect shoreline structures against scour and water, wave, or ice erosion. Ripraps are used to armor shorelines, streambeds, bridge abutments, foundational infrastructure supports and other shoreline structures against erosion.</p>
+</div>
+<p>The actual materials vary for example stone rip-rap in Texas applications can be found at <a class="reference external" href="https://www.gcli.com/product-page/txdot-protection-rip-rap">TxDOT Rip-Rap Supplier Web Page</a></p>
+<p>The design procedures are described with examples in <a class="reference external" href="https://www.fhwa.dot.gov/engineering/hydraulics/pubs/05114/05114.pdf">Design of Roadside Channels with Flexible Linings Hydraulic Engineering Circular Number 15, Third Edition (circa 2005)</a></p>
+<div class="section" id="design-example-channel">
+<h2>Design Example (Channel)<a class="headerlink" href="#design-example-channel" title="Permalink to this headline">¶</a></h2>
+<p>Evaluate a proposed gravel mulch lining on a trapezoidal channel for stability. The design discharge is <span class="math notranslate nohighlight">\(Q = 0.42 m^3/s\)</span>, bottom width is <span class="math notranslate nohighlight">\(B = 0.4 m\)</span>, side slopes are <span class="math notranslate nohighlight">\(Z = 3\)</span>, longitudinal slope is <span class="math notranslate nohighlight">\(S_0 = 0.008 m/m\)</span>, and the median grain diameter is
+<span class="math notranslate nohighlight">\(D_{50} = 25 mm\)</span></p>
+<p><strong>Solution</strong></p>
+<ol class="simple">
+<li><p>Channel slope, shape and discharge have been given</p></li>
+<li><p>Proposed lining type is a gravel mulch with <span class="math notranslate nohighlight">\(D_{50} = 25 mm\)</span></p></li>
+<li><p>Assume that the depth of flow, <span class="math notranslate nohighlight">\(d_i\)</span> in the channel is <span class="math notranslate nohighlight">\(0.5 m\)</span>. Compute <span class="math notranslate nohighlight">\(R\)</span>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>One may have to iterate back to this step and repeat if we have made a piss-poor assumption</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># prototype functions</span>
+
+<span class="k">def</span> <span class="nf">Atrap</span><span class="p">(</span><span class="n">depth</span><span class="p">,</span><span class="n">width</span><span class="p">,</span><span class="n">sideslope</span><span class="p">):</span>
+    <span class="n">Atrap</span> <span class="o">=</span> <span class="n">width</span><span class="o">*</span><span class="n">depth</span><span class="o">+</span><span class="n">sideslope</span><span class="o">*</span><span class="n">depth</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">Atrap</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Ptrap</span><span class="p">(</span><span class="n">depth</span><span class="p">,</span><span class="n">width</span><span class="p">,</span><span class="n">sideslope</span><span class="p">):</span>
+    <span class="n">Ptrap</span> <span class="o">=</span> <span class="n">width</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">depth</span><span class="o">*</span> <span class="p">((</span><span class="n">sideslope</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">Ptrap</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Rhyd</span><span class="p">(</span><span class="n">area</span><span class="p">,</span><span class="n">perimeter</span><span class="p">):</span>
+    <span class="n">Rhyd</span><span class="o">=</span><span class="n">area</span><span class="o">/</span><span class="n">perimeter</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">Rhyd</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Qdes</span> <span class="o">=</span> <span class="mf">0.42</span> <span class="c1">#given</span>
+<span class="n">dinitial</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1">#meters initial guess</span>
+<span class="n">Bwide</span> <span class="o">=</span> <span class="mf">0.4</span> <span class="c1">#meters given</span>
+<span class="n">Zslope</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># side slope given</span>
+<span class="n">AAA</span> <span class="o">=</span> <span class="n">Atrap</span><span class="p">(</span><span class="n">dinitial</span><span class="p">,</span><span class="n">Bwide</span><span class="p">,</span><span class="n">Zslope</span><span class="p">)</span>
+<span class="n">PPP</span> <span class="o">=</span> <span class="n">Ptrap</span><span class="p">(</span><span class="n">dinitial</span><span class="p">,</span><span class="n">Bwide</span><span class="p">,</span><span class="n">Zslope</span><span class="p">)</span>
+<span class="n">RRR</span> <span class="o">=</span> <span class="n">Rhyd</span><span class="p">(</span><span class="n">Atrap</span><span class="p">(</span><span class="n">dinitial</span><span class="p">,</span><span class="n">Bwide</span><span class="p">,</span><span class="n">Zslope</span><span class="p">),</span><span class="n">Ptrap</span><span class="p">(</span><span class="n">dinitial</span><span class="p">,</span><span class="n">Bwide</span><span class="p">,</span><span class="n">Zslope</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hydraulic Radius R :&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Rhyd</span><span class="p">(</span><span class="n">Atrap</span><span class="p">(</span><span class="n">dinitial</span><span class="p">,</span><span class="n">Bwide</span><span class="p">,</span><span class="n">Zslope</span><span class="p">),</span><span class="n">Ptrap</span><span class="p">(</span><span class="n">dinitial</span><span class="p">,</span><span class="n">Bwide</span><span class="p">,</span><span class="n">Zslope</span><span class="p">)),</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hydraulic Radius R : 0.267
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>4.Estimate Manning’s n</p>
+</div></blockquote>
+<p><img alt="" src="../../_images/mannN6-1.png" /></p>
+<p>and calculate discharge</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">n61</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span><span class="n">dbar</span><span class="p">,</span><span class="n">d50</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">math</span>
+    <span class="n">numerator</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span><span class="o">*</span><span class="n">dbar</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">6</span><span class="p">))</span> 
+    <span class="n">denominator</span> <span class="o">=</span> <span class="mf">2.25</span><span class="o">+</span><span class="mf">5.23</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">dbar</span><span class="o">/</span><span class="n">d50</span><span class="p">)</span>
+    <span class="n">n61</span><span class="o">=</span><span class="n">numerator</span><span class="o">/</span><span class="n">denominator</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">n61</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Qman</span><span class="p">(</span><span class="n">prefix</span><span class="p">,</span><span class="n">mann</span><span class="p">,</span><span class="n">area</span><span class="p">,</span><span class="n">radius</span><span class="p">,</span><span class="n">slope</span><span class="p">):</span>
+    <span class="n">Qman</span> <span class="o">=</span> <span class="p">(</span><span class="n">prefix</span><span class="o">/</span><span class="n">mann</span><span class="p">)</span><span class="o">*</span><span class="n">area</span><span class="o">*</span><span class="p">(</span><span class="n">radius</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">slope</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">Qman</span><span class="p">)</span>
+
+
+<span class="n">D50</span> <span class="o">=</span> <span class="mf">0.025</span> <span class="c1">#mm given</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.319</span> <span class="c1">#SI given in formula</span>
+<span class="n">nnn</span> <span class="o">=</span> <span class="n">n61</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span><span class="n">dinitial</span><span class="p">,</span><span class="n">D50</span><span class="p">)</span>
+<span class="c1">#nnn = 0.033</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mannings n :&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">n61</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span><span class="n">dinitial</span><span class="p">,</span><span class="n">D50</span><span class="p">),</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">S0</span> <span class="o">=</span> <span class="mf">0.008</span> <span class="c1"># given</span>
+<span class="n">Qnew</span> <span class="o">=</span> <span class="n">Qman</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="n">nnn</span><span class="p">,</span><span class="n">AAA</span><span class="p">,</span><span class="n">RRR</span><span class="p">,</span><span class="n">S0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Design Discharge Q :&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Qdes</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot;Computed Discharge Q :&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Qman</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="n">nnn</span><span class="p">,</span><span class="n">AAA</span><span class="p">,</span><span class="n">RRR</span><span class="p">,</span><span class="n">S0</span><span class="p">),</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">dold</span> <span class="o">=</span> <span class="n">dinitial</span> <span class="c1">#use this below</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mannings n : 0.016
+Design Discharge Q : 0.42 Computed Discharge Q : 2.22
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>5.This discharge is is more than 5 percent different from the design flow, we need to go back to step 3 to estimate a new flow depth.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Qdes</span> <span class="o">=</span> <span class="mf">0.42</span> <span class="c1">#given</span>
+<span class="n">dnew</span> <span class="o">=</span> <span class="n">dold</span><span class="o">*</span><span class="p">(</span><span class="n">Qdes</span><span class="o">/</span><span class="n">Qnew</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">0.4</span><span class="p">)</span> <span class="c1">#HEC-15 guidance</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;New Depth &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">dnew</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">Bwide</span> <span class="o">=</span> <span class="mf">0.4</span> <span class="c1">#meters given</span>
+<span class="n">Zslope</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># side slope given</span>
+<span class="n">AAA</span> <span class="o">=</span> <span class="n">Atrap</span><span class="p">(</span><span class="n">dnew</span><span class="p">,</span><span class="n">Bwide</span><span class="p">,</span><span class="n">Zslope</span><span class="p">)</span>
+<span class="n">PPP</span> <span class="o">=</span> <span class="n">Ptrap</span><span class="p">(</span><span class="n">dnew</span><span class="p">,</span><span class="n">Bwide</span><span class="p">,</span><span class="n">Zslope</span><span class="p">)</span>
+<span class="n">RRR</span> <span class="o">=</span> <span class="n">Rhyd</span><span class="p">(</span><span class="n">Atrap</span><span class="p">(</span><span class="n">dnew</span><span class="p">,</span><span class="n">Bwide</span><span class="p">,</span><span class="n">Zslope</span><span class="p">),</span><span class="n">Ptrap</span><span class="p">(</span><span class="n">dnew</span><span class="p">,</span><span class="n">Bwide</span><span class="p">,</span><span class="n">Zslope</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hydraulic Radius R :&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Rhyd</span><span class="p">(</span><span class="n">Atrap</span><span class="p">(</span><span class="n">dnew</span><span class="p">,</span><span class="n">Bwide</span><span class="p">,</span><span class="n">Zslope</span><span class="p">),</span><span class="n">Ptrap</span><span class="p">(</span><span class="n">dnew</span><span class="p">,</span><span class="n">Bwide</span><span class="p">,</span><span class="n">Zslope</span><span class="p">)),</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">D50</span> <span class="o">=</span> <span class="mf">0.025</span> <span class="c1">#mm given</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.319</span> <span class="c1">#SI given in formula</span>
+<span class="n">nnn</span> <span class="o">=</span> <span class="n">n61</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span><span class="n">dnew</span><span class="p">,</span><span class="n">D50</span><span class="p">)</span>
+<span class="c1">#nnn = 0.033</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mannings n :&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">n61</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span><span class="n">dnew</span><span class="p">,</span><span class="n">D50</span><span class="p">),</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">S0</span> <span class="o">=</span> <span class="mf">0.008</span> <span class="c1"># given</span>
+<span class="n">Qnew</span> <span class="o">=</span> <span class="n">Qman</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="n">nnn</span><span class="p">,</span><span class="n">AAA</span><span class="p">,</span><span class="n">RRR</span><span class="p">,</span><span class="n">S0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Design Discharge Q :&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Qdes</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot;Computed Discharge Q :&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Qman</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="n">nnn</span><span class="p">,</span><span class="n">AAA</span><span class="p">,</span><span class="n">RRR</span><span class="p">,</span><span class="n">S0</span><span class="p">),</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">dold</span> <span class="o">=</span> <span class="n">dnew</span> <span class="c1">#use this below</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New Depth  0.257
+Hydraulic Radius R : 0.149
+Mannings n : 0.018
+Design Discharge Q : 0.42 Computed Discharge Q : 0.428
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>6.Update is within 5 % of design flow, so can proceede without further iteration; however lest channel our inner overachiever and iterate one more time</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Qdes</span> <span class="o">=</span> <span class="mf">0.42</span> <span class="c1">#given</span>
+<span class="n">dnew</span> <span class="o">=</span> <span class="n">dold</span><span class="o">*</span><span class="p">(</span><span class="n">Qdes</span><span class="o">/</span><span class="n">Qnew</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">0.4</span><span class="p">)</span> <span class="c1">#HEC-15 guidance</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;New Depth &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">dnew</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">Bwide</span> <span class="o">=</span> <span class="mf">0.4</span> <span class="c1">#meters given</span>
+<span class="n">Zslope</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># side slope given</span>
+<span class="n">AAA</span> <span class="o">=</span> <span class="n">Atrap</span><span class="p">(</span><span class="n">dnew</span><span class="p">,</span><span class="n">Bwide</span><span class="p">,</span><span class="n">Zslope</span><span class="p">)</span>
+<span class="n">PPP</span> <span class="o">=</span> <span class="n">Ptrap</span><span class="p">(</span><span class="n">dnew</span><span class="p">,</span><span class="n">Bwide</span><span class="p">,</span><span class="n">Zslope</span><span class="p">)</span>
+<span class="n">RRR</span> <span class="o">=</span> <span class="n">Rhyd</span><span class="p">(</span><span class="n">Atrap</span><span class="p">(</span><span class="n">dnew</span><span class="p">,</span><span class="n">Bwide</span><span class="p">,</span><span class="n">Zslope</span><span class="p">),</span><span class="n">Ptrap</span><span class="p">(</span><span class="n">dnew</span><span class="p">,</span><span class="n">Bwide</span><span class="p">,</span><span class="n">Zslope</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hydraulic Radius R :&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Rhyd</span><span class="p">(</span><span class="n">Atrap</span><span class="p">(</span><span class="n">dnew</span><span class="p">,</span><span class="n">Bwide</span><span class="p">,</span><span class="n">Zslope</span><span class="p">),</span><span class="n">Ptrap</span><span class="p">(</span><span class="n">dnew</span><span class="p">,</span><span class="n">Bwide</span><span class="p">,</span><span class="n">Zslope</span><span class="p">)),</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">D50</span> <span class="o">=</span> <span class="mf">0.025</span> <span class="c1">#mm given</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.319</span> <span class="c1">#SI given in formula</span>
+<span class="n">nnn</span> <span class="o">=</span> <span class="n">n61</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span><span class="n">dnew</span><span class="p">,</span><span class="n">D50</span><span class="p">)</span>
+<span class="c1">#nnn = 0.033</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mannings n :&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">n61</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span><span class="n">dnew</span><span class="p">,</span><span class="n">D50</span><span class="p">),</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">S0</span> <span class="o">=</span> <span class="mf">0.008</span> <span class="c1"># given</span>
+<span class="n">Qnew</span> <span class="o">=</span> <span class="n">Qman</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="n">nnn</span><span class="p">,</span><span class="n">AAA</span><span class="p">,</span><span class="n">RRR</span><span class="p">,</span><span class="n">S0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Design Discharge Q :&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Qdes</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot;Computed Discharge Q :&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Qman</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="n">nnn</span><span class="p">,</span><span class="n">AAA</span><span class="p">,</span><span class="n">RRR</span><span class="p">,</span><span class="n">S0</span><span class="p">),</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">dold</span> <span class="o">=</span> <span class="n">dnew</span> <span class="c1">#use this below</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New Depth  0.255
+Hydraulic Radius R : 0.148
+Mannings n : 0.018
+Design Discharge Q : 0.42 Computed Discharge Q : 0.42
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>Ok were good, now compute shear stress</p>
+</div></blockquote>
+<p><img alt="" src="../../_images/shearstresseqn31.png" /></p>
+<blockquote>
+<div><p>and compare to permissible stress in Table below</p>
+</div></blockquote>
+<p><img alt="" src="../../_images/table23.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tauD</span><span class="p">(</span><span class="n">gamma</span><span class="p">,</span><span class="n">depth</span><span class="p">,</span><span class="n">slope</span><span class="p">):</span>
+    <span class="n">tauD</span><span class="o">=</span><span class="n">gamma</span><span class="o">*</span><span class="n">depth</span><span class="o">*</span><span class="n">slope</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">tauD</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shear stress max : &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">tauD</span><span class="p">(</span><span class="mi">9800</span><span class="p">,</span><span class="n">dnew</span><span class="p">,</span><span class="n">S0</span><span class="p">),</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Shear stress max :  19.986
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>The computed shear stress exceeds the permissible (20 &gt; 19 <span class="math notranslate nohighlight">\(N/m^3\)</span>), so the lining is <strong>Unstable</strong></p>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>… but dang close, a slightly larger gravel would satisfy the design goal.</p>
+</div>
+</div>
+<div class="section" id="vegetative-lined-channels">
+<h2>Vegetative Lined Channels<a class="headerlink" href="#vegetative-lined-channels" title="Permalink to this headline">¶</a></h2>
+<p>Similar considerations are applied to vegetative lined channels.  An important aspect is to choose species that can grow in the climate where the channel is located.  Most engineers are dumbasses when it comes to growing stuff, so get with a bunny counter colleague to help select the proper species.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Grass-lined channels have been widely used in drainage systems for many years.
+They are easily constructed and maintained and work well in a variety of climates and soilconditions. Grass linings provide good erosion protection and can trap sediment and relatedcontaminants in the channel section. Routine maintenance of grass-lined channels consists of mowing, control of weedy plants and woody vegetation, repair of damaged areas and removal of sediment deposits and dead bodies.
+The behavior of grass in an open channel lining is complicated by the fact that grass stems bend as flow depth and shear stress increase. This reduces the roughness height and increases velocity and flow rate. For some lining materials (bare earth and rigid linings), the roughness height remains constant regardless of the velocity or depth of flow in the channel. As a result, a grass-lined channel cannot be described by a single roughness coefficient.</p>
+</div>
+<p>Trapezoidal lined channel 1.5 meters bottom width, 3:1 side slope, <span class="math notranslate nohighlight">\(S_0\)</span> is 0.012 (1.2 percent). Grass-legume mixture with mature growth height of 15-20 cm.  What is maximum allowable discharge for this lining (without detaching the lining)?</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lessons/uniformflow"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="compoundchannels.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Compound Channels</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../graduallyvariedflow/graduallyvaried1.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Gradually Varied Flow</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Theodore G. Cleveland (the JupyterBook parts)<br/>
+        
+            &copy; Copyright 2023.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -1,0 +1,1133 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Specific Energy &#8212; Design of Hydraulic Systems</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Froude Number" href="specificenergy2.html" />
+    <link rel="prev" title="Discharge Measurements" href="../basicprinciples/topic2-3.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/river.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Design of Hydraulic Systems</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Hydraulic Systems Design/Open Channel Flow
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../computationaltools/computationaltools.html">
+   Computational Tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/topic1-1.html">
+     Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/topic1-2.html">
+     Excel/Libre Office Spreadsheets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/topic1-3.html">
+     HEC-RAS River Analysis Software
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/1goodgraphs.html">
+     Characteristics of a Good Graph
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/2makinggraphs.html">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       matplotlib
+      </span>
+     </code>
+     package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/3adddata.html">
+     Adding Data to Plot Lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/4loglogcharts.html">
+     Logarithmic Charts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/5othercharts.html">
+     Other Graph Types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../basicprinciples/basicprinciples.html">
+   Basic Principles
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basicprinciples/topic2-1.html">
+     Solution of Open Channel Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basicprinciples/topic2-2.html">
+     Definitions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basicprinciples/topic2-3.html">
+     Discharge Measurements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   Specific Energy
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="specificenergy2.html">
+     Froude Number
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weirs/weirs.html">
+   Weirs
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../momentum/momentum1.html">
+   Momentum
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/momentum2.html">
+     Rectangular Cross Sections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/momentum3.html">
+     Surges
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/momentum4.html">
+     Bridge Piers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/momentum5.html">
+     Spur Dikes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/stillingbasins.html">
+     Stilling Basins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/contractions.html">
+     Supercritical Contractions and Expansions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../uniformflow/uniformflow.html">
+   Uniform Flow
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../uniformflow/gutters.html">
+     Gutter Flow and Gravity Sewer Design
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../uniformflow/compoundchannels.html">
+     Compound Channels
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../uniformflow/riprapchannels.html">
+     Rip-Rap Lined Channels
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../graduallyvariedflow/graduallyvaried1.html">
+   Gradually Varied Flow
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../graduallyvariedflow/wspcomputation.html">
+     Water Surface Profile Computation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../graduallyvariedflow/wspfixeddepth.html">
+     Direct Step Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../graduallyvariedflow/wspfixedspace.html">
+     Standard Spatial-Step Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../graduallyvariedflow/wspnatural.html">
+     Natural Channels
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../hecras/hecras.html">
+   HEC-RAS
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../hecras/homebrewtohecras.html">
+     Homebrew Examples to HEC-RAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../hecras/junctions.html">
+     Junctions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../hydraulicstructures/hydraulicStructures.html">
+   Hydraulic Structures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../hydraulicstructures/example2.html">
+     Example 16.2.2 from Mays
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sedimenttransport/sedimenttransport.html">
+   Sediment Transport
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hydraulicprofiles/hydraulicprofiles.html">
+   Hydraulic Profiles through Treatment Plants
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lessons/specificenergy/specificenergy1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/specificenergy/specificenergy1.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/lessons/specificenergy/specificenergy1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#applications">
+   Applications
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-1-flow-over-a-step">
+   Example 1.  Flow over a step
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#specific-energy-diagram">
+   Specific Energy Diagram
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#choke">
+   Choke
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples">
+   Examples
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="specific-energy">
+<h1>Specific Energy<a class="headerlink" href="#specific-energy" title="Permalink to this headline">¶</a></h1>
+<p>The height of the energy grade line (EGL) above the channel bottom is the formal definition of this concept.</p>
+<blockquote>
+<div><p>From pg. 19 Sturm
+<img alt="" src="../../_images/specificNRG-define.png" /></p>
+</div></blockquote>
+<p>A skecth showing the relationship(s) of various common hydraulic components is</p>
+<p><img alt="" src="../../_images/specificNRG-drawing1.png" /></p>
+<p>where, <br></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(z\)</span> is the elevation of the channel bottom above some datum (or the thalweg point), <br></p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> is the flow depth, and <br></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{\alpha V^2}{2g}\)</span> is the velocity head (with kinetic energy correction term).</p></li>
+</ul>
+<div class="section" id="applications">
+<h2>Applications<a class="headerlink" href="#applications" title="Permalink to this headline">¶</a></h2>
+<p>The specific energy concept is useful in gradually varied flow calculations end even forms one algorithm to compute (predict) the location of the free surface. It is also vital in determining the flow regime (subcritical ,supercritical, and critical).</p>
+<p>Another use is in the analysis and design of transitions (to connect different channel geometries in engineered channels).</p>
+</div>
+<div class="section" id="example-1-flow-over-a-step">
+<h2>Example 1.  Flow over a step<a class="headerlink" href="#example-1-flow-over-a-step" title="Permalink to this headline">¶</a></h2>
+<p>A classic example being the estimation of flow depth over a step in a channel (or sand bar, or spread footing …)</p>
+<p><img alt="" src="../../_images/channelstep.png" /></p>
+<p>In the drawing above the EGL is horizontal, so there is no head loss.   The total energy at the two sections is the same.  If we write the energy equation for the two sections we have:</p>
+<div class="math notranslate nohighlight">
+\[ y_1 + \frac{\alpha V_1^2}{2g} + z_1 = y_2 + \frac{\alpha V_2^2}{2g} + z_2 + h_{L;1-&gt;2}\]</div>
+<p>The last term is zero (it is the slope of the EGL multiplied by the horizontal distance from section 1 to 2), if we express the channel elevations in terms of the approach depth we have</p>
+<div class="math notranslate nohighlight">
+\[ y_1 + \frac{\alpha V_1^2}{2g} + z_1 = y_2 + \frac{\alpha V_2^2}{2g} + (z_1+\Delta z) \]</div>
+<p>Subtract the approach elevation from both sides</p>
+<div class="math notranslate nohighlight">
+\[ y_1 + \frac{\alpha V_1^2}{2g}  = y_2 + \frac{\alpha V_2^2}{2g} + \Delta z \]</div>
+<p>Expressed in a discharge form</p>
+<div class="math notranslate nohighlight">
+\[ y_1 + \frac{\alpha Q^2}{2gA_1^2}  = y_2 + \frac{\alpha Q^2}{2gA_2^2} + \Delta z \]</div>
+<p>Assuming a recrangular channel</p>
+<div class="math notranslate nohighlight">
+\[ y_1 + \frac{\alpha Q^2}{2g B^2 y_1^2}  = y_2 + \frac{\alpha Q^2}{2g B^2 y_2^2} + \Delta z \]</div>
+<p>Then knowing <span class="math notranslate nohighlight">\(Q\)</span>, <span class="math notranslate nohighlight">\(\Delta z\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, and <span class="math notranslate nohighlight">\(y_1\)</span> we can solve for <span class="math notranslate nohighlight">\(y_2\)</span></p>
+<p>One could either be elegant, or just brute force an answer.</p>
+<p>Below we will try for elegant, rearrange into</p>
+<div class="math notranslate nohighlight">
+\[ f(y_2) =  y_2 + \frac{\alpha Q^2}{2g B^2 y_2^2} + \Delta z  - (y_1 + \frac{\alpha Q^2}{2g B^2 y_1^2}) \]</div>
+<p>and use a numerical method to find values that make <span class="math notranslate nohighlight">\(f(y_2)=0\)</span> (the equation is a cubic, so as many as three are anticipated)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find y2 given y1, B, Q, deltaz</span>
+<span class="n">deltaz</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1">#m zero means no step</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1">#m</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="mf">1.4</span> <span class="c1">#m</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1">#m^3/s</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span> <span class="c1">#m/s^2</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="c1">#m initial guess</span>
+
+<span class="k">def</span> <span class="nf">spNRG</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">width</span><span class="p">,</span><span class="n">discharge</span><span class="p">,</span><span class="n">gravity</span><span class="p">):</span> <span class="c1">#specific energy in a rectangular channel</span>
+    <span class="n">numerator</span><span class="o">=</span><span class="n">discharge</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">denominator</span><span class="o">=</span><span class="p">(</span><span class="mf">2.0</span><span class="o">*</span><span class="n">gravity</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">width</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">denominator</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">:</span> <span class="c1">#probably depth is zero</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;divide by zero, check your inputs dumbass!&quot;</span><span class="p">)</span>
+    <span class="n">spNRG</span><span class="o">=</span><span class="n">numerator</span><span class="o">/</span><span class="n">denominator</span> <span class="o">+</span> <span class="n">y</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">spNRG</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">width</span><span class="p">,</span><span class="n">discharge</span><span class="p">,</span><span class="n">gravity</span><span class="p">,</span><span class="n">deltaz</span><span class="p">):</span> <span class="c1">#our function to find zeros</span>
+    <span class="n">func</span> <span class="o">=</span> <span class="n">spNRG</span><span class="p">(</span><span class="n">y2</span><span class="p">,</span><span class="n">width</span><span class="p">,</span><span class="n">discharge</span><span class="p">,</span><span class="n">gravity</span><span class="p">)</span> <span class="o">+</span> <span class="n">deltaz</span> <span class="o">-</span> <span class="n">spNRG</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">width</span><span class="p">,</span><span class="n">discharge</span><span class="p">,</span><span class="n">gravity</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set-up a bisection-type solver</span>
+<span class="n">howmany</span> <span class="o">=</span> <span class="mi">25</span> <span class="c1"># number of iterations</span>
+<span class="n">clow</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1"># lower limit for y2</span>
+<span class="n">chigh</span> <span class="o">=</span> <span class="mf">1.50</span> <span class="c1"># upper limit for y2</span>
+<span class="n">dtrue</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="c1"># ground truth value</span>
+<span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-6</span> <span class="c1"># desired accuracy</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="c1"># useful library with absolute value and sign functions</span>
+
+<span class="c1">############ Learning Phase ################</span>
+<span class="c1"># check if clow and chigh bound a solution</span>
+<span class="k">if</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">clow</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">deltaz</span><span class="p">)</span><span class="o">-</span><span class="n">dtrue</span><span class="p">)</span> <span class="o">==</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">chigh</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">deltaz</span><span class="p">)</span><span class="o">-</span><span class="n">dtrue</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">clow</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">deltaz</span><span class="p">)</span><span class="o">-</span><span class="n">dtrue</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">chigh</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">deltaz</span><span class="p">)</span><span class="o">-</span><span class="n">dtrue</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;The scalars clow and chigh do not bound a solution&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">iteration</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">howmany</span><span class="p">):</span>  
+
+<span class="c1"># get midpoint</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">clow</span> <span class="o">+</span> <span class="n">chigh</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+
+    <span class="k">if</span> <span class="n">numpy</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">deltaz</span><span class="p">)</span><span class="o">-</span><span class="n">dtrue</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">:</span>
+        <span class="c1"># stopping condition, report m as root</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y2 = &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot;f(y2)=&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">deltaz</span><span class="p">),</span><span class="mi">3</span><span class="p">))</span>
+        <span class="k">break</span>
+    <span class="k">elif</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">clow</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">deltaz</span><span class="p">)</span><span class="o">-</span><span class="n">dtrue</span><span class="p">)</span> <span class="o">==</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">deltaz</span><span class="p">)</span><span class="o">-</span><span class="n">dtrue</span><span class="p">):</span>
+        <span class="c1"># case where m is an improvement on a. </span>
+        <span class="c1"># Make recursive call with a = m</span>
+        <span class="n">clow</span> <span class="o">=</span> <span class="n">m</span> <span class="c1"># update clow with m</span>
+    <span class="k">elif</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">chigh</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">deltaz</span><span class="p">)</span><span class="o">-</span><span class="n">dtrue</span><span class="p">)</span> <span class="o">==</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">deltaz</span><span class="p">)</span><span class="o">-</span><span class="n">dtrue</span><span class="p">):</span>
+        <span class="c1"># case where m is an improvement on b. </span>
+        <span class="c1"># Make recursive call with b = m</span>
+        <span class="n">chigh</span> <span class="o">=</span> <span class="n">m</span> <span class="c1"># update chigh with m</span>
+<span class="c1">####################################################</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>y2 =  0.857 f(y2)= -0.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Or make a graph and read from a prot</span>
+<span class="n">y2list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">f2list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">startguess</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">200</span><span class="p">):</span>
+    <span class="n">guess</span> <span class="o">=</span> <span class="n">startguess</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="mf">0.01</span>
+    <span class="n">y2list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">guess</span><span class="p">)</span>
+    <span class="n">f2list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">guess</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">deltaz</span><span class="p">))</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># the python plotting library</span>
+<span class="n">plottitle</span> <span class="o">=</span><span class="s1">&#39;Finding y2: Given y1=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">y1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;  Q=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;  Step height =&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">deltaz</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> Intersection locates y2 value that makes f(y2)=0&#39;</span>
+<span class="n">mydata</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># build a square drawing canvass from figure class</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">y2list</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">y2list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y2list</span><span class="p">,</span> <span class="n">f2list</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;y2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;f(y2)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">plottitle</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/specificenergy1_3_0.png" src="../../_images/specificenergy1_3_0.png" />
+</div>
+</div>
+<p>One can easily modify the script for the case where the head loss is non-zero.</p>
+<p>The equation in that case is</p>
+<div class="math notranslate nohighlight">
+\[ f(y_2) =  y_2 + \frac{\alpha Q^2}{2g B^2 y_2^2} + \Delta z  + (h_{L;1-&gt;2}) - (y_1 + \frac{\alpha Q^2}{2g B^2 y_1^2}) \]</div>
+<p>Variations on this approach are the basis of specific energy solutions to open channel hydraulics problems.</p>
+<p>The book provides guidance that use of the channel bottom as the datum should be limited to cases with slopes smaller than 6<span class="math notranslate nohighlight">\(^o\)</span>, greater slopes would require some consideration of the departure of streamlines from the horizontal to account for flow depth being perpindicular to the bottom, but the distances being strictly vertical in the above formulations.</p>
+<p><img alt="" src="../../_images/limitslope.png" /></p>
+</div>
+<div class="section" id="specific-energy-diagram">
+<h2>Specific Energy Diagram<a class="headerlink" href="#specific-energy-diagram" title="Permalink to this headline">¶</a></h2>
+<p>The plot of depth versus specific energy in a particular channel is the specific energy diagram.  Typically the discharge per unit width is used to define the velocity <span class="math notranslate nohighlight">\(\frac{Q}{T} = q\)</span>  and  <span class="math notranslate nohighlight">\(V= \frac{q}{y}\)</span>.</p>
+<p><img alt="" src="../../_images/specificNRG-diagram.png" /></p>
+<p>we can use our functions above to make our own diagram</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Or make a graph and read from a prot</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>
+<span class="n">ylist</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">Elist</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">startvalue</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">600</span><span class="p">):</span>
+    <span class="n">guess</span> <span class="o">=</span> <span class="n">startvalue</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="mf">0.01</span>
+    <span class="n">ylist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">guess</span><span class="p">)</span>
+    <span class="n">Elist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">spNRG</span><span class="p">(</span><span class="n">guess</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">))</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># the python plotting library</span>
+<span class="n">plottitle</span> <span class="o">=</span><span class="s1">&#39;Specific Energy Plot for Q = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; B = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+<span class="n">mydata</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># build a square drawing canvass from figure class</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">7</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Elist</span><span class="p">,</span> <span class="n">ylist</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Specific Energy&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Depth&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">plottitle</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/specificenergy1_6_0.png" src="../../_images/specificenergy1_6_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="choke">
+<h2>Choke<a class="headerlink" href="#choke" title="Permalink to this headline">¶</a></h2>
+<p>A limiting condition for the step in a channel occurs when <span class="math notranslate nohighlight">\(\Delta z\)</span> is larger than <span class="math notranslate nohighlight">\(\Delta z_c\)</span>, which is the difference between the approach specific energy and the minimum specific energy.</p>
+<p>For an approach energy <span class="math notranslate nohighlight">\(E_1\)</span></p>
+<div class="math notranslate nohighlight">
+\[ E_1 =  y_1 + \frac{ Q^2}{2g B^2 y_1^2}  \]</div>
+<p>If the step height <span class="math notranslate nohighlight">\(\Delta z\)</span> is larger than the energy difference from approach to critical</p>
+<div class="math notranslate nohighlight">
+\[ \Delta z &gt; E_1 - E_{min} =  y_1 + \frac{ Q^2}{2g B^2 y_1^2} - (y_c + \frac{ Q^2}{2g B^2 y_c^2}) \]</div>
+<p>then the condition is called choking (or throttling) and the depth upstream of the choke must rise to maintain enough energy for the depth over the step to be at least at critical depth.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The choking condition in an open channel can also occur when the width of a channel decreases substantially (e.g. rectangular changing to 1/2 original width) as we move downstream. As the channel width narrows, the flow area available for the water to pass through becomes restricted. This reduction in flow area leads to an increase in flow velocity according to the principle of continuity, which states that the product of flow area and velocity remains constant.</p>
+<p>As the flow velocity increases due to the narrowing channel width, it can reach a critical value at which the flow becomes unstable. This critical velocity is known as the critical velocity of choking. When the flow velocity exceeds the critical velocity, the flow is said to be in a choking condition.</p>
+<p>In the choking condition, the flow becomes highly turbulent and chaotic. The water surface rises significantly, and large waves or standing waves may form downstream of the constriction. The increased turbulence and energy losses in the choking flow can lead to excessive erosion, sediment transport, and increased resistance to flow.</p>
+<p>Choking can have detrimental effects on the hydraulic performance and stability of the channel. It can cause localized scouring, erosion of banks, and increased flood risk. Therefore, it is essential to carefully design and analyze open channels to avoid or mitigate the choking condition by considering the channel width, flow rates, and velocity profiles.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Froude Number</span>
+<span class="k">def</span> <span class="nf">Fr</span><span class="p">(</span><span class="n">depth</span><span class="p">,</span><span class="n">width</span><span class="p">,</span><span class="n">discharge</span><span class="p">,</span><span class="n">gravity</span><span class="p">):</span> <span class="c1"># Calculate Fr in rectangular channel</span>
+    <span class="n">Fr</span> <span class="o">=</span> <span class="p">((</span><span class="n">discharge</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">width</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">gravity</span><span class="o">*</span><span class="p">(</span><span class="n">depth</span><span class="o">*</span><span class="n">width</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">Fr</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">ycrit</span><span class="p">(</span><span class="n">width</span><span class="p">,</span><span class="n">discharge</span><span class="p">,</span><span class="n">gravity</span><span class="p">):</span> <span class="c1"># critical depth in a rectangular channel</span>
+    <span class="n">ycrit</span> <span class="o">=</span> <span class="p">(((</span><span class="n">discharge</span><span class="o">/</span><span class="n">width</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">gravity</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">1.0</span><span class="o">/</span><span class="mf">3.0</span><span class="p">)</span> <span class="c1"># sneaky cube root here!</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">ycrit</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A choke occurs when the minimum energy in the downstream section is equal to or greater than the approach section, in which case the approach water depth increases (trades velocity head for pressure head) to make the flow deep enough to get over/onto the step at critical depth.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 2.1 </span>
+<span class="c1"># Prototype Functions</span>
+
+<span class="k">def</span> <span class="nf">spNRG</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">width</span><span class="p">,</span><span class="n">discharge</span><span class="p">,</span><span class="n">gravity</span><span class="p">):</span> <span class="c1">#specific energy in a rectangular channel</span>
+    <span class="n">numerator</span><span class="o">=</span><span class="n">discharge</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">denominator</span><span class="o">=</span><span class="p">(</span><span class="mf">2.0</span><span class="o">*</span><span class="n">gravity</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">width</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">denominator</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">:</span> <span class="c1">#probably depth is zero</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;divide by zero, check your inputs dumbass!&quot;</span><span class="p">)</span>
+    <span class="n">spNRG</span><span class="o">=</span><span class="n">numerator</span><span class="o">/</span><span class="n">denominator</span> <span class="o">+</span> <span class="n">y</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">spNRG</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">width</span><span class="p">,</span><span class="n">discharge</span><span class="p">,</span><span class="n">gravity</span><span class="p">,</span><span class="n">deltaz</span><span class="p">):</span> <span class="c1">#our function to find zeros</span>
+    <span class="n">func</span> <span class="o">=</span> <span class="n">spNRG</span><span class="p">(</span><span class="n">y2</span><span class="p">,</span><span class="n">width</span><span class="p">,</span><span class="n">discharge</span><span class="p">,</span><span class="n">gravity</span><span class="p">)</span> <span class="o">+</span> <span class="n">deltaz</span> <span class="o">-</span> <span class="n">spNRG</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">width</span><span class="p">,</span><span class="n">discharge</span><span class="p">,</span><span class="n">gravity</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+
+<span class="c1"># Find y2 given y1, B, Q, deltaz</span>
+<span class="c1"># Approach Section</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1">#m</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="c1">#m</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="mf">2.2</span><span class="o">*</span><span class="n">y1</span><span class="o">*</span><span class="n">B</span>  <span class="c1">#m^3/s</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span> <span class="c1">#m/s^2</span>
+<span class="c1"># Step-up Section</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="c1">#m initial guess</span>
+<span class="n">deltaz</span> <span class="o">=</span> <span class="mf">0.25</span> <span class="c1">#m zero means no step</span>
+
+<span class="c1"># Graph to get good root guesses for bisection</span>
+<span class="n">y2list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">f2list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">startguess</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">200</span><span class="p">):</span>
+    <span class="n">guess</span> <span class="o">=</span> <span class="n">startguess</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="mf">0.01</span>
+    <span class="n">y2list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">guess</span><span class="p">)</span>
+    <span class="n">f2list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">guess</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">deltaz</span><span class="p">))</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># the python plotting library</span>
+<span class="n">plottitle</span> <span class="o">=</span><span class="s1">&#39;Finding y2: Given y1=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">y1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;  Q=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;  Step height =&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">deltaz</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> Intersection locates y2 value that makes f(y2)=0&#39;</span>
+<span class="n">mydata</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># build a square drawing canvass from figure class</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">y2list</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">y2list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y2list</span><span class="p">,</span> <span class="n">f2list</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;y2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;f(y2)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">plottitle</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/specificenergy1_11_0.png" src="../../_images/specificenergy1_11_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set-up a bisection-type solver</span>
+<span class="n">howmany</span> <span class="o">=</span> <span class="mi">25</span> <span class="c1"># number of iterations</span>
+<span class="n">clow</span> <span class="o">=</span> <span class="mf">1.25</span> <span class="c1"># lower limit for y2</span>
+<span class="n">chigh</span> <span class="o">=</span> <span class="mf">2.50</span> <span class="c1"># upper limit for y2</span>
+<span class="n">dtrue</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="c1"># ground truth value</span>
+<span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-6</span> <span class="c1"># desired accuracy</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="c1"># useful library with absolute value and sign functions</span>
+
+<span class="c1">############ Learning Phase ################</span>
+<span class="c1"># check if clow and chigh bound a solution</span>
+<span class="k">if</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">clow</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">deltaz</span><span class="p">)</span><span class="o">-</span><span class="n">dtrue</span><span class="p">)</span> <span class="o">==</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">chigh</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">deltaz</span><span class="p">)</span><span class="o">-</span><span class="n">dtrue</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">clow</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">deltaz</span><span class="p">)</span><span class="o">-</span><span class="n">dtrue</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">chigh</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">deltaz</span><span class="p">)</span><span class="o">-</span><span class="n">dtrue</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;The scalars clow and chigh do not bound a solution&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">iteration</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">howmany</span><span class="p">):</span>  
+
+<span class="c1"># get midpoint</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">clow</span> <span class="o">+</span> <span class="n">chigh</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+
+    <span class="k">if</span> <span class="n">numpy</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">deltaz</span><span class="p">)</span><span class="o">-</span><span class="n">dtrue</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">:</span>
+        <span class="c1"># stopping condition, report m as root</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y2 = &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s2">&quot;f(y2)=&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">deltaz</span><span class="p">),</span><span class="mi">3</span><span class="p">))</span>
+        <span class="k">break</span>
+    <span class="k">elif</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">clow</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">deltaz</span><span class="p">)</span><span class="o">-</span><span class="n">dtrue</span><span class="p">)</span> <span class="o">==</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">deltaz</span><span class="p">)</span><span class="o">-</span><span class="n">dtrue</span><span class="p">):</span>
+        <span class="c1"># case where m is an improvement on a. </span>
+        <span class="c1"># Make recursive call with a = m</span>
+        <span class="n">clow</span> <span class="o">=</span> <span class="n">m</span> <span class="c1"># update clow with m</span>
+    <span class="k">elif</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">chigh</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">deltaz</span><span class="p">)</span><span class="o">-</span><span class="n">dtrue</span><span class="p">)</span> <span class="o">==</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">deltaz</span><span class="p">)</span><span class="o">-</span><span class="n">dtrue</span><span class="p">):</span>
+        <span class="c1"># case where m is an improvement on b. </span>
+        <span class="c1"># Make recursive call with b = m</span>
+        <span class="n">chigh</span> <span class="o">=</span> <span class="n">m</span> <span class="c1"># update chigh with m</span>
+<span class="c1">####################################################</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>y2 =  1.621 f(y2)= -0.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using the upper root we can summarize and check the energies for choke flow.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Summary and Check for Choke</span>
+<span class="c1"># Approach Section</span>
+<span class="n">z1</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="mf">2.0</span>
+<span class="n">B1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="mf">2.2</span><span class="o">*</span><span class="n">y1</span><span class="o">*</span><span class="n">B1</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>
+<span class="n">E1min</span> <span class="o">=</span> <span class="n">spNRG</span><span class="p">(</span><span class="n">ycrit</span><span class="p">(</span><span class="n">B1</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">),</span><span class="n">B1</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">)</span>
+<span class="n">yc1</span> <span class="o">=</span> <span class="n">ycrit</span><span class="p">(</span><span class="n">B1</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">)</span>
+<span class="n">E1</span> <span class="o">=</span> <span class="n">spNRG</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">B1</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">)</span>
+<span class="n">F1</span> <span class="o">=</span> <span class="n">Fr</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">B1</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;----Approach Section----&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Emin &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">E1min</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s1">&#39; yc &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">yc1</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y1 = &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s1">&#39;E1 = &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">E1</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s1">&#39; Fr1 = &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">F1</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;WSE1 =&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">y1</span><span class="o">+</span><span class="n">z1</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="c1"># Step-Up Section</span>
+<span class="n">deltaz</span> <span class="o">=</span> <span class="mf">0.25</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="mf">1.621</span>
+<span class="n">B2</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>
+<span class="n">E2min</span> <span class="o">=</span> <span class="n">spNRG</span><span class="p">(</span><span class="n">ycrit</span><span class="p">(</span><span class="n">B2</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">),</span><span class="n">B2</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">)</span>
+<span class="n">yc2</span> <span class="o">=</span> <span class="n">ycrit</span><span class="p">(</span><span class="n">B2</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">)</span>
+<span class="n">E2</span> <span class="o">=</span> <span class="n">spNRG</span><span class="p">(</span><span class="n">y2</span><span class="p">,</span><span class="n">B2</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">)</span><span class="o">+</span><span class="n">deltaz</span>
+<span class="n">F2</span> <span class="o">=</span> <span class="n">Fr</span><span class="p">(</span><span class="n">y2</span><span class="p">,</span><span class="n">B2</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;----Step-Up Section----&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Emin &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">E2min</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s1">&#39; yc &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">yc2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y2 = &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">y2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s1">&#39;E2 = &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">E2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s1">&#39; Fr2 = &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">F2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;WSE1 =&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">y2</span><span class="o">+</span><span class="n">z1</span><span class="o">+</span><span class="n">deltaz</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----Approach Section----
+Emin  1.881  yc  1.254
+y1 =  2.0 E1 =  2.247  Fr1 =  0.247
+WSE1 = 2.0
+----Step-Up Section----
+Emin  1.881  yc  1.254
+y2 =  1.621 E2 =  2.247  Fr2 =  0.463
+WSE1 = 1.871
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now repeat but with a step of <span class="math notranslate nohighlight">\(\Delta z = 0.5~m\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find y2 given y1, B, Q, deltaz</span>
+<span class="c1"># Approach Section</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1">#m</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="c1">#m</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="mf">2.2</span><span class="o">*</span><span class="mf">2.0</span><span class="o">*</span><span class="n">B</span>  <span class="c1">#m^3/s</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span> <span class="c1">#m/s^2</span>
+<span class="c1"># Step-up Section</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="c1">#m initial guess</span>
+<span class="n">deltaz</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1">#m INCREASED!!!</span>
+
+<span class="c1"># Graph to get good root guesses for bisection</span>
+<span class="n">y2list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">f2list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">startguess</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">200</span><span class="p">):</span>
+    <span class="n">guess</span> <span class="o">=</span> <span class="n">startguess</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="mf">0.01</span>
+    <span class="n">y2list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">guess</span><span class="p">)</span>
+    <span class="n">f2list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">guess</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">deltaz</span><span class="p">))</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># the python plotting library</span>
+<span class="n">plottitle</span> <span class="o">=</span><span class="s1">&#39;Finding y2: Given y1=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">y1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;  Q=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;  Step height =&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">deltaz</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> Intersection locates y2 value that makes f(y2)=0&#39;</span>
+<span class="n">mydata</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># build a square drawing canvass from figure class</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">y2list</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">y2list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y2list</span><span class="p">,</span> <span class="n">f2list</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;y2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;f(y2)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">plottitle</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/specificenergy1_16_0.png" src="../../_images/specificenergy1_16_0.png" />
+</div>
+</div>
+<p>So we have a choke, and the approach depth must increase to get over the step.  Flow on the step is critical</p>
+<p>So use the summary energies to find a suitable upstream depth</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Summary and Check for Choke</span>
+<span class="c1"># Approach Section</span>
+<span class="n">z1</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="mf">2.172</span> <span class="c1"># original was 2.0, but needs more head</span>
+<span class="n">B1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="mf">2.2</span><span class="o">*</span><span class="mf">2.0</span><span class="o">*</span><span class="n">B1</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>
+<span class="n">E1min</span> <span class="o">=</span> <span class="n">spNRG</span><span class="p">(</span><span class="n">ycrit</span><span class="p">(</span><span class="n">B1</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">),</span><span class="n">B1</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">)</span>
+<span class="n">yc1</span> <span class="o">=</span> <span class="n">ycrit</span><span class="p">(</span><span class="n">B1</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">)</span>
+<span class="n">E1</span> <span class="o">=</span> <span class="n">spNRG</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">B1</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">)</span>
+<span class="n">F1</span> <span class="o">=</span> <span class="n">Fr</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">B1</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;----Approach Section----&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Emin &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">E1min</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s1">&#39; yc &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">yc1</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y1 = &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s1">&#39;E1 = &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">E1</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s1">&#39; Fr1 = &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">F1</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;WSE1 =&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">y1</span><span class="o">+</span><span class="n">z1</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="c1"># Step-Up Section</span>
+<span class="n">deltaz</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="mf">1.254</span> <span class="c1"># know this is critical because have a choke!</span>
+<span class="n">B2</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>
+<span class="n">E2min</span> <span class="o">=</span> <span class="n">spNRG</span><span class="p">(</span><span class="n">ycrit</span><span class="p">(</span><span class="n">B2</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">),</span><span class="n">B2</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">)</span>
+<span class="n">yc2</span> <span class="o">=</span> <span class="n">ycrit</span><span class="p">(</span><span class="n">B2</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">)</span>
+<span class="n">E2</span> <span class="o">=</span> <span class="n">spNRG</span><span class="p">(</span><span class="n">y2</span><span class="p">,</span><span class="n">B2</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">)</span><span class="o">+</span><span class="n">deltaz</span>
+<span class="n">F2</span> <span class="o">=</span> <span class="n">Fr</span><span class="p">(</span><span class="n">y2</span><span class="p">,</span><span class="n">B2</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;----Step-Up Section----&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Emin &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">E2min</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s1">&#39; yc &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">yc2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y2 = &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">y2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s1">&#39;E2 = &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">E2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s1">&#39; Fr2 = &#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">F2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;WSE1 =&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">y2</span><span class="o">+</span><span class="n">z1</span><span class="o">+</span><span class="n">deltaz</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----Approach Section----
+Emin  1.881  yc  1.254
+y1 =  2.172 E1 =  2.381  Fr1 =  0.193
+WSE1 = 2.172
+----Step-Up Section----
+Emin  1.881  yc  1.254
+y2 =  1.254 E2 =  2.381  Fr2 =  1.001
+WSE1 = 1.754
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we put the choke flow value into the plotting routine we find we are just intersecting at a single point</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find y2 given y1, B, Q, deltaz</span>
+<span class="c1"># Approach Section</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1">#m</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="mf">2.172</span> <span class="c1">#m</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="mf">2.2</span><span class="o">*</span><span class="mf">2.0</span><span class="o">*</span><span class="n">B</span>  <span class="c1">#m^3/s</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span> <span class="c1">#m/s^2</span>
+<span class="c1"># Step-up Section</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="c1">#m initial guess</span>
+<span class="n">deltaz</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1">#m INCREASED!!!</span>
+
+<span class="c1"># Graph to get good root guesses for bisection</span>
+<span class="n">y2list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">f2list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">startguess</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">200</span><span class="p">):</span>
+    <span class="n">guess</span> <span class="o">=</span> <span class="n">startguess</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="mf">0.01</span>
+    <span class="n">y2list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">guess</span><span class="p">)</span>
+    <span class="n">f2list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">guess</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">deltaz</span><span class="p">))</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># the python plotting library</span>
+<span class="n">plottitle</span> <span class="o">=</span><span class="s1">&#39;Finding y2: Given y1=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">y1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;  Q=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;  Step height =&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">deltaz</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> Intersection locates y2 value that makes f(y2)=0&#39;</span>
+<span class="n">mydata</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># build a square drawing canvass from figure class</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">y2list</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">y2list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y2list</span><span class="p">,</span> <span class="n">f2list</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;y2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;f(y2)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">plottitle</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/specificenergy1_20_0.png" src="../../_images/specificenergy1_20_0.png" />
+</div>
+</div>
+<p>No point in trying bisection (it will be hopeless because we cannot bracket the root) lets see how close</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;f(y2=1.254) =&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="mf">1.254</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">deltaz</span><span class="p">),</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f(y2=1.254) = 0.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Chokes also occur in contractions as in Figure 2.7, but instead of a step increase we are changing the width of a channel.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Choke Figure 2.7 </span>
+<span class="c1"># Approach Section</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">B1</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>
+<span class="n">y1list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">E1list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">E1min</span> <span class="o">=</span> <span class="n">spNRG</span><span class="p">(</span><span class="n">ycrit</span><span class="p">(</span><span class="n">B1</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">),</span><span class="n">B1</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Approach section Emin &#39;</span><span class="p">,</span><span class="n">E1min</span><span class="p">)</span>
+<span class="c1"># Contracted Section</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">B2</span> <span class="o">=</span> <span class="mf">0.24</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>
+<span class="n">y2list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">E2list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">E2min</span> <span class="o">=</span> <span class="n">spNRG</span><span class="p">(</span><span class="n">ycrit</span><span class="p">(</span><span class="n">B2</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">),</span><span class="n">B2</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Contracted section Emin &#39;</span><span class="p">,</span><span class="n">E2min</span><span class="p">)</span>
+<span class="c1"># Build up vectors to plot</span>
+<span class="n">startvalue</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">200</span><span class="p">):</span>
+    <span class="n">guess</span> <span class="o">=</span> <span class="n">startvalue</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="mf">0.01</span>
+    <span class="n">y1list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">guess</span><span class="p">)</span>
+    <span class="n">E1list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">spNRG</span><span class="p">(</span><span class="n">guess</span><span class="p">,</span><span class="n">B1</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">))</span>
+    <span class="n">y2list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">guess</span><span class="p">)</span>
+    <span class="n">E2list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">spNRG</span><span class="p">(</span><span class="n">guess</span><span class="p">,</span><span class="n">B2</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">g</span><span class="p">))</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># the python plotting library</span>
+<span class="n">plottitle</span> <span class="o">=</span><span class="s1">&#39;Specific Energy Plot for Q = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; B = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+<span class="n">mydata</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span> <span class="c1"># build a square drawing canvass from figure class</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">E1list</span><span class="p">,</span> <span class="n">y1list</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">E2list</span><span class="p">,</span> <span class="n">y2list</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Specific Energy&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Depth&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Equal Value Line&#39;</span><span class="p">,</span><span class="s1">&#39;Approach Section&#39;</span><span class="p">,</span><span class="s1">&#39;Contracted Section&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">plottitle</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Approach section Emin  0.7007045269019605
+Contracted section Emin  2.8801432746393916
+</pre></div>
+</div>
+<img alt="../../_images/specificenergy1_24_1.png" src="../../_images/specificenergy1_24_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lessons/specificenergy"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../basicprinciples/topic2-3.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Discharge Measurements</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="specificenergy2.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Froude Number</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Theodore G. Cleveland (the JupyterBook parts)<br/>
+        
+            &copy; Copyright 2023.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

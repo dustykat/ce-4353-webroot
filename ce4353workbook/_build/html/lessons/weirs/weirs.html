@@ -1,0 +1,849 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weirs &#8212; Design of Hydraulic Systems</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Momentum" href="../momentum/momentum1.html" />
+    <link rel="prev" title="Froude Number" href="../specificenergy/specificenergy2.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/river.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Design of Hydraulic Systems</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Hydraulic Systems Design/Open Channel Flow
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../computationaltools/computationaltools.html">
+   Computational Tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/topic1-1.html">
+     Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/topic1-2.html">
+     Excel/Libre Office Spreadsheets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/topic1-3.html">
+     HEC-RAS River Analysis Software
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/1goodgraphs.html">
+     Characteristics of a Good Graph
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/2makinggraphs.html">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       matplotlib
+      </span>
+     </code>
+     package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/3adddata.html">
+     Adding Data to Plot Lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/4loglogcharts.html">
+     Logarithmic Charts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/5othercharts.html">
+     Other Graph Types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../basicprinciples/basicprinciples.html">
+   Basic Principles
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basicprinciples/topic2-1.html">
+     Solution of Open Channel Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basicprinciples/topic2-2.html">
+     Definitions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basicprinciples/topic2-3.html">
+     Discharge Measurements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../specificenergy/specificenergy1.html">
+   Specific Energy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specificenergy/specificenergy2.html">
+     Froude Number
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Weirs
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../momentum/momentum1.html">
+   Momentum
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/momentum2.html">
+     Rectangular Cross Sections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/momentum3.html">
+     Surges
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/momentum4.html">
+     Bridge Piers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/momentum5.html">
+     Spur Dikes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/stillingbasins.html">
+     Stilling Basins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/contractions.html">
+     Supercritical Contractions and Expansions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../uniformflow/uniformflow.html">
+   Uniform Flow
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../uniformflow/gutters.html">
+     Gutter Flow and Gravity Sewer Design
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../uniformflow/compoundchannels.html">
+     Compound Channels
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../uniformflow/riprapchannels.html">
+     Rip-Rap Lined Channels
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../graduallyvariedflow/graduallyvaried1.html">
+   Gradually Varied Flow
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../graduallyvariedflow/wspcomputation.html">
+     Water Surface Profile Computation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../graduallyvariedflow/wspfixeddepth.html">
+     Direct Step Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../graduallyvariedflow/wspfixedspace.html">
+     Standard Spatial-Step Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../graduallyvariedflow/wspnatural.html">
+     Natural Channels
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../hecras/hecras.html">
+   HEC-RAS
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../hecras/homebrewtohecras.html">
+     Homebrew Examples to HEC-RAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../hecras/junctions.html">
+     Junctions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../hydraulicstructures/hydraulicStructures.html">
+   Hydraulic Structures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../hydraulicstructures/example2.html">
+     Example 16.2.2 from Mays
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sedimenttransport/sedimenttransport.html">
+   Sediment Transport
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hydraulicprofiles/hydraulicprofiles.html">
+   Hydraulic Profiles through Treatment Plants
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lessons/weirs/weirs.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/weirs/weirs.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/lessons/weirs/weirs.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flow-measurement">
+   Flow Measurement
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stage-control-water-quality-enhancement">
+   Stage Control - Water Quality Enhancement
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stage-control-erosion-management">
+   Stage Control - Erosion Management
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stage-control-navigation">
+   Stage Control - Navigation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stage-control-diversion-extraction">
+   Stage Control - Diversion/Extraction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples">
+   Examples
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sharp-crested-rectangular-notch-weir">
+     Sharp-Crested Rectangular Notch Weir
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shart-crested-triangular-notch-weir">
+     Shart-Crested Triangular Notch Weir
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#general-formula">
+       General Formula
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#kindsvater-carter-formula">
+       Kindsvater-Carter formula
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#broad-crested-weir">
+     Broad-Crested Weir
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-2-5-from-sturm">
+     Example 2.5 (from Sturm)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#flumes">
+     Flumes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="weirs">
+<h1>Weirs<a class="headerlink" href="#weirs" title="Permalink to this headline">¶</a></h1>
+<p>Used as flow measuring devices and to maintain specific pool elevations in hydraulic systems.</p>
+<div class="section" id="flow-measurement">
+<h2>Flow Measurement<a class="headerlink" href="#flow-measurement" title="Permalink to this headline">¶</a></h2>
+<p><img alt="" src="../../_images/stream_weir.png" /></p>
+</div>
+<div class="section" id="stage-control-water-quality-enhancement">
+<h2>Stage Control - Water Quality Enhancement<a class="headerlink" href="#stage-control-water-quality-enhancement" title="Permalink to this headline">¶</a></h2>
+<p><img alt="" src="../../_images/Dobbsweirvdropsjan2006.png" /></p>
+</div>
+<div class="section" id="stage-control-erosion-management">
+<h2>Stage Control - Erosion Management<a class="headerlink" href="#stage-control-erosion-management" title="Permalink to this headline">¶</a></h2>
+<p><img alt="" src="../../_images/Weir_on_the_river_wear.png" /></p>
+</div>
+<div class="section" id="stage-control-navigation">
+<h2>Stage Control - Navigation<a class="headerlink" href="#stage-control-navigation" title="Permalink to this headline">¶</a></h2>
+<p><img alt="" src="../../_images/bath-weir.png" /></p>
+</div>
+<div class="section" id="stage-control-diversion-extraction">
+<h2>Stage Control - Diversion/Extraction<a class="headerlink" href="#stage-control-diversion-extraction" title="Permalink to this headline">¶</a></h2>
+<p><img alt="" src="../../_images/Typical-weir-system-in-Northern-Thailand-consists-of-weirs-and-canals.png" /></p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>Many types of weirs in the textbook are typically employed for flow measurement.  Most of the weirs pictured are morphologically the same as a handful of well studied types</p>
+<div class="section" id="sharp-crested-rectangular-notch-weir">
+<h3>Sharp-Crested Rectangular Notch Weir<a class="headerlink" href="#sharp-crested-rectangular-notch-weir" title="Permalink to this headline">¶</a></h3>
+<p><img alt="" src="../../_images/sharp-crest.png" /></p>
+<p>A sketch of a sharp-crested weir (weir plate is thin in the flow direction) is shown below</p>
+<p><img alt="" src="../../_images/sharp-crest-sketch.png" /></p>
+<p>Assuming no head loss, atmospheric pressure across AB (implies flow over the crest is like a jet, that is <span class="math notranslate nohighlight">\(\Delta p\)</span>  is small from top to bottom - the assumption becomes weak when the weir becomes flooded), negligible contraction of the <a class="reference external" href="https://en.wikipedia.org/wiki/Nappe_(water)">nappe</a>.</p>
+<p>Integrating the velocity profile from A to B to obtain a mean section speed in the nappe, and multiplying by the cross section width produces (Eqn 2.39)</p>
+<div class="math notranslate nohighlight">
+\[ Q = \frac{2}{3}\sqrt{2g}C_d~L~H^{3/2} \]</div>
+<p>Where <span class="math notranslate nohighlight">\(L\)</span> is the width (weir length) of the notch crest perpindicular to flow, and <span class="math notranslate nohighlight">\(H\)</span> is the static head above the crest height (the flow depth of the nappe at the crest).</p>
+<p>The weir coefficient <span class="math notranslate nohighlight">\(C_d\)</span> is determined by weir morphology:</p>
+<p><img alt="" src="../../_images/weir-charts-one.png" /></p>
+<p>These charts are used with an adjusted formula</p>
+<div class="math notranslate nohighlight">
+\[ Q = \frac{2}{3}\sqrt{2g}C_{de}~L_{e}~H_e^{3/2} \]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[L_{de}=L + k_L\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[H_e=H + k_H\]</div>
+<p><span class="math notranslate nohighlight">\(k_L\)</span> is read from the chart and <span class="math notranslate nohighlight">\(k_H\)</span> is a constant 0.001 m (0.003 ft)</p>
+<p>An alternate approach is a formula for <span class="math notranslate nohighlight">\(C_{de}\)</span> (Kindsvater-Carter formula)</p>
+<p><span class="math notranslate nohighlight">\(C_{de} = \beta_1 + \beta_2 \frac{H}{P}\)</span></p>
+<p>where</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:right head"><p><span class="math notranslate nohighlight">\(\frac{L}{b}\)</span></p></th>
+<th class="text-align:right head"><p><span class="math notranslate nohighlight">\(\beta_1\)</span></p></th>
+<th class="text-align:right head"><p><span class="math notranslate nohighlight">\(\beta_2\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:right"><p>1.0</p></td>
+<td class="text-align:right"><p>0.602</p></td>
+<td class="text-align:right"><p>0.075</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>0.9</p></td>
+<td class="text-align:right"><p>0.599</p></td>
+<td class="text-align:right"><p>0.064</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>0.8</p></td>
+<td class="text-align:right"><p>0.597</p></td>
+<td class="text-align:right"><p>0.045</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>0.7</p></td>
+<td class="text-align:right"><p>0.595</p></td>
+<td class="text-align:right"><p>0.030</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>0.6</p></td>
+<td class="text-align:right"><p>0.593</p></td>
+<td class="text-align:right"><p>0.018</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>0.5</p></td>
+<td class="text-align:right"><p>0.592</p></td>
+<td class="text-align:right"><p>0.011</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>0.4</p></td>
+<td class="text-align:right"><p>0.591</p></td>
+<td class="text-align:right"><p>0.0058</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>0.3</p></td>
+<td class="text-align:right"><p>0.590</p></td>
+<td class="text-align:right"><p>0.0020</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>0.2</p></td>
+<td class="text-align:right"><p>0.589</p></td>
+<td class="text-align:right"><p>-0.0018</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>0.1</p></td>
+<td class="text-align:right"><p>0.588</p></td>
+<td class="text-align:right"><p>-0.0021</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>0.0</p></td>
+<td class="text-align:right"><p>0.587</p></td>
+<td class="text-align:right"><p>-0.0023</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="shart-crested-triangular-notch-weir">
+<h3>Shart-Crested Triangular Notch Weir<a class="headerlink" href="#shart-crested-triangular-notch-weir" title="Permalink to this headline">¶</a></h3>
+<p><img alt="" src="../../_images/V-notch.png" /></p>
+<p><img alt="" src="../../_images/vee-notch-weir-in-brick-tunnel-t.png" /></p>
+<div class="section" id="general-formula">
+<h4>General Formula<a class="headerlink" href="#general-formula" title="Permalink to this headline">¶</a></h4>
+<p>The general formula for a V-Notch weir (with experimentally determined discharge coefficients for the geometry in the sketch below</p>
+<p><img alt="" src="../../_images/v-notch-sketch.png" /></p>
+<p>is</p>
+<div class="math notranslate nohighlight">
+\[Q = C_d \frac{8}{15} \sqrt{2g}~tan(\frac{\theta}{2})H^{5/2}\]</div>
+</div>
+<div class="section" id="kindsvater-carter-formula">
+<h4>Kindsvater-Carter formula<a class="headerlink" href="#kindsvater-carter-formula" title="Permalink to this headline">¶</a></h4>
+<p>In the Kindsvater-Carter form using the concept of effective head (<span class="math notranslate nohighlight">\(H_e = H + k_H\)</span>) is</p>
+<div class="math notranslate nohighlight">
+\[Q = C_{de} \frac{8}{15} \sqrt{2g}~tan(\frac{\theta}{2})H_e^{5/2}\]</div>
+</div>
+</div>
+<div class="section" id="broad-crested-weir">
+<h3>Broad-Crested Weir<a class="headerlink" href="#broad-crested-weir" title="Permalink to this headline">¶</a></h3>
+<p>A broad crested weir is distinct from the sharp edged wiers by virtue of having a substantial portion of the crest in the direction of flow of at least several approach depth equivalents.</p>
+<p>The wier below is nearly flooded, but yopu can see the crest length relative to the approach depth, the central “channel” is a notch in the system for lower flows/pool elevations.</p>
+<p><img alt="" src="../../_images/BCweir4.png" /></p>
+<p>The weir below is clearly either a flow measuring weir or a debris trap - the notch is to guarentee enough flow to scour the trap after a substantial solids flow event.  The “crest” is pretty long (in the direction of flow) no doubt to withstand the shear forces that would be imparted by a slurry (water and solids) impacting the upstream face.  Notice the geometry - it is a notch-type weir with at least three notches.  The small width portion.  The wider portion near at elevation a little below the gaging vault (or prison cell), and a widest portion using the gaging vault as part of the vertical wall of the notch.  This kind of weir is called acomposite-geometry  weir.</p>
+<p><img alt="" src="../../_images/BCweir3.png" /></p>
+<p>The next two images show a broad crested weir set into a trapezoidal channel, first just after construction waiting for the concrete to harden,</p>
+<p><img alt="" src="../../_images/BCweir2.png" /></p>
+<p>and then with water flowing in the weir.</p>
+<p>Notice the two hydrographers admiring the weir and awaiting their chance to fish in the newly constructed fish race.</p>
+<p><img alt="" src="../../_images/BCweir1.png" /></p>
+<p>The sketch below shows the geometry of a broad crested weir, the width of the weir across the channel is <span class="math notranslate nohighlight">\(L\)</span> whereas the length of the weir in the direction of flow is <span class="math notranslate nohighlight">\(I\)</span> in the drawing.</p>
+<p><img alt="" src="../../_images/broad-crested-sketch.png" /></p>
+<p>Key points in the broad crested weir are that the crest is long enough so that parallel flow and critical depth occur somewhere along the crest.</p>
+<p>The critical energy at this location is</p>
+<div class="math notranslate nohighlight">
+\[H_e = \frac{3}{2}[\frac{(Q/L)^2}{g}]^{1/3}\]</div>
+<p>The discharge equation is</p>
+<div class="math notranslate nohighlight">
+\[Q = C_d~(\frac{H_e}{H})^{3/2}~\frac{2}{3}[\frac{2}{3}g]^{1/2}~LH^{3/2}  \]</div>
+<p>The typical discharge coefficient <span class="math notranslate nohighlight">\(C_d\)</span> is 0.848, but increases as the weir “floods” as indicated by the chart above that relates <span class="math notranslate nohighlight">\(C_d\)</span> to the depth to crest length ratio.  A flooded weir is called “submerged” and Sturm pages 48-50 have a nice discussion regarding submerged weirs if flow measurement is the goal.</p>
+<p>The gist of the pages is a submergence correction for discharge as</p>
+<div class="math notranslate nohighlight">
+\[Q_s = Q_{free} * [1-(\frac{H_t}{H})^{10.0}]^{0.95}\]</div>
+<p>The equation above is essentially eqn 2.52 in the textbook with the constants for a broad-crested weir.</p>
+</div>
+<div class="section" id="example-2-5-from-sturm">
+<h3>Example 2.5 (from Sturm)<a class="headerlink" href="#example-2-5-from-sturm" title="Permalink to this headline">¶</a></h3>
+<p>A rectangular broad-crested weir is used in a stormwasser detention pond as part of the outlet structure (most likely to control pool elevation - hence probably a wet bottom pond).  The crest length is 10 feets and the maximum allowable head on the crest is 1.0 ft.  What is the discharge capacity of the weir at free willy?  If the tailwater head is 0.8 ft, what will be the discharge?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># BC weir - free willy flow</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="n">Cd</span> <span class="o">=</span> <span class="mf">0.848</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">32.2</span> <span class="c1"># feet per second per second</span>
+<span class="n">H</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c1"># feet </span>
+<span class="n">Va</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="c1"># approach velocity, negligible in pond</span>
+<span class="n">He</span> <span class="o">=</span> <span class="n">H</span> <span class="o">+</span> <span class="p">(</span><span class="n">Va</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">g</span><span class="p">)</span>
+<span class="n">I</span> <span class="o">=</span> <span class="mf">10.0</span> <span class="c1"># actually unknown in this example, but are told it is a broad crest</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mf">10.0</span> <span class="c1"># feet</span>
+
+<span class="n">Q</span> <span class="o">=</span> <span class="n">Cd</span><span class="o">*</span><span class="p">((</span><span class="n">He</span><span class="o">/</span><span class="n">H</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">g</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span><span class="o">*</span><span class="n">L</span><span class="o">*</span><span class="n">H</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Discharge: &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="s2">&quot; cfs&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Discharge:  26.2  cfs
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># BC weir - submerged flow</span>
+<span class="c1"># compute submergence reduction factor</span>
+<span class="n">Ht</span> <span class="o">=</span> <span class="mf">0.8</span> <span class="c1"># feet</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">0.95</span>
+<span class="n">S</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span><span class="o">-</span><span class="p">(</span><span class="n">Ht</span><span class="o">/</span><span class="n">H</span><span class="p">)</span><span class="o">**</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="n">b</span>
+<span class="n">Qs</span> <span class="o">=</span> <span class="n">S</span><span class="o">*</span><span class="n">Q</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Discharge: &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Qs</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="s2">&quot; cfs&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Discharge:  23.5  cfs
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="flumes">
+<h3>Flumes<a class="headerlink" href="#flumes" title="Permalink to this headline">¶</a></h3>
+<p>A flume is another device to measure flow in open channels.  A flume employs contractions and/or a raised bottom section to force flow through critical depth within the measurement section of the flume. A rating curve is provided by manufacturers or if the geometry is known in the critical sectionthat fact can be leveraged to rate the flume.</p>
+<p>Flumes can be pretty small</p>
+<p><img alt="" src="../../_images/flume-small.png" /></p>
+<p>Moderate in size</p>
+<p><img alt="" src="../../_images/flume-medium.png" /></p>
+<p>And semi-portable installations can be fairly large</p>
+<p><img alt="" src="../../_images/flume-field.png" /></p>
+<p>Or even pretty large (notice the dude on the right side trying to figure out how to steal the abandoned bicycle!)</p>
+<p><img alt="" src="../../_images/flume-large.png" /></p>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=YkR79oDAgOg">What is a weir? (YouTube)</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=8QIqPOnpT9Q">Discharge over Broad-Crested Weir (YouTube)</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=JhYmhYuy1bY">Discharge over a Wrecked Angular Weir (YouTube)</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=DE-cb6gH_Js">Discharge over a Submerged Weir (YouTube)</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=_T_nJD9-su4">Discharge over a Trapezoidal Weir (YouTube)</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=OeOzDzBBHO0">Discharge over a Triangle Notched Weir (YouTube)</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=bxHagMo6nm0">Parshall Flume (YouTube)</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=eY3fDHMxxRg">Cut-Throat Flume (YouTube)</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=LphKo8YU8jU">Flume for Rapid Chemical Mixing (YouTube)</a></p></li>
+</ol>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lessons/weirs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../specificenergy/specificenergy2.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Froude Number</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../momentum/momentum1.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Momentum</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Theodore G. Cleveland (the JupyterBook parts)<br/>
+        
+            &copy; Copyright 2023.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

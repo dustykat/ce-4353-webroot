@@ -1,0 +1,854 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Direct Step Method &#8212; Design of Hydraulic Systems</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Standard Spatial-Step Method" href="wspfixedspace.html" />
+    <link rel="prev" title="Water Surface Profile Computation" href="wspcomputation.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/river.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Design of Hydraulic Systems</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Hydraulic Systems Design/Open Channel Flow
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../computationaltools/computationaltools.html">
+   Computational Tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/topic1-1.html">
+     Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/topic1-2.html">
+     Excel/Libre Office Spreadsheets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/topic1-3.html">
+     HEC-RAS River Analysis Software
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/1goodgraphs.html">
+     Characteristics of a Good Graph
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/2makinggraphs.html">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       matplotlib
+      </span>
+     </code>
+     package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/3adddata.html">
+     Adding Data to Plot Lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/4loglogcharts.html">
+     Logarithmic Charts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/5othercharts.html">
+     Other Graph Types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../basicprinciples/basicprinciples.html">
+   Basic Principles
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basicprinciples/topic2-1.html">
+     Solution of Open Channel Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basicprinciples/topic2-2.html">
+     Definitions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basicprinciples/topic2-3.html">
+     Discharge Measurements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../specificenergy/specificenergy1.html">
+   Specific Energy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specificenergy/specificenergy2.html">
+     Froude Number
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weirs/weirs.html">
+   Weirs
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../momentum/momentum1.html">
+   Momentum
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/momentum2.html">
+     Rectangular Cross Sections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/momentum3.html">
+     Surges
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/momentum4.html">
+     Bridge Piers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/momentum5.html">
+     Spur Dikes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/stillingbasins.html">
+     Stilling Basins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/contractions.html">
+     Supercritical Contractions and Expansions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../uniformflow/uniformflow.html">
+   Uniform Flow
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../uniformflow/gutters.html">
+     Gutter Flow and Gravity Sewer Design
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../uniformflow/compoundchannels.html">
+     Compound Channels
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../uniformflow/riprapchannels.html">
+     Rip-Rap Lined Channels
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="graduallyvaried1.html">
+   Gradually Varied Flow
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="wspcomputation.html">
+     Water Surface Profile Computation
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Direct Step Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="wspfixedspace.html">
+     Standard Spatial-Step Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="wspnatural.html">
+     Natural Channels
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../hecras/hecras.html">
+   HEC-RAS
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../hecras/homebrewtohecras.html">
+     Homebrew Examples to HEC-RAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../hecras/junctions.html">
+     Junctions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../hydraulicstructures/hydraulicStructures.html">
+   Hydraulic Structures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../hydraulicstructures/example2.html">
+     Example 16.2.2 from Mays
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sedimenttransport/sedimenttransport.html">
+   Sediment Transport
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hydraulicprofiles/hydraulicprofiles.html">
+   Hydraulic Profiles through Treatment Plants
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lessons/graduallyvariedflow/wspfixeddepth.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/graduallyvariedflow/wspfixeddepth.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/lessons/graduallyvariedflow/wspfixeddepth.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#finite-difference-methods-depth-step-backwater-method">
+   Finite Difference Methods — Depth-Step Backwater Method
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-1">
+     Example 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-2">
+     Example 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="direct-step-method">
+<h1>Direct Step Method<a class="headerlink" href="#direct-step-method" title="Permalink to this headline">¶</a></h1>
+<p>The direct step method computes distances from changes in flow depths.</p>
+<div class="section" id="finite-difference-methods-depth-step-backwater-method">
+<h2>Finite Difference Methods — Depth-Step Backwater Method<a class="headerlink" href="#finite-difference-methods-depth-step-backwater-method" title="Permalink to this headline">¶</a></h2>
+<p>The depth-step refers to fixed changes in depth for which we solve to find the variable spatial steps.
+The method is a very simple method for computing water surface profiles in prismatic channels.
+A prismatic channel is a channel of uniform cross sectional geometry with constant bed (topographic) slope.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The textbook calls this the <strong>Direct Step Method</strong></p>
+</div>
+<p>In such channels with smooth (non-jump) steady flow the continunity and momentum equations are:</p>
+<p><strong>Continunity</strong></p>
+<div class="math notranslate nohighlight">
+\[Q = AV\]</div>
+<p>where <br></p>
+<p><span class="math notranslate nohighlight">\(Q\)</span> is volumetric discharge, <br>
+<span class="math notranslate nohighlight">\(A\)</span> is cross sectional flow area, and<br>
+<span class="math notranslate nohighlight">\(V\)</span> is the mean section velocity. <br></p>
+<p><strong>Momentum</strong></p>
+<div class="math notranslate nohighlight">
+\[ \frac{V}{g}\frac{dV}{dx} + \frac{dy}{dx} = S_0 - S_f \]</div>
+<p>where <span class="math notranslate nohighlight">\(y\)</span> is the flow depth (above the bottom), and <span class="math notranslate nohighlight">\(x\)</span> is horizontal the distance along the channel.</p>
+<p>For the depth-step method, the momentum equation is rewritten as a difference equation (after application of calculus to gather terms) then rearranged to solve for the spatial step dimension</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\frac{V_{i+1}^2}{2g}-\frac{V_i^2}{2g}}{\Delta x} + \frac{h_{i+1}-h_i}{\Delta x} = S_0 - \bar S_f\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bar S\)</span> is the average slope of the energy grade line between two sections (along a reach of length <span class="math notranslate nohighlight">\(\Delta x\)</span>, the unknown value).</p>
+<p>Rearrangement to isolate <span class="math notranslate nohighlight">\(\Delta x\)</span> produces an explicit update equation that can be evaluated to find the different values of <span class="math notranslate nohighlight">\(\Delta x\)</span> associated with different flow depths. The plot of the accumulated spatial changes versus the sum of the flow depth and bottom elevation is the water surface profile.</p>
+<div class="math notranslate nohighlight">
+\[\Delta x = \frac{(y_{i+1}+\frac{V_{i+1}^2}{2g} )- (y_{i}+\frac{V_{i}^2}{2g} )}{S_0-\bar S_f}\]</div>
+<p>The distance between two sections with known discharges is computed using the
+equation, all the terms on the left hand side are known values. The mean energy
+gradient (<span class="math notranslate nohighlight">\(\bar S_f\)</span> ) is computed from the mean of the velocity, depth, area, and hydraulic radius for the two sections.</p>
+<p>The friction slope can be computed using Manning’s, Chezy, or the Darcy-Weisbach friction equations adapted for non-circular, free-surface conduits.</p>
+<div class="section" id="example-1">
+<h3>Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">¶</a></h3>
+<p>The figure below is a backwater curve for a rectangular channel with discharge over a weir (on the right hand side — not depicted).The channel width is 5 meters, bottom slope 0.001, Manning’s n = 0.02 and discharge Q = 55.4m<span class="math notranslate nohighlight">\(^3\)</span>.</p>
+<p><img alt="" src="../../_images/bw_curve1.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The figure is from: Page 85. Koutitas, C.G. (1983). Elements of Computational Hydraulics. Pentech Press, London 138p. ISBN 0-7273-0503-4</p>
+</div>
+<p>Our goal is to replicate the fugure using our computational thinking (ENGR 1330) approach.  The depth-step method already described is an algorithm, we have to simply determine the direction to integrate - supply known depths at a control section and the target depth (normal) for the algorithm, and let the computer do the heavy lifting.</p>
+<p><strong>Solution Script</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># prototype functions</span>
+<span class="k">def</span> <span class="nf">A_rect</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">A_rect</span> <span class="o">=</span> <span class="n">B</span><span class="o">*</span><span class="n">y</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">A_rect</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">P_rect</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">P_rect</span> <span class="o">=</span> <span class="n">B</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">y</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">P_rect</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Rh</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">P</span><span class="p">):</span>
+    <span class="n">Rh</span> <span class="o">=</span> <span class="n">A</span><span class="o">/</span><span class="n">P</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">Rh</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">slope_f</span><span class="p">(</span><span class="n">discharge</span><span class="p">,</span><span class="n">mannings_n</span><span class="p">,</span><span class="n">area</span><span class="p">,</span><span class="n">radius</span><span class="p">):</span>
+    <span class="n">slope_f</span> <span class="o">=</span> <span class="p">(</span><span class="n">discharge</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">mannings_n</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span> <span class="p">(</span><span class="n">radius</span><span class="o">**</span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">area</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">slope_f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># input information</span>
+<span class="n">begin_depth</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">end_depth</span>   <span class="o">=</span> <span class="mi">5</span>
+<span class="n">discharge</span>   <span class="o">=</span> <span class="mf">55.4</span>
+<span class="n">how_many</span>    <span class="o">=</span> <span class="mi">32</span>
+<span class="n">manningn</span>    <span class="o">=</span> <span class="mf">0.020</span>
+<span class="n">slope</span>       <span class="o">=</span> <span class="mf">0.001</span>
+<span class="n">width</span>       <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># empty lists for variables</span>
+<span class="n">depth</span>    <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">how_many</span><span class="p">)]</span> <span class="c1">#flow depth</span>
+<span class="n">bse</span>      <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">how_many</span><span class="p">)]</span> <span class="c1">#channel bottom elevation</span>
+<span class="n">wse</span>      <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">how_many</span><span class="p">)]</span> <span class="c1">#water surface elevation</span>
+<span class="n">deltax</span>   <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">how_many</span><span class="p">)]</span> <span class="c1">#space steps</span>
+<span class="n">distance</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">how_many</span><span class="p">)]</span> <span class="c1">#station locations</span>
+<span class="n">velocity</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">how_many</span><span class="p">)]</span> <span class="c1">#section velocity</span>
+
+<span class="n">delta_depth</span> <span class="o">=</span> <span class="p">(</span><span class="n">begin_depth</span><span class="o">-</span><span class="n">end_depth</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">how_many</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="c1"># change in depth for finding spatial steps</span>
+
+<span class="n">depth</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">begin_depth</span><span class="p">)</span> <span class="c1"># assign downstream value</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">how_many</span><span class="p">):</span>
+    <span class="n">depth</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">depth</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">i</span><span class="o">*</span><span class="n">delta_depth</span><span class="p">)</span><span class="c1"># depth values to evaluate</span>
+    <span class="n">velocity</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">discharge</span><span class="o">/</span><span class="n">A_rect</span><span class="p">(</span><span class="n">width</span><span class="p">,</span><span class="n">depth</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="c1">#velocity for each depth</span>
+    
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">how_many</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">depth_bar</span>     <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">depth</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">depth</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>    <span class="c1">#compute average depth in reach</span>
+    <span class="n">area_bar</span>      <span class="o">=</span> <span class="n">A_rect</span><span class="p">(</span><span class="n">width</span><span class="p">,</span><span class="n">depth_bar</span><span class="p">)</span>      <span class="c1">#compute average area in reach</span>
+    <span class="n">perimeter_bar</span> <span class="o">=</span> <span class="n">P_rect</span><span class="p">(</span><span class="n">width</span><span class="p">,</span><span class="n">depth_bar</span><span class="p">)</span>  <span class="c1">#compute average wetted perimeter</span>
+    <span class="n">radius_bar</span>    <span class="o">=</span> <span class="n">Rh</span><span class="p">(</span><span class="n">area_bar</span><span class="p">,</span><span class="n">perimeter_bar</span><span class="p">)</span>   <span class="c1">#compute average hydraulic radius</span>
+    <span class="n">friction</span> <span class="o">=</span> <span class="n">slope_f</span><span class="p">(</span><span class="n">discharge</span><span class="p">,</span><span class="n">manningn</span><span class="p">,</span><span class="n">area_bar</span><span class="p">,</span><span class="n">radius_bar</span><span class="p">)</span> <span class="c1">#compute friction slope</span>
+    <span class="n">deltax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">depth</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="n">velocity</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mf">9.8</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="n">depth</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">velocity</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mf">9.8</span><span class="p">)))</span><span class="o">/</span><span class="p">(</span><span class="n">slope</span><span class="o">-</span><span class="n">friction</span><span class="p">)</span>
+
+<span class="n">wse</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">bse</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">depth</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># water surface at control point</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">how_many</span><span class="p">):</span>
+    <span class="n">distance</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">distance</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">deltax</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span> <span class="c1"># station distances</span>
+    <span class="n">bse</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">bse</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">deltax</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">slope</span><span class="p">;</span> <span class="c1"># bottom elevations</span>
+    <span class="n">wse</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">bse</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">depth</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1"># water surface elevations</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># the python plotting library</span>
+<span class="n">plottitle</span> <span class="o">=</span><span class="s1">&#39;Water Surface Profile for Q=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">discharge</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39; CMS &#39;</span>
+<span class="n">mydata</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># build a square drawing canvass from figure class</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="n">bse</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span> <span class="c1"># basic line plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="n">wse</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span> <span class="c1"># basic line plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Channel Bottom&#39;</span><span class="p">,</span><span class="s1">&#39;Water Surface&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Station Location (meters)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Elevation (meters)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">plottitle</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Depth at station&quot;</span><span class="p">,</span><span class="n">distance</span><span class="p">[</span><span class="n">how_many</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="s2">&quot; is&quot;</span><span class="p">,</span><span class="n">depth</span><span class="p">[</span><span class="n">how_many</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/wspfixeddepth_5_0.png" src="../../_images/wspfixeddepth_5_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Depth at station -11393.235683125995  is 5.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our plot and computed location to normal depth is for all purposes the same as the original document.</p>
+</div>
+<div class="section" id="example-2">
+<h3>Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h3>
+<p>The figure below is another illustrative case. Here the water discharges into a horizontal channel at a rate of 1 m<span class="math notranslate nohighlight">\(^3\)</span> per second per meter width. Assuming Manning’s n = 0.01 we wish
+to compute the profile downstream of the gate and determine if it will extend to the sharp edge.</p>
+<p><img alt="" src="../../_images/bw_curve2.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The figure is from: Jaeger, C. (1957). Engineering Fluid Mechanics. St. Martin’s Press. 529p.</p>
+</div>
+<p>We would need to know the critical depth for the section (≈ 0.47meters), then compute the profile moving from the gate downstream (a frontwater curve with respect to the gate).</p>
+<p>All we really need to do is change the starting and ending values because the script is already built for the rectangular geometry.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># prototype functions</span>
+<span class="k">def</span> <span class="nf">A_rect</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">A_rect</span> <span class="o">=</span> <span class="n">B</span><span class="o">*</span><span class="n">y</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">A_rect</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">P_rect</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">P_rect</span> <span class="o">=</span> <span class="n">B</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">y</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">P_rect</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Rh</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">P</span><span class="p">):</span>
+    <span class="n">Rh</span> <span class="o">=</span> <span class="n">A</span><span class="o">/</span><span class="n">P</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">Rh</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">slope_f</span><span class="p">(</span><span class="n">discharge</span><span class="p">,</span><span class="n">mannings_n</span><span class="p">,</span><span class="n">area</span><span class="p">,</span><span class="n">radius</span><span class="p">):</span>
+    <span class="n">slope_f</span> <span class="o">=</span> <span class="p">(</span><span class="n">discharge</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">mannings_n</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span> <span class="p">(</span><span class="n">radius</span><span class="o">**</span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">area</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">slope_f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># input information</span>
+<span class="n">begin_depth</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="c1"># at the sluice gate opening</span>
+<span class="n">end_depth</span>   <span class="o">=</span> <span class="mf">0.47</span> <span class="c1"># critical depth </span>
+<span class="n">discharge</span>   <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">how_many</span>    <span class="o">=</span> <span class="mi">32</span>
+<span class="n">manningn</span>    <span class="o">=</span> <span class="mf">0.010</span>
+<span class="n">slope</span>       <span class="o">=</span> <span class="mf">0.000</span>
+<span class="n">width</span>       <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># empty lists for variables</span>
+<span class="n">depth</span>    <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">how_many</span><span class="p">)]</span> <span class="c1">#flow depth</span>
+<span class="n">bse</span>      <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">how_many</span><span class="p">)]</span> <span class="c1">#channel bottom elevation</span>
+<span class="n">wse</span>      <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">how_many</span><span class="p">)]</span> <span class="c1">#water surface elevation</span>
+<span class="n">deltax</span>   <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">how_many</span><span class="p">)]</span> <span class="c1">#space steps</span>
+<span class="n">distance</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">how_many</span><span class="p">)]</span> <span class="c1">#station locations</span>
+<span class="n">velocity</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">how_many</span><span class="p">)]</span> <span class="c1">#section velocity</span>
+
+<span class="n">delta_depth</span> <span class="o">=</span> <span class="p">(</span><span class="n">begin_depth</span><span class="o">-</span><span class="n">end_depth</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">how_many</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="c1"># change in depth for finding spatial steps</span>
+
+<span class="n">depth</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">begin_depth</span><span class="p">)</span> <span class="c1"># assign downstream value</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">how_many</span><span class="p">):</span>
+    <span class="n">depth</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">depth</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">i</span><span class="o">*</span><span class="n">delta_depth</span><span class="p">)</span><span class="c1"># depth values to evaluate</span>
+    <span class="n">velocity</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">discharge</span><span class="o">/</span><span class="n">A_rect</span><span class="p">(</span><span class="n">width</span><span class="p">,</span><span class="n">depth</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="c1">#velocity for each depth</span>
+    
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">how_many</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">depth_bar</span>     <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">depth</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">depth</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>    <span class="c1">#compute average depth in reach</span>
+    <span class="n">area_bar</span>      <span class="o">=</span> <span class="n">A_rect</span><span class="p">(</span><span class="n">width</span><span class="p">,</span><span class="n">depth_bar</span><span class="p">)</span>      <span class="c1">#compute average area in reach</span>
+    <span class="n">perimeter_bar</span> <span class="o">=</span> <span class="n">P_rect</span><span class="p">(</span><span class="n">width</span><span class="p">,</span><span class="n">depth_bar</span><span class="p">)</span>  <span class="c1">#compute average wetted perimeter</span>
+    <span class="n">radius_bar</span>    <span class="o">=</span> <span class="n">Rh</span><span class="p">(</span><span class="n">area_bar</span><span class="p">,</span><span class="n">perimeter_bar</span><span class="p">)</span>   <span class="c1">#compute average hydraulic radius</span>
+    <span class="n">friction</span> <span class="o">=</span> <span class="n">slope_f</span><span class="p">(</span><span class="n">discharge</span><span class="p">,</span><span class="n">manningn</span><span class="p">,</span><span class="n">area_bar</span><span class="p">,</span><span class="n">radius_bar</span><span class="p">)</span> <span class="c1">#compute friction slope</span>
+    <span class="n">deltax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">depth</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="n">velocity</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mf">9.8</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="n">depth</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">velocity</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mf">9.8</span><span class="p">)))</span><span class="o">/</span><span class="p">(</span><span class="n">slope</span><span class="o">-</span><span class="n">friction</span><span class="p">)</span>
+
+<span class="n">wse</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">bse</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">depth</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># water surface at control point</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">how_many</span><span class="p">):</span>
+    <span class="n">distance</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">distance</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">deltax</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span> <span class="c1"># station distances</span>
+    <span class="n">bse</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">bse</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">deltax</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">slope</span><span class="p">;</span> <span class="c1"># bottom elevations</span>
+    <span class="n">wse</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">bse</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">depth</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1"># water surface elevations</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># the python plotting library</span>
+<span class="n">plottitle</span> <span class="o">=</span><span class="s1">&#39;Water Surface Profile for Q=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">discharge</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39; CMS &#39;</span>
+<span class="n">mydata</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># build a square drawing canvass from figure class</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="n">bse</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span> <span class="c1"># basic line plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="n">wse</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span> <span class="c1"># basic line plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Channel Bottom&#39;</span><span class="p">,</span><span class="s1">&#39;Water Surface&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Station Location (meters)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Elevation (meters)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">plottitle</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">how_many</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">distance</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">depth</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/wspfixeddepth_10_0.png" src="../../_images/wspfixeddepth_10_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 0.1
+4.436732598938704 0.11193548387096774
+8.890771308584114 0.12387096774193548
+13.345925531714814 0.13580645161290322
+17.78760249742602 0.147741935483871
+22.202439396714528 0.1596774193548387
+26.578020781699287 0.17161290322580647
+30.902660708283786 0.1835483870967742
+35.16523375300604 0.19548387096774195
+39.35504304581471 0.20741935483870969
+43.461716533328115 0.21935483870967742
+47.475124951068075 0.23129032258064516
+51.38531663212699 0.24322580645161293
+55.182465480986565 0.25516129032258067
+58.856829321149384 0.2670967741935484
+62.39871647496652 0.27903225806451615
+65.79845891811088 0.2909677419354839
+69.04639071514907 0.3029032258064516
+72.13283071890275 0.31483870967741934
+75.04806872778249 0.3267741935483871
+77.7823544585682 0.33870967741935487
+80.32588881918448 0.35064516129032264
+82.66881706565181 0.3625806451612903
+84.80122350605285 0.37451612903225806
+86.71312747685819 0.3864516129032258
+88.39448036692608 0.3983870967741936
+89.83516350466259 0.41032258064516136
+91.0249867562946 0.422258064516129
+91.95368770957263 0.4341935483870968
+92.61093133872741 0.44612903225806455
+92.98631006412161 0.4580645161290323
+93.06934413452389 0.47
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observe that the distance is now incrementing forward (by choice of begin and end depths) when we build the plots.</p>
+<p>Printing the distance and depth table we conclude that at the edge the flow depth is 0.35 meters - still supercritical but relatively close to the critical depth and pending instability.</p>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>Koutitas, C. G. 1983. Elements of Computational Hydraulics. ISBN 0-412-00361-9. Pentech Press Ltd. London. (Chapter 4) <a class="reference external" href="http://54.243.252.9/ce-5362-webroot/3-Readings/PracticalComputationalHydraulics-Kousitas/ElementsOfComputationalHydraulics.pdf">http://54.243.252.9/ce-5362-webroot/3-Readings/PracticalComputationalHydraulics-Kousitas/ElementsOfComputationalHydraulics.pdf</a></p>
+<p>Roberson, J. A., Cassidy, J.J., and Chaudry, M. H., (1988) Hydraulic Engineering, Houghton Mifflin Co (Chapter 10) <a class="reference external" href="http://54.243.252.9/ce-5362-webroot/3-Readings/HydraulicEngineering/">http://54.243.252.9/ce-5362-webroot/3-Readings/HydraulicEngineering/</a></p>
+<p>Sturm T.W (2001) Open Channel Hydraulics, 1ed., McGraw-Hill, New York. Note: This PDF is from an international edition published in Singapore. <a class="reference external" href="http://54.243.252.9/ce-5362-webroot/3-Readings/OpenChannelHYdraulics/">http://54.243.252.9/ce-5362-webroot/3-Readings/OpenChannelHYdraulics/</a></p>
+<p>Cunge, J.A., Holly, F.M., Verwey, A. (1980). Practical Aspects of Computational
+River Hydraulics. Pittman Publishing Inc. , Boston, MA. pp. 7-50</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lessons/graduallyvariedflow"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="wspcomputation.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Water Surface Profile Computation</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="wspfixedspace.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Standard Spatial-Step Method</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Theodore G. Cleveland (the JupyterBook parts)<br/>
+        
+            &copy; Copyright 2023.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

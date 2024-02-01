@@ -1,0 +1,859 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gutter Flow and Gravity Sewer Design &#8212; Design of Hydraulic Systems</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Compound Channels" href="compoundchannels.html" />
+    <link rel="prev" title="Uniform Flow" href="uniformflow.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/river.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Design of Hydraulic Systems</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Hydraulic Systems Design/Open Channel Flow
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../computationaltools/computationaltools.html">
+   Computational Tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/topic1-1.html">
+     Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/topic1-2.html">
+     Excel/Libre Office Spreadsheets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/topic1-3.html">
+     HEC-RAS River Analysis Software
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/1goodgraphs.html">
+     Characteristics of a Good Graph
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/2makinggraphs.html">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       matplotlib
+      </span>
+     </code>
+     package
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/3adddata.html">
+     Adding Data to Plot Lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/4loglogcharts.html">
+     Logarithmic Charts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../computationaltools/5othercharts.html">
+     Other Graph Types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../basicprinciples/basicprinciples.html">
+   Basic Principles
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basicprinciples/topic2-1.html">
+     Solution of Open Channel Problems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basicprinciples/topic2-2.html">
+     Definitions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../basicprinciples/topic2-3.html">
+     Discharge Measurements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../specificenergy/specificenergy1.html">
+   Specific Energy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specificenergy/specificenergy2.html">
+     Froude Number
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../weirs/weirs.html">
+   Weirs
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../momentum/momentum1.html">
+   Momentum
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/momentum2.html">
+     Rectangular Cross Sections
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/momentum3.html">
+     Surges
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/momentum4.html">
+     Bridge Piers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/momentum5.html">
+     Spur Dikes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/stillingbasins.html">
+     Stilling Basins
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../momentum/contractions.html">
+     Supercritical Contractions and Expansions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="uniformflow.html">
+   Uniform Flow
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Gutter Flow and Gravity Sewer Design
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="compoundchannels.html">
+     Compound Channels
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="riprapchannels.html">
+     Rip-Rap Lined Channels
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../graduallyvariedflow/graduallyvaried1.html">
+   Gradually Varied Flow
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../graduallyvariedflow/wspcomputation.html">
+     Water Surface Profile Computation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../graduallyvariedflow/wspfixeddepth.html">
+     Direct Step Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../graduallyvariedflow/wspfixedspace.html">
+     Standard Spatial-Step Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../graduallyvariedflow/wspnatural.html">
+     Natural Channels
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../hecras/hecras.html">
+   HEC-RAS
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../hecras/homebrewtohecras.html">
+     Homebrew Examples to HEC-RAS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../hecras/junctions.html">
+     Junctions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../hydraulicstructures/hydraulicStructures.html">
+   Hydraulic Structures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../hydraulicstructures/example2.html">
+     Example 16.2.2 from Mays
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../sedimenttransport/sedimenttransport.html">
+   Sediment Transport
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hydraulicprofiles/hydraulicprofiles.html">
+   Hydraulic Profiles through Treatment Plants
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lessons/uniformflow/gutters.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flessons/uniformflow/gutters.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/lessons/uniformflow/gutters.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gutter-geometry">
+   Gutter Geometry
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inlets">
+   Inlets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tools-spreadsheets">
+   Tools(Spreadsheets)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gravity-sewers">
+   Gravity Sewers
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-4-6">
+     Example 4.6
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#solution">
+       Solution
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-4-7">
+     Example 4.7
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Solution
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#slope-classification">
+     Slope Classification
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="gutter-flow-and-gravity-sewer-design">
+<h1>Gutter Flow and Gravity Sewer Design<a class="headerlink" href="#gutter-flow-and-gravity-sewer-design" title="Permalink to this headline">¶</a></h1>
+<p>Curb and gutters on transportation infrastructure (streets, bridges, highways, …) conveys runoff parallel to the travel paths to inlets, which collect the flow and convey it to storm sewer systems (or ditches)</p>
+<p><img alt="" src="../../_images/gutterflowintro.png" /></p>
+<p><a class="reference external" href="http://onlinemanuals.txdot.gov/txdotmanuals/hyd/pavement_drainage.htm">Pavement Drainage (Texas Hydraulics Manual 2019)</a></p>
+<div class="section" id="gutter-geometry">
+<h2>Gutter Geometry<a class="headerlink" href="#gutter-geometry" title="Permalink to this headline">¶</a></h2>
+<p><img alt="" src="../../_images/guttergeometry.png" /> <img alt="" src="../../_images/gutterterms.png" /></p>
+<p>More in the link below under inlets</p>
+</div>
+<div class="section" id="inlets">
+<h2>Inlets<a class="headerlink" href="#inlets" title="Permalink to this headline">¶</a></h2>
+<p><img alt="" src="../../_images/inlettypes.png" /></p>
+<p><a class="reference external" href="http://onlinemanuals.txdot.gov/txdotmanuals/hyd/storm_drain_inlets.htm">Inlet (Texas Hydraulics Manual 2019)</a></p>
+<p><a class="reference external" href="http://onlinemanuals.txdot.gov/txdotmanuals/hyd/gutter_and_inlet_equations.htm">Gutter and Inlet Equations (Texas Hydraulics Manual 2019)</a></p>
+<p>Inlets of various types to collect stormwater and deliver to drainage infrastructure <a class="reference external" href="http://54.243.252.9/ce-3372-webroot/1-Lessons/Lesson16/PowerPointInLecture/CE3372-Lesson-16.key.pdf">Cleveland, T.G. (2020) <em>Water Systems Design (Storm Sewers, Inlets, and Conduits) to accompany CE-3372</em>, Department of Civil, Environmental, and Construction Engineering, Whitacre College of Engineering.</a></p>
+</div>
+<div class="section" id="tools-spreadsheets">
+<h2>Tools(Spreadsheets)<a class="headerlink" href="#tools-spreadsheets" title="Permalink to this headline">¶</a></h2>
+<p>The spreadsheets below implement the inlet equations described in <a class="reference external" href="http://onlinemanuals.txdot.gov/txdotmanuals/hyd/gutter_and_inlet_equations.htm">Gutter and Inlet Equations (Texas Hydraulics Manual 2019)</a>.</p>
+<p>The spreadhseets should work as-is in Excel 2014 and older, you may have to jack with them a bit in newer Excel.  They work fine in LibreOffice.</p>
+<ol class="simple">
+<li><p><a class="reference external" href="http://54.243.252.9/ce-4353-webroot/ce4353jb/ce4353workbook/lessons/uniformflow/HDM-CurbInletOnGrade.xlsx">Curb Inlet on Grade</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-4353-webroot/ce4353jb/ce4353workbook/lessons/uniformflow/HDM-GrateOnGrade.xlsx">Grate Inlet on Grade</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-4353-webroot/ce4353jb/ce4353workbook/lessons/uniformflow/HDM-SlotOnGrade.xlsx">Slot Inlet on Grade</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-4353-webroot/ce4353jb/ce4353workbook/lessons/uniformflow/HDM-CurbOnSag.xlsx">Curb Inlet in Sag</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-4353-webroot/ce4353jb/ce4353workbook/lessons/uniformflow/HDM-GrateOnSag.xlsx">Grate Inlet in Sag</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-4353-webroot/ce4353jb/ce4353workbook/lessons/uniformflow/HDM-MedianGrateSag.xlsx">Median Inlet in Sag</a></p></li>
+<li><p><a class="reference external" href="http://54.243.252.9/ce-4353-webroot/ce4353jb/ce4353workbook/lessons/uniformflow/InletCapacityCalculations.xlsx">Example Calculations to accompany CE-3372 notes above</a></p></li>
+</ol>
+</div>
+<div class="section" id="gravity-sewers">
+<h2>Gravity Sewers<a class="headerlink" href="#gravity-sewers" title="Permalink to this headline">¶</a></h2>
+<p><img alt="" src="../../_images/grabitysewer.png" /></p>
+<p><img alt="" src="../../_images/grabitysewer2.png" /></p>
+<p><img alt="" src="../../_images/lurkers.png" /></p>
+<p><a class="reference external" href="http://onlinemanuals.txdot.gov/txdotmanuals/hyd/conduit_systems.htm#QBDUPXXE">Conduit Design Procedure (Taxes Hydraulics Manual 2019)</a></p>
+<div class="section" id="example-4-6">
+<h3>Example 4.6<a class="headerlink" href="#example-4-6" title="Permalink to this headline">¶</a></h3>
+<p>Find the discharge capacity of a 24-inch diameter PVC storm sewer flowing at 80% fill ratio, if the sewer slope is 0.003.</p>
+<div class="section" id="solution">
+<h4>Solution<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h4>
+<p>Use techniques in textbook, or as alternative the following.</p>
+<ol class="simple">
+<li><p><a class="reference external" href="https://www.conteches.com/pipe-article/article/7/hydraulics-for-gravity-sewer-pipe-a-few-things-to-consider">Manning’s n for PVC (source of values below)</a></p></li>
+</ol>
+<p><img alt="" src="../../_images/manningsNpvc.png" />  or</p>
+<ol class="simple">
+<li><p><a class="reference external" href="http://54.243.252.9/toolbox/Databases/ManningN/ManningsN.html">Manning’s n Database (http://54.243.252.9/)</a></p></li>
+</ol>
+<p><img alt="" src="../../_images/manningsNwebster.png" /></p>
+<ol class="simple">
+<li><p>Now just reuse code</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># prototype functions</span>
+
+<span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">diameter</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">math</span>
+    <span class="n">area</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">8</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">theta</span><span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span><span class="o">*</span><span class="n">diameter</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">area</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">topw</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">diameter</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">math</span>
+    <span class="n">topw</span><span class="o">=</span><span class="n">diameter</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">topw</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">diameter</span><span class="p">):</span>
+    <span class="n">perimeter</span> <span class="o">=</span> <span class="n">diameter</span><span class="o">*</span><span class="n">theta</span><span class="o">/</span><span class="mi">2</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">perimeter</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">angle</span><span class="p">(</span><span class="n">depth</span><span class="p">,</span><span class="n">diameter</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">math</span>
+    <span class="n">angle</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">acos</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">depth</span><span class="o">/</span><span class="n">diameter</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Qman</span><span class="p">(</span><span class="n">Kn</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">S</span><span class="p">):</span>
+    <span class="n">Qman</span><span class="o">=</span><span class="p">(</span><span class="n">Kn</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">R</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">S</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">Qman</span><span class="p">)</span>
+
+<span class="c1"># Our problem</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mf">0.009</span> <span class="c1"># https://www.conteches.com/pipe-article/article/7/hydraulics-for-gravity-sewer-pipe-a-few-things-to-consider</span>
+<span class="n">diameter</span> <span class="o">=</span> <span class="mi">24</span> <span class="c1">#inches</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">diameter</span><span class="o">/</span><span class="mi">12</span> <span class="c1">#inches to feets</span>
+<span class="n">fillratio</span> <span class="o">=</span> <span class="mi">80</span> <span class="c1"># percent</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">D</span><span class="o">*</span><span class="n">fillratio</span><span class="o">/</span><span class="mi">100</span> <span class="c1">#y in feets (unit conversions embedded in formula)</span>
+<span class="c1">#print(round(y/D,3))  # check work, suppress for the money shot</span>
+<span class="n">slope</span> <span class="o">=</span> <span class="mf">0.003</span>
+
+<span class="n">theta</span> <span class="o">=</span> <span class="n">angle</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">D</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">area</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">D</span><span class="p">)</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">perimeter</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">D</span><span class="p">)</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">A</span><span class="o">/</span><span class="n">P</span>
+<span class="n">Qcap</span> <span class="o">=</span> <span class="n">Qman</span><span class="p">(</span><span class="mf">1.49</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">slope</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Estimated Discharge&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Qcap</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="s1">&#39; CFS&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Estimated Discharge 17.54  CFS
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Compare our answer of 17.54 CFS, to the book result of 17.5 CFS.  In this case the same, but textbook used a more rigorous approach involving friction factors.  Typically one would expect similar results in most applications - using the mighty internet, defendible Manning’s n values are practically unlimited.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="example-4-7">
+<h3>Example 4.7<a class="headerlink" href="#example-4-7" title="Permalink to this headline">¶</a></h3>
+<p>Find the concrete sewer (n=0.015) diameter required to carry a maximum discharge of 10.0 CFS on a slope of 0.003.  Minimum discharge is anticipated to be 2.5 cfs.  Check for self-cleansing critical velocity adherence.</p>
+<div class="section" id="id1">
+<h4>Solution<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<ol class="simple">
+<li><p>Use <span class="math notranslate nohighlight">\(\frac{y}{D} = 0.8\)</span> as design fill ratio.</p></li>
+<li><p>Guess a diameter (use the code above) and increment diameter until can get the design discharge.  Round up to nearest commercial diameter.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># prototype functions</span>
+
+<span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">diameter</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">math</span>
+    <span class="n">area</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">8</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">theta</span><span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span><span class="o">*</span><span class="n">diameter</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">area</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">topw</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">diameter</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">math</span>
+    <span class="n">topw</span><span class="o">=</span><span class="n">diameter</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">topw</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">diameter</span><span class="p">):</span>
+    <span class="n">perimeter</span> <span class="o">=</span> <span class="n">diameter</span><span class="o">*</span><span class="n">theta</span><span class="o">/</span><span class="mi">2</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">perimeter</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">angle</span><span class="p">(</span><span class="n">depth</span><span class="p">,</span><span class="n">diameter</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">math</span>
+    <span class="n">angle</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">acos</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">depth</span><span class="o">/</span><span class="n">diameter</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Qman</span><span class="p">(</span><span class="n">Kn</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">S</span><span class="p">):</span>
+    <span class="n">Qman</span><span class="o">=</span><span class="p">(</span><span class="n">Kn</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">R</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">S</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">Qman</span><span class="p">)</span>
+
+<span class="c1"># Our problem</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mf">0.015</span> <span class="c1"># https://www.conteches.com/pipe-article/article/7/hydraulics-for-gravity-sewer-pipe-a-few-things-to-consider</span>
+<span class="n">diameter</span> <span class="o">=</span> <span class="mf">23.545</span> <span class="c1">#inches &lt;&lt;&lt; Guess this value</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">diameter</span><span class="o">/</span><span class="mi">12</span> <span class="c1">#inches to feets</span>
+<span class="n">fillratio</span> <span class="o">=</span> <span class="mi">80</span> <span class="c1"># percent</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">D</span><span class="o">*</span><span class="n">fillratio</span><span class="o">/</span><span class="mi">100</span> <span class="c1">#y in feets (unit conversions embedded in formula)</span>
+<span class="c1">#print(round(y/D,3))  # check work, suppress for the money shot</span>
+<span class="n">slope</span> <span class="o">=</span> <span class="mf">0.003</span>
+
+<span class="n">theta</span> <span class="o">=</span> <span class="n">angle</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">D</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">area</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">D</span><span class="p">)</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">perimeter</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">D</span><span class="p">)</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">A</span><span class="o">/</span><span class="n">P</span>
+<span class="n">Qcap</span> <span class="o">=</span> <span class="n">Qman</span><span class="p">(</span><span class="mf">1.49</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">slope</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Estimated Discharge&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Qcap</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="s1">&#39; CFS&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Estimated Discharge 10.0  CFS
+</pre></div>
+</div>
+</div>
+</div>
+<p>23.545 inches, nearest commerical is 24-inch, so specify that value.</p>
+<ol class="simple">
+<li><p>Now compute y for 10 CFS and 2.5 CFS in this pipe</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 10CFS</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mf">0.015</span> <span class="c1"># https://www.conteches.com/pipe-article/article/7/hydraulics-for-gravity-sewer-pipe-a-few-things-to-consider</span>
+<span class="n">diameter</span> <span class="o">=</span> <span class="mi">24</span> <span class="c1">#inches </span>
+<span class="n">depth</span> <span class="o">=</span> <span class="mf">18.29</span> <span class="c1">#inches &lt;&lt;&lt; Guess this value</span>
+<span class="n">y</span><span class="o">=</span><span class="n">depth</span><span class="o">/</span><span class="mi">12</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">diameter</span><span class="o">/</span><span class="mi">12</span> <span class="c1">#inches to feets</span>
+<span class="n">fillratio</span> <span class="o">=</span> <span class="mi">80</span> <span class="c1"># percent</span>
+<span class="c1">#y = D*fillratio/100 #y in feets (unit conversions embedded in formula)</span>
+<span class="c1">#print(round(y/D,3))  # check work, suppress for the money shot</span>
+<span class="n">slope</span> <span class="o">=</span> <span class="mf">0.003</span>
+
+<span class="n">theta</span> <span class="o">=</span> <span class="n">angle</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">D</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">area</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">D</span><span class="p">)</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">perimeter</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">D</span><span class="p">)</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">A</span><span class="o">/</span><span class="n">P</span>
+<span class="n">Qcap</span> <span class="o">=</span> <span class="n">Qman</span><span class="p">(</span><span class="mf">1.49</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">slope</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Estimated Discharge&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Qcap</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="s1">&#39; CFS&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hydraulic Radius&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">R</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">Vcrit</span> <span class="o">=</span> <span class="p">(</span><span class="n">R</span><span class="o">/</span><span class="n">D</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Critical Velocity&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Vcrit</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Section Velocity&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Qcap</span><span class="o">/</span><span class="n">A</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Estimated Discharge 10.0  CFS
+Hydraulic Radius 0.605
+Critical Velocity 0.819
+Section Velocity 3.893
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2.5CFS</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mf">0.015</span> <span class="c1"># https://www.conteches.com/pipe-article/article/7/hydraulics-for-gravity-sewer-pipe-a-few-things-to-consider</span>
+<span class="n">diameter</span> <span class="o">=</span> <span class="mi">24</span> <span class="c1">#inches </span>
+<span class="n">depth</span> <span class="o">=</span> <span class="mf">7.87</span> <span class="c1">#inches &lt;&lt;&lt; Guess this value</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">depth</span><span class="o">/</span><span class="mi">12</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">diameter</span><span class="o">/</span><span class="mi">12</span> <span class="c1">#inches to feets</span>
+<span class="n">fillratio</span> <span class="o">=</span> <span class="mi">80</span> <span class="c1"># percent</span>
+<span class="c1">#y = D*fillratio/100 #y in feets (unit conversions embedded in formula)</span>
+<span class="c1">#print(round(y/D,3))  # check work, suppress for the money shot</span>
+<span class="n">slope</span> <span class="o">=</span> <span class="mf">0.003</span>
+
+<span class="n">theta</span> <span class="o">=</span> <span class="n">angle</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">D</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">area</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">D</span><span class="p">)</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">perimeter</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">D</span><span class="p">)</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">A</span><span class="o">/</span><span class="n">P</span>
+<span class="n">Qcap</span> <span class="o">=</span> <span class="n">Qman</span><span class="p">(</span><span class="mf">1.49</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">slope</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Estimated Discharge&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Qcap</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="s1">&#39; CFS&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hydraulic Radius&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">R</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">Vcrit</span> <span class="o">=</span> <span class="p">(</span><span class="n">R</span><span class="o">/</span><span class="n">D</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Critical Velocity&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Vcrit</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Section Velocity&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">Qcap</span><span class="o">/</span><span class="n">A</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Estimated Discharge 2.5  CFS
+Hydraulic Radius 0.368
+Critical Velocity 0.754
+Section Velocity 2.791
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Now check the critical cleansing velocities,  at the two discharges the section velocity is larger than the critical velocity, so these sewers should have acceptable self-cleansing properties.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="slope-classification">
+<h3>Slope Classification<a class="headerlink" href="#slope-classification" title="Permalink to this headline">¶</a></h3>
+<p><img alt="" src="../../_images/slopeclassify.png" /></p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lessons/uniformflow"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="uniformflow.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Uniform Flow</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="compoundchannels.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Compound Channels</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Theodore G. Cleveland (the JupyterBook parts)<br/>
+        
+            &copy; Copyright 2023.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
